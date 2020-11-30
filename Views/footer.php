@@ -1,23 +1,23 @@
 <footer id="footer">
-
-    <div class="row-fluid row-social-media">
-        <div class="col-1 social-media__circle d-flex justify-content-center align-items-center">
-            <a class="social-media__link" href="https://twitter.com/?lang=fr"><i class="social-media__icon fa fa-twitter"></i></a>
+    
+    <div class="row-fluid row-social-media d-flex justify-content-center align-items-center">
+        <div class="col-1 social-media__circle  ">
+            <a class="social-media__link d-flex justify-content-center align-items-center" href="https://twitter.com/?lang=fr"><i class="social-media__icon fa fa-twitter"></i></a>
         </div>
-        <div class="col-1 social-media__circle d-flex justify-content-center align-items-center">
-            <a class="social-media__link" href="https://www.apple.com/"><i class="social-media__icon fa fa-apple"></i></a>
+        <div class="col-1 social-media__circle">
+            <a class="social-media__link d-flex justify-content-center align-items-center" href="https://www.apple.com/"><i class="social-media__icon fa fa-apple"></i></a>
         </div>
-        <div class="col-1 social-media__circle d-flex justify-content-center align-items-center">
-            <a class="social-media__link" href="https://fr-fr.facebook.com"><i class="social-media__icon fa fa-facebook"></i></a>
+        <div class="col-1 social-media__circle ">
+            <a class="social-media__link d-flex justify-content-center align-items-center" href="https://fr-fr.facebook.com"><i class="social-media__icon fa fa-facebook"></i></a>
         </div>
-        <div class="col-1 social-media__circle d-flex justify-content-center align-items-center">
-            <a class="social-media__link" href="https://codepen.io"><i class="social-media__icon fa fa-codepen"></i></a>
+        <div class="col-1 social-media__circle">
+            <a class="social-media__link d-flex justify-content-center align-items-center" href="https://codepen.io"><i class="social-media__icon fa fa-codepen"></i></a>
         </div>
-        <div class="col-1 social-media__circle d-flex justify-content-center align-items-center">
-            <a class="social-media__link" href="https://digg.com/"><i class="social-media__icon fa fa-digg"></i></a>
+        <div class="col-1 social-media__circle">
+            <a class="social-media__link d-flex justify-content-center align-items-center" href="https://digg.com/"><i class="social-media__icon fa fa-digg"></i></a>
         </div>
-        <div class="col-1 social-media__circle d-flex justify-content-center align-items-center">
-            <a class="social-media__link" href="https://www.pinterest.fr/">
+        <div class="col-1 social-media__circle">
+            <a class="social-media__link d-flex justify-content-center align-items-center" href="https://www.pinterest.fr/">
                 <i class="social-media__icon fa fa-pinterest-p"></i>
             </a> 
         </div>

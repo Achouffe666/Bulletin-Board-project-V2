@@ -1,38 +1,31 @@
-/*General*/
-body {
-    background-color: rgb(207, 230, 238);
-    margin: 0;
-    padding: 0;
-}
-h1{
-    text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rubik:wght@500&display=swap');
 
-ul li{
-    text-decoration: none;
-    list-style-type: none;
-}
-a {
-    text-decoration: none;
-    font-size: 20px;
-}
-
-/*General And*/
-
-/*ici vous trouvez tous qui le concerne le header And*/
 .header-rt {
     background: url(../Image/rail_duotone.png);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 300px;
-    text-align: center;
-    font-size: 50px; 
     color: white;
+
 }
 
-.block-login{
-    justify-content: space-between;
-    color: white;
+h1{
+    font-size: 15vw;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
 }
-/*ici vous trouvez tous qui le concerne le header And*/
+
+.nav-link{
+    font-size: 3vw;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+.nav-link img{
+    width: 3vw;
+}
+
+.nav-link:hover{
+    color: rgba(176,106,179,0.7);
+}
 

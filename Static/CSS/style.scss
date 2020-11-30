@@ -1,31 +1,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rubik:wght@500&display=swap');
 
-.header-rt {
-    background: url(../Image/rail_duotone.png);
+.header{
+    background: url(../Image/railway.jpg);
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-size: 2000px 300px;
-    background-position: center top;
+    background-position: center;
     color: white;
 
 
     .nav-link{
-        font-size: 3vw;
+        font-size: 1vw;
         color: white;
         font-family: 'Rubik', sans-serif;
     
         
             img{
-                width: 3vw;
+                width: 1vw;
                 }
- 
 
             &:hover{
         color: rgba(176,106,179,0.7);
         }
     }
     h1{
-        font-size: 15vw;
+        font-size: 5vw;
         font-family: 'Raleway', sans-serif;
         font-weight: bolder;
     }
@@ -34,64 +33,47 @@
 
 
 // FOOTER
+$primary: #b06ab3;
+$secondary:linear-gradient(to right, rgba(177, 106, 179, 0.64),rgba(69, 104, 220, 0.64));
+$color: #000000; 
+$alpha: 0;
 
-#social-media {
-    height: 10em;
-    background: linear-gradient(90deg, $primary 0%, rgba(70,104,220,1) 100%);
+
+#footer
+{
+    .row-social-media
+    {
+        height: 10vh;
+        background: $secondary;
+          
+    }
+    .row_details
+    {
+        height: 5vh;
+        background-color: #323233;
+    }
+    .row_end
+    {
+        height: 1vh;
+        background-color: $color;
+    }
+     a
+    {
+        height: 46px;
+        width: 46px;
+       border-radius: 25px;
+        border: 1px solid white;
+        
+    }
 }
 
-.social-media__circle {
-    height: 2.5em;
-    width: 2.5em;
-    background-color: rgba($color: #000000, $alpha: 0);
-    border: 2px solid white;
-    margin: 0.5em;
-    position: relative;
-    top: 1.5em;
-}
-
-.social-media__icon {
+.fa
+{
     color: white;
-    font-size: 1.3em;
-}
-
-.social-media__link:hover {
-    text-decoration: none;
-}
-
-.social-media__link:hover .social-media__circle{
-    background-color: white;
-}
-
-.social-media__link:hover .social-media__icon{
-    text-decoration: none;
-    color: $primary;
-}
-
-#more-infos, #design-cpright {
-    padding: 1em;
-    font-size: 0.7em;
-    color: seashell;
-}
-
-#more-infos {
-    height: 6em;
-    background-color: rgb(41, 43, 48);
-}
-
-.more-infos__link, .design-cpright__link {
-    margin: 0.5em;
-}
-
-#design-cpright {
-    height: 3em;
-    background-color: rgb(21, 22, 24);
+    font-size: 24px;
+    
 }
 
 
-.more-infos__link:hover, .design-cpright__link:hover {
-    text-decoration: none;
-    color: seashell;
-}
 
 

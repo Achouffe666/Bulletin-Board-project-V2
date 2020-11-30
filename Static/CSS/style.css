@@ -1,75 +1,40 @@
-/*
-Error: Undefined variable: "$primary".
-        on line 40 of style.scss
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rubik:wght@500&display=swap");
+.header {
+  background: url(../Image/railway.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white; }
+  .header .nav-link {
+    font-size: 1vw;
+    color: white;
+    font-family: 'Rubik', sans-serif; }
+    .header .nav-link img {
+      width: 1vw; }
+    .header .nav-link:hover {
+      color: rgba(176, 106, 179, 0.7); }
+  .header h1 {
+    font-size: 5vw;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder; }
 
-35: 
-36: // FOOTER
-37: 
-38: #social-media {
-39:     height: 10em;
-40:     background: linear-gradient(90deg, $primary 0%, rgba(70,104,220,1) 100%);
-41: }
-42: 
-43: .social-media__circle {
-44:     height: 2.5em;
-45:     width: 2.5em;
+#footer .row-social-media {
+  height: 10vh;
+  background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)); }
+#footer .row_details {
+  height: 5vh;
+  background-color: #323233; }
+#footer .row_end {
+  height: 1vh;
+  background-color: #000000; }
+#footer a {
+  height: 46px;
+  width: 46px;
+  border-radius: 25px;
+  border: 1px solid white; }
 
-Backtrace:
-style.scss:40
-/usr/lib/ruby/vendor_ruby/sass/script/tree/variable.rb:49:in `_perform'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/node.rb:50:in `perform'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/list_literal.rb:75:in `block in _perform'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/list_literal.rb:75:in `map'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/list_literal.rb:75:in `_perform'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/node.rb:50:in `perform'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/funcall.rb:182:in `perform_arg'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/funcall.rb:129:in `block in _perform'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/funcall.rb:129:in `each'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/funcall.rb:129:in `each_with_index'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/funcall.rb:129:in `each'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/funcall.rb:129:in `map'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/funcall.rb:129:in `_perform'
-/usr/lib/ruby/vendor_ruby/sass/script/tree/node.rb:50:in `perform'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:398:in `visit_prop'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `block in with_base'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:135:in `with_frame'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `with_base'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:440:in `map'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:438:in `visit_rule'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `block in with_base'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:135:in `with_frame'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `with_base'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `map'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:10:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/root_node.rb:36:in `css_tree'
-/usr/lib/ruby/vendor_ruby/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:389:in `_render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:307:in `render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:383:in `run'
-/usr/lib/ruby/vendor_ruby/sass/exec/sass_scss.rb:63:in `process_result'
-/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:50:in `parse'
-/usr/lib/ruby/vendor_ruby/sass/exec/base.rb:18:in `parse!'
-/usr/bin/sass:8:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$primary\".\A         on line 40 of style.scss\A \A 35: \A 36: // FOOTER\A 37: \A 38: #social-media {\A 39:     height: 10em;\A 40:     background: linear-gradient(90deg, $primary 0%, rgba(70,104,220,1) 100%);\A 41: }\A 42: \A 43: .social-media__circle {\A 44:     height: 2.5em;\A 45:     width: 2.5em;"; }
+.fa {
+  color: white;
+  font-size: 24px; }
+
+/*# sourceMappingURL=style.css.map */

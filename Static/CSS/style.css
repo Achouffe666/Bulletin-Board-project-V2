@@ -7,17 +7,34 @@
 
 #footer .row-social-media {
   height: 10vh;
+<<<<<<< HEAD
   background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)); }
   #footer .row-social-media .social-media_circle {
     color: white; }
   #footer .row-social-media i.fa {
     color: white;
     font-size: 30px; }
+=======
+  background: -webkit-gradient(linear, left top, right top, from(#b06ab3), to(#4668dc));
+  background: linear-gradient(90deg, #b06ab3 0%, #4668dc 100%);
+}
+>>>>>>> 918db782de01d77eb9e78628725a269680b81395
 #footer .row_details {
   height: 5vh;
   background-color: #323233; }
 #footer .row_end {
   height: 1vh;
+<<<<<<< HEAD
   background-color: #000000; }
 
 /*# sourceMappingURL=style.css.map */
+=======
+  background-color: #000000;
+}
+
+.fa {
+  color: white;
+  font-size: 30px;
+}
+/*# sourceMappingURL=style.css.map */
+>>>>>>> 918db782de01d77eb9e78628725a269680b81395

@@ -17,7 +17,9 @@
             <a class="social-media__link" href="https://digg.com/"><i class="social-media__icon fa fa-digg"></i></a>
         </div>
         <div class="col-1 social-media__circle d-flex justify-content-center align-items-center">
-            <a class="social-media__link" href="https://www.pinterest.fr/"><i class="social-media__icon fa fa-pinterest-p"></i></a> 
+            <a class="social-media__link" href="https://www.pinterest.fr/">
+                <i class="social-media__icon fa fa-pinterest-p"></i>
+            </a> 
         </div>
 
     </div>

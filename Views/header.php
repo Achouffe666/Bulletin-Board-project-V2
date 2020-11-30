@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="header">
-        <img class="img-fluid" src="../Static/Image/new_rail.png" alt="rail" style="width: 100%; height: 100%;">
+        <img class="img-fluid" src="../Static/Image/railway.png" alt="rail">
     </div>
 </body>
 </html>

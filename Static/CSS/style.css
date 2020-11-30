@@ -1,0 +1,38 @@
+/*General*/
+body {
+    background-color: rgb(207, 230, 238);
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+
+ul li{
+    text-decoration: none;
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/*General And*/
+
+/*ici vous trouvez tous qui le concerne le header And*/
+.header-rt {
+    background: url(../images/header/rail_duotone.png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    text-align: center;
+    font-size: 50px; 
+    color: white;
+}
+
+.block-login{
+    justify-content: space-between;
+    color: white;
+}
+/*ici vous trouvez tous qui le concerne le header And*/
+

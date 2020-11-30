@@ -14,16 +14,7 @@ $alpha: 0;
     {
         height: 10vh;
         background: $secondary;
-        .social-media_circle
-        {
-            color: white;
-        }
-        i.fa
-        {
-            color: white;
-            font-size: 30px;
-
-        }
+          
     }
     .row_details
     {
@@ -37,6 +28,11 @@ $alpha: 0;
     }
 }
 
+.fa
+{
+    color: white;
+    font-size: 30px;
+}
 
 
 

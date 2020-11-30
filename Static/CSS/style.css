@@ -15,15 +15,9 @@
   height: 1vh;
   background-color: #000000;
 }
-#footer a {
-  height: 46px;
-  width: 46px;
-  border-radius: 25px;
-  border: 1px solid white;
-}
 
 .fa {
   color: white;
-  font-size: 24px;
+  font-size: 30px;
 }
 /*# sourceMappingURL=style.css.map */

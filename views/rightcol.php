@@ -27,25 +27,25 @@
           
           <div id="user_login">
             <div class="input__wrap">
-              <form method="GET" id="submit">
+              <form id="submit" method="post" action="../controlers/functions.php">
 
                 <div class="form-group">
                   <label class="text-black-50">
                     Username
                   </label>
-                  <input id="username" class="form-control bg-light rounded rounded-pill" type="username">
+                  <input id="username" name="nickname" class="form-control bg-light rounded rounded-pill" type="username">
                 </div>
 
                 <div class="form-group">
                   <label class="text-black-50">
                     Password
                   </label>
-                  <input id="password" class="form-control bg-light rounded rounded-pill" type="password">
+                  <input id="password" name="password" class="form-control bg-light rounded rounded-pill" type="password">
                 </div> 
 
                 <div class="form-group">
                   <div class="checkbox">
-                    <label class="text-black-50"> <input type="checkbox">
+                    <label class="text-black-50"> <input name="remember" type="checkbox">
                       Save password 
                     </label>
                   </div>

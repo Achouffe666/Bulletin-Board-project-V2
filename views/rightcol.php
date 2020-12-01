@@ -58,7 +58,7 @@
                 </div> 
               </form>
 
-              <?php include 'login-php';?>
+              <!-- <?php include 'login-php';?> -->
 
             </div>
           </div>

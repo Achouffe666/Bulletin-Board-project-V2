@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-group d-flex justify-content-center">
-                  <button type="submit" class=" button--modifier btn text-black border rounded rounded-pill">
+                  <button type="submit" class="button--modifier btn text-black border rounded rounded-pill login-button">
                     Login 
                   </button>
                 </div> 

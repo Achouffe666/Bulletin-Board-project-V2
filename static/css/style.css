@@ -20,7 +20,8 @@
 
 .rightcol .btn {
   background-color: #b06ab3;
-  color: white;
+  color: white; }
+.rightcol .login-button {
   width: 500px; }
 .rightcol hr {
   background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64));

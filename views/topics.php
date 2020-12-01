@@ -1,4 +1,8 @@
 <!-- TOPICS -->
+<?php
+session_start();
+?>
+<?php include 'header.php';?>
 
 <!-- MAIN WRAP -->
 <div class="main-wrap container overlay rounded-lg position-relative my-3 pb-3">
@@ -10,6 +14,45 @@
       <li class="breadcrumb-item">Forum One</li>
     </ol>
   </nav>
+
+  <?php
+  include "../database/db.php";
+  global $db;
+
+    try {
+        $query =$db ->query('SELECT * FROM topics');
+        $query->execute();
+        $topics = $query->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        ?>
+        <div class="alert alert-danger" role="alert">
+         Error apeared, try again,
+        </div>
+        <?php
+    }
+?>
+ <!-- formulaire de creation de topic -->
+<form action='' method='post' class="form_topics">
+        <h4>Create your own topic!</h4>
+        <div class='form-group'>
+        <input type="text" class="form-control" name='Title' placeholder="Title" required>
+        </div>
+        <div class='form-group'>
+        <input type="text" class="form-control" name='Content' placeholder="Content" required>
+        </div>
+        <div class='form-group'>
+        <input type="text" class="form-control" name='BoardID' placeholder="BoardID" required>
+        </div>
+        <div class='form-group'>
+        <input type="text" class="form-control" name='userID' placeholder="userID" required>
+        </div>
+        <input type="submit" name="formSend" id="formSend">
+        <button type="button" id='cancel'>Cancel</button>
+</form>
+ 
+        <div class="board-util d-flex">
+          <button class="btn text-black rounded-pill border" name="btn" id="btn" type="submit">New topic
+            <i class="fas fa-pencil-alt"></i></button>
 
   <div class="container-lg">
 
@@ -25,8 +68,7 @@
         <div class="d-flex">
 
           <button class="button--modifier btn text-black rounded-pill border" type="submit">
-            New topic
-            <?php include 'topic-create.php';?>
+            New topic         
 
             <includ class="fas fa-pencil-alt"></>
           </button>
@@ -249,3 +291,4 @@
 
 </div>
 <!-- END MAIN CONTAINER -->
+<?php include 'footer.php';?>

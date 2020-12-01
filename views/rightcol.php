@@ -1,6 +1,5 @@
       <!-- RIGHT COL -->
-
-
+   
       <div class="col-xl-3 themed-grid-col rightcol"> 
         
         <div class="bg-light rounded rounded-pill border mt-5"> 

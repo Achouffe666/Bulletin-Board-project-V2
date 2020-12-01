@@ -40,5 +40,6 @@
      
 
 </footer>
+<script src="../static/js/topics.js"></script>
 </body>
 </html>

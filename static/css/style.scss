@@ -44,13 +44,71 @@ $alpha: 0;
     {
         background-color: $primary;
         color: white;
+        width: 500px;
     }
     hr 
     {
         background: $secondary;
         height: 3px;
     }
+  
 }
+.topics-top{
+        margin-top:30px;    
+        background: #f2f2f2;
+
+    .topics-top-title{
+        color: #FFFFFFFF;
+        background: $secondary;
+        }    
+
+    .last-topics-wrap{
+        margin: 10px;
+        border-radius: 10px;
+
+        background: #FFFFFFFF;
+        span{
+                color: #676767;
+            }
+        h4{
+          font-weight: 300;
+          border-radius:10px 10px 0 0;
+       
+        }
+      }
+  
+  }
+
+.user-top{
+    margin-top:30px;    
+    background: #f2f2f2;
+
+.user-top-title{
+    color: #FFFFFFFF;
+    background: $secondary;
+    }    
+
+.last-user-wrap{
+    margin: 10px;
+    border-radius: 10px;
+    background: #FFFFFFFF;
+        span{
+                color: #676767;
+            }
+        h4{
+        font-weight: 300;
+        border-radius:10px 10px 0 0;
+
+        .col-4{
+            max-width: 130px;
+        }
+        
+    }
+  }
+
+}
+
+  
 // FOOTER
 
 

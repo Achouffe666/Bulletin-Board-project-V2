@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rubik:wght@500&display=swap');
 
+$primary: #b06ab3;
+$secondary:linear-gradient(to right, rgba(177, 106, 179, 0.64),rgba(69, 104, 220, 0.64));
+$color: #000000; 
+$alpha: 0;
+
 .header{
     background: url(../image/railway.jpg);
     background-size: 100%;
@@ -31,12 +36,23 @@
     
 }
 
+//RIGHTCOL
 
+.rightcol
+{
+    .btn
+    {
+        background-color: $primary;
+        color: white;
+    }
+    hr 
+    {
+        background: $secondary;
+        height: 3px;
+    }
+}
 // FOOTER
-$primary: #b06ab3;
-$secondary:linear-gradient(to right, rgba(177, 106, 179, 0.64),rgba(69, 104, 220, 0.64));
-$color: #000000; 
-$alpha: 0;
+
 
 
 #footer

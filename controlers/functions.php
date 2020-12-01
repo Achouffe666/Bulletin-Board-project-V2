@@ -1,10 +1,14 @@
 <?php 
+session_start();
 
-$database = include "../database/database.php";
+include "../database/db.php";
+global $db;
+$nickname = $_POST['nickname'];
+$password = $_POST['password'];
+$remember = $_POST['remember'];
 
-function login_post()
-{
-    $database;
+
+    $database2;
     if (isset($_POST['nickname'])) 
     {
         $query = $db->prepare("SELECT nickname, id, password FROM users WHERE nickname = :nickname");
@@ -12,7 +16,7 @@ function login_post()
         while($data = $query->fetch())
         {
             
-            if (isset($_POST['remember']) && ($POST_['remember'] == true))
+            if (isset($_POST['remember']) && ($_POST['remember'] == true))
             {
                 $_SESSION["id"] = $data["id"];
                 $_SESSION["nickname"] = $data["nickname"];
@@ -20,7 +24,7 @@ function login_post()
             }
             if($data["password"] == $_POST["password"])
             {
-               header("Location:message_Maud.php");
+                header("Location:../views/index.php");
             }
             else
             {
@@ -44,5 +48,5 @@ function login_post()
         }
     }
 
-}
+
 ?>

@@ -43,9 +43,9 @@
                   <input id="password" name="password" class="form-control bg-light rounded rounded-pill" type="password">
                 </div> 
 
-                <div class="form-group">
+                <div class="form-check">
                   <div class="checkbox">
-                    <label class="text-black-50"> <input name="remember" type="checkbox">
+                    <label class="text-black-50"> <input name="remember" type="radio">
                       Save password 
                     </label>
                   </div>
@@ -58,7 +58,6 @@
                 </div> 
               </form>
 
-              <!-- <?php include 'login-php';?> -->
 
             </div>
           </div>

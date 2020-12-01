@@ -1,7 +1,7 @@
       <!-- RIGHT COL -->
 
 
-      <div class="col-xl-3 themed-grid-col">
+      <div class="col-xl-3 themed-grid-col rightcol">
         
         <div class="bg-light rounded rounded-pill border mt-5">
           <div class="input-group">
@@ -20,7 +20,7 @@
         <!-- LOGIN -->
         <div class="login_wrap">
           
-          <button type="button"
+          <button type="button button-login"
             class="btn bg-transparent text-black-50 text-left mb-2">
              Login · Register 
           </button>

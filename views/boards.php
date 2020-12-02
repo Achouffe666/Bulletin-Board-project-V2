@@ -21,9 +21,9 @@
                 <!-- ONE LINK TO TOPICS-->
                 <div class="topics bg-white shadow-sm rounded p-1 m-1">
         
-                    <div class="topics__container d-flex flex-column p-2">
+                    <div class="topics__container d-flex flex-column pl-2">
         
-                        <div class="row no-gutters topics__top">
+                        <div class="row topics__top">
         
                             <div class="col-3">
                                 <img src="../static/image/1.png">
@@ -36,7 +36,7 @@
         
                         </div>
                         <hr class="topics__hr float-left m-0 mb-3">
-                        <div class="row topics__bot no-gutters">
+                        <div class="row topics__bot">
         
                             <div class="col-3 d-flex flex-column align-items-center">
                                 <p class="topics__number">6</p>

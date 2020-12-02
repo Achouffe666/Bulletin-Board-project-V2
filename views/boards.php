@@ -25,8 +25,8 @@
         
                         <div class="row no-gutters topics__top">
         
-                            <div class="col-3 mr-0">
-                                <img src="1.png">
+                            <div class="col-3">
+                                <img src="../static/image/1.png">
                             </div>
         
                             <div class="col-9">
@@ -70,7 +70,7 @@
                         <div class="row topics__top">
         
                             <div class="col-3">
-                                <img src="2.png">
+                                <img src="../static/image/2.png">
                             </div>
         
                             <div class="col-9">
@@ -124,7 +124,7 @@
                     <div class="row topics__top">
         
                         <div class="col-3">
-                            <img src="3.png">
+                            <img src="../static/image/3.png">
                         </div>
         
                         <div class="col-9">
@@ -168,7 +168,7 @@
                     <div class="row topics__top">
         
                         <div class="col-3">
-                            <img src="4.png">
+                            <img src="../static/image/4.png">
                         </div>
         
                         <div class="col-9">
@@ -224,7 +224,7 @@
                     <div class="row topics__top">
         
                         <div class="col-3">
-                            <img src="1.png">
+                            <img src="../static/image/2.png">
                         </div>
         
                         <div class="col-9">
@@ -266,7 +266,7 @@
                     <div class="row topics__top">
         
                         <div class="col-3">
-                            <img src="5.png">
+                            <img src="../static/image/5.png">
                         </div>
         
                         <div class="col-9">
@@ -310,7 +310,7 @@
                     <div class="row topics__top">
         
                         <div class="col-3">
-                            <img src="1.png">
+                            <img src="../static/image/3.png">
                         </div>
         
                         <div class="col-9">
@@ -353,7 +353,7 @@
                     <div class="row topics__top">
         
                         <div class="col-3">
-                            <img src="2.png">
+                            <img src="../static/image/4.png">
                         </div>
         
                         <div class="col-9">

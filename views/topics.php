@@ -32,13 +32,13 @@ session_start();
     }
 ?>
  <!-- formulaire de creation de topic -->
-<form action='' method='post' class="form_topics row">
-        <h4>Create your own topic!</h4>
-        <div class='form-group'>
+<form action='' method='post' class="form_topics row d-flex">
+        <h4 class ="mx-2">Create your own topic!</h4>
+        <div class="form-group mr-1">
         <input type="text" class="form-control bg-light rounded rounded-pill" name='Title' placeholder="Topic Title Here!" required>
         </div>
         
-        <input type="submit" name="formSend" id="formSend" class="button--modifier px-2 py-1 border rounded rounded-pill login-button" value="Create a topic">
+        <input type="submit" name="formSend" id="formSend" class="button--modifier mr-1 px-2 py-1 border rounded rounded-pill login-button" value="Create a topic">
         <button type="button" class="button--modifier px-2 py-1 border rounded rounded-pill login-button" id='cancel'>Cancel</button>
 </form>
  

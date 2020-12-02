@@ -18,7 +18,8 @@
             </nav>
         </div>
         <?php include "../database/database.php";
-          global $db;
+            include "../controlers/functions_message.php";
+            global $db;
         ?>
 
         <div class="row">
@@ -36,22 +37,14 @@
                 </form>
             </div>
         </div>
-        <?php 
- 
-                $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
-                $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
-                $req->execute(array('nickname' => $_SESSION["id"]));
-                
-                while($data = $req->fetch())
-                {          
-         ?>
+       
         
         <div class="row content row-content justify-content-center ">
                 <div class="row row-message row-message2">
                     <div class="col-2 col-content-message">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
-                        <p name="message-position"><?php echo $data["position"];?></p>
-                        <p name="message-identity"><?php echo $data["nickname"];}?></p>
+                        <p name="message-position"><?php get_user_position()?></p>
+                        <p name="message-identity"><?php get_user_nickname()?></p>
                     </div>
                     <div class="col-10 col-content-message row-message2">
                         <form method="post" action="message_post.php">
@@ -65,49 +58,29 @@
                     </div>
                 </div>
             
-            <?php while($data = $response->fetch())
-                {
-                    $user_id = $db->quote($data['user_id']);
-                    $response2 = $db->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
-                    $count_message = $db->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
-            ?>
-
+           
                <div class="row row-message">
                     <div class="col-2 col-content-message">
-                        <?php while($datas = $response2->fetch())
-                        { $avatar= "http://2.gravatar.com/avatar/".md5($datas['email'])."?s=100&"?>
-                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo $avatar ?> style="width: 150px;" alt="avatar_autre">
-                        <p class="message-position"><?php echo $datas['position']?></p>
-                        <p class="message-identity"><?php echo $datas['nickname'];} ?></p>
-                        <p class="message-number"><?php while($datas_count = $count_message->fetch()){ echo $datas_count["NumberOfMessages"];} ?> post(s)</p>
+                       
+                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
+                        get_message_avatar() ?> style="width: 150px;" alt="avatar_autre">
+                        <p class="message-position"><?php get_message_position();?></p>
+                        <p class="message-identity"><?php get_message_nickname(); ?></p>
+                        <p class="message-number"><?php get_message_count()?> post(s)</p>
                     </div>
                     <div class="col-10 col-content-message content-message2">
-                        <p><?php echo $data['title'];?></p>
-                        <p><?php echo $data['content'];?></p>
-                        <?php 
-                        $response3 = $db->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
-                        while($datas = $response3->fetch())
-                        { ?>
-                        <p class="message-signature"><?php echo $datas['signature'];}?></p>
-                        <p><?php echo $data['creation_date'];?></p>
-                        <?php 
-                        $response4 = $db->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
-                        while($datas = $response4->fetch())
-                        
-                        if ($datas['id'] == $_SESSION["id"]) 
-                        {
-                        ?>
+                        <p><?php get_message_title()?></p>
+                        <p><?php get_message_content()?></p>
+                        <p class="message-signature"><?php get_message_signature();?></p>
+                        <p><?php get_message_creation_date();?></p>
+                       
                         <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2">
-                            <a href="message_delete.php?id=<?php echo $data['id']?>">Annuler</a> 
+                            <a href="message_delete.php?id=<?php get_message_id()?>">Annuler</a> 
                         </button>
-                        <?php } ?>
+                        
                     </div>
                 </div>
-                <?php 
-                };
-                 $response->closeCursor(); // Termine le traitement de la requête
-            
-             ?>
+               
 
              </div>  
             

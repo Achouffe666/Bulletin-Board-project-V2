@@ -35,24 +35,14 @@ session_start();
 <form action='' method='post' class="form_topics">
         <h4>Create your own topic!</h4>
         <div class='form-group'>
-        <input type="text" class="form-control" name='Title' placeholder="Title" required>
+        <input type="text" class="form-control bg-light rounded rounded-pill" name='Title' placeholder="Topic Title Here!" required>
         </div>
-        <div class='form-group'>
-        <input type="text" class="form-control" name='Content' placeholder="Content" required>
-        </div>
-        <div class='form-group'>
-        <input type="text" class="form-control" name='BoardID' placeholder="BoardID" required>
-        </div>
-        <div class='form-group'>
-        <input type="text" class="form-control" name='userID' placeholder="userID" required>
-        </div>
-        <input type="submit" name="formSend" id="formSend">
-        <button type="button" id='cancel'>Cancel</button>
+        
+        <input type="submit" name="formSend" id="formSend" class="button--modifier btn text-black border rounded rounded-pill login-button" value="Create a topic">
+        <button type="button" class="button--modifier btn text-black border rounded rounded-pill login-button" id='cancel'>Cancel</button>
 </form>
  
-        <div class="board-util d-flex">
-          <button class="btn text-black rounded-pill border" name="btn" id="btn" type="submit">New topic
-            <i class="fas fa-pencil-alt"></i></button>
+ 
 
   <div class="container-lg">
 
@@ -67,8 +57,8 @@ session_start();
 
         <div class="d-flex">
 
-          <button class="button--modifier btn text-black rounded-pill border" type="submit">
-            New topic         
+          <button class="button--modifier btn text-black rounded-pill border" type="submit" id="btn">
+            New topic     
 
             <includ class="fas fa-pencil-alt"></>
           </button>
@@ -225,7 +215,7 @@ session_start();
 
         <div class=" d-flex pt-3">
 
-          <button class="button--modifier btn text-black border rounded-pill px-4 py-2" type="submit">
+          <button class="button--modifier btn text-black border rounded-pill px-4 py-2" type="submit" id="btn2">
             New topic
             <i class="fas fa-pencil-alt"></i>
           </button>

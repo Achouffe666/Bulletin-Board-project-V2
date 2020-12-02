@@ -97,15 +97,15 @@
           </div>
             <div class="row d-flex flex-row align-items-start card-body last-user-wrap">
               <div class="col-4"> 
-              <img src="../static/image/3.png" alt="User1" style="width:75px">
+              <img src="../static/image/3.png" alt="User1" style="width:35px">
               <p>#User1</p>             
              </div>
               <div class="col-4"> 
-              <img src="../static/image/3.png " alt="user2" style="width:75px">
+              <img src="../static/image/3.png " alt="user2" style="width:35px">
               <p>#User2</p>             
               </div>
               <div class="col-4"> 
-              <img src="../static/image/3.png" alt="user3" style="width:75px">
+              <img src="../static/image/3.png" alt="user3" style="width:35px">
               <p>#User</p>             
               </div>
                   </div>

@@ -9,13 +9,14 @@ $alpha: 0;
 /* HEADER */
 
 header{
-    background:$secondary, url(../image/railway.jpg);
+    background:$secondary, url(../image/railway.jpg) 100%;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     color: white;
     margin-bottom:-50px;
     height:20%;
-    width:auto;
+   
 
 
     .nav-link{

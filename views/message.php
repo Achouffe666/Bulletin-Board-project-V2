@@ -3,7 +3,9 @@
    
    
 ?>
-<?php include "header.php"; ?>
+<?php include "header.php"; 
+   
+?>
 
 <div class="container-fluid overlay">
         <div class="breadcrumb">
@@ -15,25 +17,10 @@
                 </ol>
             </nav>
         </div>
-        <?php 
-            
-            $host = "localhost"; 
-            $dbname = "forum"; 
-            $user = "root"; 
-            $pass = "root";
-            
-            try{
-                
-                    $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                
-            }
-             catch(Exception $e)
-            {
-                die('Erreur : '.$e->getMessage());
-            }
-            
+        <?php include "../database/database.php";
+          global $db;
         ?>
+
         <div class="row">
             <div class="col col-md-2">
                 <button id="button_reply" type="submit" class="btn  btn-outline-info  button-reply" name="post_reply">Post reply</button>
@@ -50,16 +37,9 @@
             </div>
         </div>
         <?php 
-                $host = "localhost"; 
-                $dbname = "forum"; 
-                $user = "root"; 
-                $pass = "root";
-
-                try
-                {
-                $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-                $response = $pdo->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
-                $req = $pdo->prepare('SELECT * FROM users WHERE nickname = :nickname');
+ 
+                $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
+                $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
                 $req->execute(array('nickname' => $_SESSION["id"]));
                 
                 while($data = $req->fetch())
@@ -87,9 +67,9 @@
             
             <?php while($data = $response->fetch())
                 {
-                    $user_id = $pdo->quote($data['user_id']);
-                    $response2 = $pdo->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
-                    $count_message = $pdo->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
+                    $user_id = $db->quote($data['user_id']);
+                    $response2 = $db->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
+                    $count_message = $db->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
             ?>
 
                <div class="row row-message">
@@ -105,13 +85,13 @@
                         <p><?php echo $data['title'];?></p>
                         <p><?php echo $data['content'];?></p>
                         <?php 
-                        $response3 = $pdo->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
+                        $response3 = $db->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
                         while($datas = $response3->fetch())
                         { ?>
                         <p class="message-signature"><?php echo $datas['signature'];}?></p>
                         <p><?php echo $data['creation_date'];?></p>
                         <?php 
-                        $response4 = $pdo->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
+                        $response4 = $db->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
                         while($datas = $response4->fetch())
                         
                         if ($datas['id'] == $_SESSION["id"]) 
@@ -126,12 +106,7 @@
                 <?php 
                 };
                  $response->closeCursor(); // Termine le traitement de la requête
-                }
-                
-                catch(Exception $e)
-                    {
-                        die('Erreur : '.$e->getMessage());
-                    }
+            
              ?>
 
              </div>  

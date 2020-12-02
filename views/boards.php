@@ -1,4 +1,3 @@
-<?php include "header.php";?>
 
 <!-- BOARD -->
 <div class="container overlay main__wrap d-flex flex-column rounded-lg my-3 pb-3 pr-2 bg-white shadow">
@@ -401,9 +400,9 @@
         
         </div>
         <!-- END OF BOARD WRAP-->
-        <?php include "rightcol.php";?>
+        
     </div>
     <!-- END OF BOARD INNER-->
 </div>
 <!-- END OF CONTAINER-->
-<?php include "footer.php";?>
+

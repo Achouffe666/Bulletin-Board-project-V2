@@ -3,10 +3,10 @@
 .gradient {
   background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)); }
 
-.nav-list li a {
+.nav__list li a {
   text-decoration: none;
   color: #676767; }
-  .nav-list li a:hover {
+  .nav__list li a:hover {
     color: rgba(176, 106, 179, 0.7); }
 
 /*----used in every file----*/

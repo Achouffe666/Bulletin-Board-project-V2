@@ -2,11 +2,11 @@
 <?php
 session_start();
 ?>
-<?php include 'header.php';?>
+
 
 <!-- MAIN WRAP -->
 <div class="main__wrap container overlay rounded-lg position-relative my-3 pb-3">
-  <nav class="nav-list">
+  <nav class="nav__list">
     <ol class="breadcrumb bg-transparent pt-5">
       <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
       <li class="breadcrumb-item" ><a href="#">Board Index</a></li>
@@ -281,4 +281,4 @@ session_start();
 
 </div>
 <!-- END MAIN CONTAINER -->
-<?php include 'footer.php';?>
+

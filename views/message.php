@@ -3,13 +3,11 @@
    
    
 ?>
-<?php include "header.php"; 
-   
-?>
+
 
 <div class="container-fluid overlay position-relative rounded-lg main__wrap d-flex flex-column">
     
-    <nav class="nav-list">
+    <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
             <li class="breadcrumb-item"><a href="#">Board Index</a></li>
@@ -99,4 +97,3 @@
 </div>
 <!-- END MAIN WRAP -->
     
-  <?php include "footer.php"; ?>

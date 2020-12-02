@@ -33,7 +33,7 @@ header {
     padding-bottom: 50px; }
 
 /* MAIN WRAP */
-.main__wrap {
+body .main__wrap {
   width: 90%;
   position: relative;
   background: white;

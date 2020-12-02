@@ -13,7 +13,7 @@
         <div class="board__wrap col-xl-9 mr-0 mb-2">
         
             <!-- BOARD ONE TOPICS-->
-            <h4 class="my-5 ml-5 text-black-50">Category One</h4>
+            <h4 class="mt-2 mb-5 ml-5 text-black-50">Category One</h4>
             <!-- TOPICS WRAP-->
             <div class="topics__wrap container-fluid d-flex p-1 mb-5">
                 <!-- ONE LINK TO TOPICS-->

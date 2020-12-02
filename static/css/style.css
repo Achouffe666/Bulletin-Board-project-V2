@@ -177,8 +177,8 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   color: rgba(176, 106, 179, 0.7); }
   #footer .row_more-infos .more-infos__link {
     text-decoration: none;
-    list-style: none;
-    color: rgba(176, 106, 179, 0.7); }
+    color: #B06AB3;
+    font: size 13; }
 #footer .row_end {
   height: 3vh;
   background-color: #000000; }

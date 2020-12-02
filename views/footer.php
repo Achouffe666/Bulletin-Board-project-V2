@@ -26,12 +26,12 @@
 
     <div class="row row-fluid row_more-infos d-flex justify-content-between justify-content-md-end">
        
-            <a class="col-4 col-md-1 more-infos__link" href="#"> <i class="fas fa-envelope"></i>Contact us </a>
-            <a class="col-4 col-md-1 more-infos__link" href="#"> <i class="fas fa-shield-alt"></i> The team </a>
-            <a class="col-4 col-md-1 more-infos__link" href="./terms.html"> <i class="fas fa-check"></i> Terms </a>
-            <a class="col-4 col-md-1 more-infos__link" href="./policy.html"> <i class="fas fa-lock"></i> Privacy </a>
-            <a class="col-4 col-md-1 more-infos__link" href="./member.php"> <i class="fas fa-users"></i> Members </a>
-            <a class="col-4 col-md-2 more-infos__link p0 " href="./logout.php"> <i class="fas fa-trash-alt"></i> Delete cookies </a>
+            <a class="col-4 col-md-1 more-infos__link d-flex" href="#"> <i class="fas fa-envelope"></i>Contact us </a>
+            <a class="col-4 col-md-1 more-infos__link d-flex" href="#"> <i class="fas fa-shield-alt"></i> The team </a>
+            <a class="col-4 col-md-1 more-infos__link d-flex" href="./terms.html"> <i class="fas fa-check"></i> Terms </a>
+            <a class="col-4 col-md-1 more-infos__link d-flex" href="./policy.html"> <i class="fas fa-lock"></i> Privacy </a>
+            <a class="col-4 col-md-1 more-infos__link d-flex" href="./member.php"> <i class="fas fa-users"></i> Members </a>
+            <a class="col-4 col-md-2 more-infos__link d-flex" href="./logout.php"> <i class="fas fa-trash-alt"></i> Delete cookies </a>
        
     </div>
 

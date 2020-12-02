@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer" class="fixed-bottom">
     
     <div class="row social-bar row-fluid row-social-media d-flex justify-content-between justify-content-md-center align-items-center">
         <div class="col-4 col-md-1 social-media__circle  ">

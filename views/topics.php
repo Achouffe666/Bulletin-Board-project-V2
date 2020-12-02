@@ -36,8 +36,8 @@
         <div class="alert b-radius alert-danger" role="alert">
           <a href="#" class="alert-link">Forum rules</a>
         </div>
-
-        <div class="d-flex">
+        <!-- ACTION ROW -->
+        <div class="d-flex mb-3">
 
           <button class="button--modifier rounded-pill border" type="submit" id="btn">
             New topic     
@@ -72,11 +72,11 @@
           <p class="ml-auto text-black-50"> 12 topics · Page <strong>1</strong> of <strong>1</strong>
           </p>
 
-          <!-- END SEARCH -->
+          
         </div>
-
+        <!-- END ACTION ROW -->
         <!-- ANNONCE -->
-        <div class="b-radius">
+        <div class="b-radius mb-3">
 
           <div class="topics-top gradient row no-gutters align-items-center w-100">
           
@@ -137,7 +137,7 @@
 
         <!-- TOPICS -->
 
-        <div class="b-radius">
+        <div class="b-radius mb-3">
 
           <div class="topics-top gradient text-black row no-gutters align-items-center w-100">
             
@@ -156,7 +156,7 @@
           </div>
 
           <!-- EXEMPLE POST -->
-          <div class="topic bg-light b-radius p-2">
+          <div class="topic bg-light b-radius p-2 my-1">
 
             <div class="shadow-sm b-radius bg-white p-3">
 
@@ -253,7 +253,7 @@
       </div>
       <!--END BOARD WRAP-->
 
-      <!-- <?php include "rightcol.php";?> -->      
+      <?php include "rightcol.php";?>     
 
     </div>
     <!-- END BOARD INNER -->

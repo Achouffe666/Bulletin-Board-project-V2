@@ -60,10 +60,12 @@
 
             </div>
           </div>
-        </div>
-        <a href="#" class="mb-3">
+          
+          <a href="#">
           Forgot my password
-        </a>
+          </a>
+        </div>
+
 
         <!-- END LOGIN -->
         

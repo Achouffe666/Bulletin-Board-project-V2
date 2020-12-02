@@ -1,7 +1,4 @@
 <!-- TOPICS -->
-<?php
-session_start();
-?>
 
 
 <!-- MAIN WRAP -->
@@ -15,22 +12,7 @@ session_start();
     </ol>
   </nav>
 
-  <?php
-  include "../database/db.php";
-  global $db;
 
-    try {
-        $query =$db ->query('SELECT * FROM topics');
-        $query->execute();
-        $topics = $query->fetchAll(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        ?>
-        <div class="alert alert-danger" role="alert">
-         Error apeared, try again,
-        </div>
-        <?php
-    }
-?>
  <!-- formulaire de creation de topic -->
 <form action='' method='post' class="form_topics row d-flex">
         <h4 class ="mx-2">Create your own topic!</h4>

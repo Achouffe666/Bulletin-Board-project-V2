@@ -1,6 +1,6 @@
 
 <!-- BOARD -->
-<div class="container overlay main__wrap d-flex flex-column rounded-lg my-3 pb-3 pr-2 bg-white shadow">
+<div class="container overlay main__wrap d-flex flex-column rounded-lg my-3 mx-1 pb-3 pr-2 bg-white shadow">
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>

@@ -5,8 +5,6 @@
         <ol class="breadcrumb bg-transparent pt-5">
             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
             <li class="breadcrumb-item"><a href="#">Board Index</a></li>
-            <li class="breadcrumb-item"><a href="#">Category One</a></li>
-            <li class="breadcrumb-item">Forum One</li>
         </ol>
     
     </nav>

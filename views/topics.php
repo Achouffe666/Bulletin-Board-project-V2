@@ -32,19 +32,19 @@ session_start();
     }
 ?>
  <!-- formulaire de creation de topic -->
-<form action='' method='post' class="form_topics">
+<form action='' method='post' class="form_topics row">
         <h4>Create your own topic!</h4>
         <div class='form-group'>
         <input type="text" class="form-control bg-light rounded rounded-pill" name='Title' placeholder="Topic Title Here!" required>
         </div>
         
-        <input type="submit" name="formSend" id="formSend" class="button--modifier btn text-black border rounded rounded-pill login-button" value="Create a topic">
-        <button type="button" class="button--modifier btn text-black border rounded rounded-pill login-button" id='cancel'>Cancel</button>
+        <input type="submit" name="formSend" id="formSend" class="button--modifier px-2 py-1 border rounded rounded-pill login-button" value="Create a topic">
+        <button type="button" class="button--modifier px-2 py-1 border rounded rounded-pill login-button" id='cancel'>Cancel</button>
 </form>
  
  
 
-  <div class="container-lg board__inner">
+  <div class="container-lg board__inner pt-2">
 
     <div class="row board__wrap">
 
@@ -57,10 +57,10 @@ session_start();
 
         <div class="d-flex">
 
-          <button class="button--modifier btn text-black rounded-pill border" type="submit" id="btn">
+          <button class="button--modifier rounded-pill border" type="submit" id="btn">
             New topic     
 
-            <includ class="fas fa-pencil-alt"></>
+            <i class="fas fa-pencil-alt"></i>
           </button>
 
 
@@ -96,14 +96,14 @@ session_start();
         <!-- ANNONCE -->
         <div class="b-radius">
 
-          <div class="topics-top text-black row no-gutters align-items-center w-100">
+          <div class="topics-top gradient row no-gutters align-items-center w-100">
           
-            <div class="col">
+            <div class="col topics-top-title">
               <h4>Announcements</h4>
             </div>
           
             <div class="d-none d-md-block col-6 text-black-50">
-              <div class="row no-gutters align-items-center text-black">
+              <div class="row no-gutters align-items-center">
                 <div class="col-3"><i class="fas fa-comments"></i></div>
                 <div class="col-3"><i class="fas fa-eye"></i></div>
                 <div class="col-6"><i class="fas fa-clock"></i></div>
@@ -157,9 +157,9 @@ session_start();
 
         <div class="b-radius">
 
-          <div class="topics-top text-black row no-gutters align-items-center w-100">
+          <div class="topics-top gradient text-black row no-gutters align-items-center w-100">
             
-            <div class="col">
+            <div class="col topics-top-title">
               <h4>Topics</h4>
             </div>
 
@@ -215,7 +215,7 @@ session_start();
 
         <div class=" d-flex pt-3">
 
-          <button class="button--modifier btn text-black border rounded-pill px-4 py-2" type="submit" id="btn2">
+          <button class="button--modifier border rounded-pill px-4 py-2" type="submit" id="btn2">
             New topic
             <i class="fas fa-pencil-alt"></i>
           </button>

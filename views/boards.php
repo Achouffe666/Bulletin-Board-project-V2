@@ -400,7 +400,7 @@
         
         </div>
         <!-- END OF BOARD WRAP-->
-        
+        <?php include "rightcol.php";?>
     </div>
     <!-- END OF BOARD INNER-->
 </div>

@@ -1,5 +1,7 @@
 <!-- TOPICS -->
-
+<?php
+session_start();
+?>
 
 <!-- MAIN WRAP -->
 <div class="main__wrap container overlay rounded-lg position-relative my-3 pb-3">
@@ -12,6 +14,22 @@
     </ol>
   </nav>
 
+  <?php
+  include "../database/db.php";
+  global $db;
+
+    try {
+        $query =$db ->query('SELECT * FROM topics');
+        $query->execute();
+        $topics = $query->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        ?>
+        <div class="alert alert-danger" role="alert">
+         Error apeared, try again,
+        </div>
+        <?php
+    }
+?>
 
  <!-- formulaire de creation de topic -->
 <form action='' method='post' class="form_topics ml-3 row d-flex">

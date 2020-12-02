@@ -70,7 +70,7 @@
         <!-- last posts  -->
         <div class="card">
 
-          <div class="card-header topics-top">
+          <div class="card-header gradient topics-top">
             <h4 class="topics-top-title">Last posts</h4>
           </div>
 

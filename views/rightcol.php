@@ -17,7 +17,7 @@
         <hr>
         
         <!-- LOGIN -->
-        <div class="login_wrap">
+        <div class="login_wrap mb-3">
           
           <button type="button button-login"
             class="btn bg-transparent text-black-50 text-left mb-2">

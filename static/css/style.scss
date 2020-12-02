@@ -27,7 +27,7 @@ header{
         
             img{
                 width: 1vw;
-                height:1vw;
+                
                 }
 
             &:hover{
@@ -98,14 +98,15 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search{
 /* END MAIN WRAP */
 
 /* BOARD INNER*/
-img{
-  width:70px;
-  height:70px;
-}
+
 .topics{
   max-width: 300px;
   max-height:200px;
   border-radius:10px;
+    img{
+    width:70px;
+    height:70px;
+    }
 }
 .topics__description{
   width:80%

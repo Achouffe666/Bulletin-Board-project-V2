@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="form-group d-flex justify-content-center">
-                  <button type="submit" class="button--modifier btn text-black border rounded rounded-pill login-button">
+                  <button type="submit" class="button--modifier border rounded rounded-pill login-button">
                     Login 
                   </button>
                 </div> 
@@ -104,7 +104,7 @@
               <img src="../static/image/3.png " alt="user2" style="width:35px">
               <p>#User2</p>             
               </div>
-              <div class="cold-flex flex-column mx-1 mt-1 p-1"> 
+              <div class="col d-flex flex-column mx-1 p-1"> 
               <img src="../static/image/3.png" alt="user3" style="width:35px">
               <p>#User3</p>             
               </div>

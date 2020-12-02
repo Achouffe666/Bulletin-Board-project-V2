@@ -68,18 +68,25 @@
         <!-- END LOGIN -->
         
         <!-- last posts  -->
-        <div class="card topics-top">
-          <div class="card-header topics-top-title">
-            <h4>Last posts</h4>
+        <div class="card">
+
+          <div class="card-header topics-top">
+            <h4 class="topics-top-title">Last posts</h4>
           </div>
-            <div class="card-body last-topics-wrap">
-              <div> 
-                <span class="content-title">titre (php)</span> <span class="float-right">2 hours ago</span>
-                  <div>
-                    <span>contents contents</span>
+
+          <div class="card-body last-topics-wrap">
+            
+            <div>
+
+              <span class="content-title">titre (php)</span>
+              <span class="float-right">2 hours ago</span>
+
+              <div>
+                <span>contents contents</span>
               </div>
-                  </div>
-              </div>
+
+            </div>
+          </div>
         </div>
     <!-- end last posts  -->
 

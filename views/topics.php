@@ -44,9 +44,9 @@ session_start();
  
  
 
-  <div class="container-lg">
+  <div class="container-lg board__inner">
 
-    <div class="row">
+    <div class="row board__wrap">
 
       <div class="col-xl-9">
 
@@ -269,12 +269,12 @@ session_start();
 
 
       </div>
-      <!--END LEFT COL-->
+      <!--END BOARD WRAP-->
 
       <!-- <?php include "rightcol.php";?> -->      
 
     </div>
-    <!-- END ROW -->
+    <!-- END BOARD INNER -->
 
   </div>
   <!-- END CONTAINER -->

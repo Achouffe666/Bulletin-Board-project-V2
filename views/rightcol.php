@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="form-group d-flex justify-content-center">
-                  <button type="submit" class="button--modifier border rounded rounded-pill login-button">
+                  <button type="submit" class="button--modifier py-1 border rounded rounded-pill login-button">
                     Login 
                   </button>
                 </div> 
@@ -61,7 +61,7 @@
             </div>
           </div>
         </div>
-        <a href="#" class="mb-5">
+        <a href="#" class="mb-3">
           Forgot my password
         </a>
 

@@ -1,16 +1,13 @@
 <?php 
 
-function get_user_position()
+function get_user_infos($sessionId)
 {   
     include "../database/database.php";
     $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
-    $req->execute(array('nickname' => $_SESSION["id"]));
-    
-    while($data= $req->fetch())
-    {          
-        echo $data["position"];
-        
-    }
+    $req->execute(array('nickname' => $sessionId));
+    $post = $req->fetch();
+    return $post;
+    require "message.php";
 }
 function get_user_nickname()
 {

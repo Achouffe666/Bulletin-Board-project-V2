@@ -16,9 +16,11 @@
         </ol>
     </nav>
 
-    <?php include "../database/database.php";
+    <?php 
         include "../controlers/functions_message.php";
         global $db;
+        $post = get_user_infos($_SESSION["id"]);
+        
     ?>
 
     <div class="row mb-2">
@@ -68,15 +70,7 @@
             </div>
             <!-- END MESSAGE CREATE -->
 
-            <!-- MESSAGES WRAP -->
-            <div class="container row-content justify-content-center ">
-<?php 
-$infos_message = get_message();
-foreach($infos_message as $infos)
-{
-?>
 
-<?php } ?>
                 <!-- MESSAGE START -->
                 <div class="row row-message mb-2 bg-light pt-2 pr-2">
 

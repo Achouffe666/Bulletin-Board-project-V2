@@ -269,7 +269,7 @@
         
                         <div class="col-9">
                             <h4 class="topics__title"><a href="#">Maud </a><i class="fas fa-check"></i></h4>
-                            <p class="topics__description">Tu peux pas test mon skill lorem ipsum </p>
+                            <p class="topics__description"> lorem ipsum yo yo yo yo </p>
                         </div>
         
                     </div>

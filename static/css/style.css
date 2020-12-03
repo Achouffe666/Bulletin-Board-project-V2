@@ -181,22 +181,24 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   #footer .row-social-media a {
     height: 40px;
     width: 40px;
+    text-decoration: none;
     border-radius: 25px;
     border: 1px solid white; }
     #footer .row-social-media a:hover {
       border: 1px solid #B06AB3; }
     #footer .row-social-media a i {
       color: white;
-      font-size: 24px;
-      text-decoration: none; }
+      font-size: 24px; }
       #footer .row-social-media a i:hover {
         color: #B06AB3; }
 #footer .row_more-infos {
   min-height: 10vh;
   background-color: #323233; }
-  #footer .row_more-infos .more-infos__link a {
+  #footer .row_more-infos .more-infos__link {
     color: #B06AB3;
     font-size: small; }
+    #footer .row_more-infos .more-infos__link i {
+      text-decoration: none; }
 #footer .row_end {
   height: 3vh;
   background-color: #000000; }

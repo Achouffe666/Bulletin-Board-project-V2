@@ -288,6 +288,7 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
         a{
           height: 40px;
           width: 40px;
+          text-decoration:none;
           border-radius: 25px;
           border: 1px solid white;
           &:hover{
@@ -296,13 +297,12 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
           i{
             color: white;
             font-size: 24px;
-            text-decoration:none;
             &:hover{
               color:$tertiary;
             }
           }
         
-        }
+          }
           
     }
     .row_more-infos
@@ -311,9 +311,10 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
         background-color: #323233;
         .more-infos__link
         {
-            a{
-              color: $tertiary;
-              font-size: small;
+          color: $tertiary;
+          font-size: small;
+            i{
+              text-decoration: none;
             }
             
         }

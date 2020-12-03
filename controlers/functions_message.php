@@ -97,7 +97,7 @@ function get_message_autre()
 }
 function get_message()
 {
-    include "../database/database.php";
+    include "../database/db.php";
 
     $response = $db->query("SELECT messages.id, title, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email FROM messages INNER JOIN users WHERE messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 3");
     $response -> execute();

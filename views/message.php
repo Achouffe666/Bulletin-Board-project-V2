@@ -19,8 +19,6 @@
     <?php 
         include "../controlers/functions_message.php";
         
-        
-        
     ?>
 
     <div class="row mb-2">
@@ -49,27 +47,12 @@
     <div class="board__inner row">
 
         <div class="board__wrap col-xl-9 mr-0 mb-2">
-            <!-- MESSAGE CREATE -->
-            <div class="row row-message row-message2 mb-5 p-2 bg-light">
-                <div class="col-2 col-content-message">
-                    <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
-                    <p name="message-position"><?php $post["position"]?></p>
-                    <p name="message-identity"><?php $post["nickname"]?></p>
-                </div>
-
+       
             <!-- MESSAGES WRAP -->
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->
                 <div class="row row-message row-message2 mb-5 p-2 bg-light">
-                    <div class="col-2 col-content-message">
-                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
-                        <p name="message-position"></p>
-                        <p name="message-identity"></p>
-                    </div>
-                    <div class="col-10 col-content-message row-message2">
-                        <form method="post" action="message_post.php">
-                        
          
                 <div class="col-10 col-content-message row-message2">
                     <form method="post" action="message_post.php">

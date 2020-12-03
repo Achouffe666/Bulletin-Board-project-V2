@@ -83,7 +83,7 @@
                         <p class="message-position"><?php echo "$results[position]";?></p>
                         <p class="message-identity"><?php echo "$results[nickname]";?></p>
                        
-                        <p class="message-number"><?php get_message_count()?> post(s)</p>
+                        <p class="message-number"><?php ?> post(s)</p>
 
                     </div>
                     

@@ -157,34 +157,13 @@ function get_message_id()
 
 function get_message()
 {
-    include "../database/database.php";
-    global $db;
+    include "../database/db.php";
+    
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
-    while($data = $response->fetch())
-                {
-                    $user_id = $db->quote($data['user_id']);
-                    $response2 = $db->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
-                    $count_message = $db->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
-                    while($datas = $response2->fetch())
-                        { $avatar= "http://2.gravatar.com/avatar/".md5($datas['email'])."?s=100&";
-                          echo $avatar ;
-                          echo $datas['position'];
-                          echo $datas['nickname'];}
-                    while($datas_count = $count_message->fetch())
-                        { echo $datas_count["NumberOfMessages"];}
-                    echo $data['title'];
-                    echo $data['content'];
-                    $response3 = $db->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
-                    while($datas = $response3->fetch())
-                    { echo $datas['signature'];}
-                    echo $data['creation_date'];
-                    $response4 = $db->query("SELECT id, nickname, signature, position FROM users WHERE id=" . $data['user_id']);
-                    while($datas = $response4->fetch())
-                    
-                   { if ($datas['id'] == $_SESSION["id"]) 
-                    {echo $data['id'];}
-                }
-                };
-    $response->closeCursor();
+    $response -> execute();
+    $result = $response->fetchAll();
+
+    return $result;
+
 }
 ?>

@@ -18,8 +18,8 @@
 
     <?php 
         include "../controlers/functions_message.php";
-        global $db;
-        $post = get_user_infos($_SESSION["id"]);
+        
+        
         
     ?>
 
@@ -53,8 +53,8 @@
             <div class="row row-message row-message2 mb-5 p-2 bg-light">
                 <div class="col-2 col-content-message">
                     <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
-                    <p name="message-position"><?php get_user_position()?></p>
-                    <p name="message-identity"><?php get_user_nickname()?></p>
+                    <p name="message-position"><?php $post["position"]?></p>
+                    <p name="message-identity"><?php $post["nickname"]?></p>
                 </div>
 
                 <div class="col-10 col-content-message row-message2">
@@ -69,17 +69,25 @@
                 </div>
             </div>
             <!-- END MESSAGE CREATE -->
-
+<?php 
+        $result = get_message();
+        foreach($result as $results){
+            $user_results = get_user_infos($results["user_id"]);
+            var_dump($user_results);
+?>
 
                 <!-- MESSAGE START -->
                 <div class="row row-message mb-2 bg-light pt-2 pr-2">
 
                     <div class="col-2 col-content-message">
-                   
+                    <?php $datas= get_message_nickname();
+                        foreach($datas as $data) {
+                            ?>
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
-                        get_message_avatar() ?> style="width: 150px;" alt="avatar_autre">
-                        <p class="message-position"><?php get_message_position();?></p>
-                        <p class="message-identity"><?php get_message_nickname(); ?></p>
+                        echo "$data[email]" ;?> style="width: 150px;" alt="avatar_autre">
+                        <p class="message-position"><?php echo "$data[position]";?></p>
+                        <p class="message-identity"><?php echo "$data[nickname]";}?></p>
+                       
                         <p class="message-number"><?php get_message_count()?> post(s)</p>
 
                     </div>
@@ -87,10 +95,10 @@
                     <div class="col-10 col-content-message content-message2">
 
                         <div class="row'">
-                            <p class="col-3"><?php get_message_title()?></p>
-                            <p class="col-6"><?php get_message_content()?></p>
-                            <p class="message-signature col-2"><?php get_message_signature();?></p>
-                            <p class="col-1"><?php get_message_creation_date();?></p>
+                            <p class="col-3"><?php echo "$results[title]";?></p>
+                            <p class="col-6"><?php echo "$results[content]"?></p>
+                            <p class="message-signature col-2"><?php ;?></p>
+                            <p class="col-1"><?php echo "$results[creation_date]";?></p>
                         </div>
 
                         <div class="row"> 
@@ -101,13 +109,14 @@
                         </div>
 
                         <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2">
-                            <a href="message_delete.php?id=<?php infos["id"];?>">Annuler</a> 
+                            <a href="message_delete.php?id=<?php echo $results["user_id"];?>">Annuler</a> 
                         </button>
                         
                     </div>
 
                 </div>
                 <!-- END MESSAGE EXEMPLE -->
+                <?php ;}?>
             </div>
             <!-- END MESSAGE WRAP -->
 
@@ -119,4 +128,5 @@
     <!-- END BOARD__INNER -->  
 </div>
 <!-- END MAIN WRAP -->
+<script src="../static/js/javascript.js"></script>
 <?php include "footer.php"; ?>  

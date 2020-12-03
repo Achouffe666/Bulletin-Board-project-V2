@@ -119,6 +119,9 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   height: 2px;
   width: 20%; }
 
+.topics__bot .col-6 {
+  padding-right: 0 !important; }
+
 .board__inner {
   background: white;
   font-family: Rubik; }

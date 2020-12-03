@@ -113,7 +113,7 @@
         <!-- BOARD TWO TOPICS-->
         <h4 class="my-5 ml-5 text-black-50">Rock</h4>
         <!-- TOPICS WRAP-->
-        <div class="topics__wrap container-fluid d-flex bg-light flex-wrap mb-5">
+        <div class="topics__wrap container-fluid d-flex justify-content-center bg-light flex-wrap mb-5">
             <!-- ONE LINK TO TOPICS-->
             <div class="topics bg-white shadow-sm rounded p-1 m-1">
         

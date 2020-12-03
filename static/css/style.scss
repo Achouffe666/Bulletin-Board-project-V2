@@ -278,14 +278,25 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
     {
         width:auto;
         margin-top:-25px;
+        padding-top:10px;
         min-height: 13vh;
         background: $secondary;
         a
     {
-        height: 46px;
-        width: 46px;
+        height: 40px;
+        width: 40px;
         border-radius: 25px;
         border: 1px solid white;
+        &:hover{
+          border:1px solid $tertiary;
+        }
+        i{
+          color: white;
+          font-size: 24px;
+          &:hover{
+            color:$tertiary;
+          }
+        }
         
     }
           
@@ -313,12 +324,7 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
      
 }
 
-.fa
-{
-    color: white;
-    font-size: 24px;
-    
-}
+
 
 .social-bar{
   height:15%;

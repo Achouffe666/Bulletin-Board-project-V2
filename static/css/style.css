@@ -172,13 +172,21 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 #footer .row-social-media {
   width: auto;
   margin-top: -25px;
+  padding-top: 10px;
   min-height: 13vh;
   background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)); }
   #footer .row-social-media a {
-    height: 46px;
-    width: 46px;
+    height: 40px;
+    width: 40px;
     border-radius: 25px;
     border: 1px solid white; }
+    #footer .row-social-media a:hover {
+      border: 1px solid #B06AB3; }
+    #footer .row-social-media a i {
+      color: white;
+      font-size: 24px; }
+      #footer .row-social-media a i:hover {
+        color: #B06AB3; }
 #footer .row_more-infos {
   min-height: 10vh;
   background-color: #323233;
@@ -190,10 +198,6 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 #footer .row_end {
   height: 3vh;
   background-color: #000000; }
-
-.fa {
-  color: white;
-  font-size: 24px; }
 
 .social-bar {
   height: 15%;

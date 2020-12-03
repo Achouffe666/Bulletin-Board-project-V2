@@ -186,7 +186,8 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
       color: white;
       font-size: 24px; }
       #footer .row-social-media a i:hover {
-        color: #B06AB3; }
+        color: #B06AB3;
+        text-decoration: none; }
 #footer .row_more-infos {
   min-height: 10vh;
   background-color: #323233;

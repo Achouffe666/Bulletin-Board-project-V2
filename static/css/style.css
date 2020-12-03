@@ -84,12 +84,12 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 /* END MAIN WRAP */
 /* BOARD INNER*/
 .topics {
-  max-width: 300px;
+  max-width: 280px;
   max-height: 200px;
   border-radius: 10px; }
   .topics img {
-    width: 70px;
-    height: 70px; }
+    width: 55px;
+    height: 55px; }
 
 .topics__description {
   width: 80%; }
@@ -101,10 +101,10 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 
 .topics__title {
   font-family: Rubik;
-  font-weight: 500; }
+  font-weight: 400; }
   .topics__title a {
     text-decoration: none;
-    color: #676767; }
+    color: #676767d4; }
     .topics__title a:hover {
       color: #B06AB3; }
   .topics__title .fas.fa-check {

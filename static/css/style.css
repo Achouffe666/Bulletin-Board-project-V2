@@ -100,8 +100,11 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   .topics__title a {
     text-decoration: none;
     color: #676767; }
+    .topics__title a:hover {
+      color: #B06AB3; }
   .topics__title .fas.fa-check {
-    color: green; }
+    color: green;
+    font-size: small; }
 
 .topics__description, .topics__text {
   color: #8e8e8ef2; }

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500");
 
@@ -149,9 +148,13 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
   a{
     text-decoration:none;
     color:#676767;
+    &:hover{
+      color:$tertiary;
+    }
   }
   .fas.fa-check{
   color:green;
+  font-size:small;
 }
 }
 

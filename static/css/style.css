@@ -19,7 +19,8 @@
 /*----used in every file----*/
 /* HEADER */
 header {
-  background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)), url(../image/railway.jpg) 100%;
+  background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)), url(../image/railway.jpg);
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   color: white;

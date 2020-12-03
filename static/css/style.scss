@@ -43,7 +43,8 @@ $alpha: 0;
 /* HEADER */
 
 header{
-    background:$secondary, url(../image/railway.jpg) 100%;
+    background:$secondary, url(../image/railway.jpg);
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     color: white;

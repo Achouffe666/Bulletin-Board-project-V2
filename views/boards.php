@@ -115,7 +115,7 @@
         <!-- TOPICS WRAP-->
         <div class="topics__wrap container-fluid d-flex bg-light flex-wrap mb-5">
             <!-- ONE LINK TO TOPICS-->
-            <div class="topics bg-white shadow-sm rounded p-1 m-1">
+            <div class="topics bg-white shadow-sm col-3 rounded p-1 m-1">
         
                 <div class="topics__container d-flex flex-column pl-2">
         

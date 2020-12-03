@@ -68,9 +68,8 @@
             <!-- END  OF MESSAGE CREATE -->
 <?php 
         $result = get_message();
-        foreach($result as $results){
-            $user_results = get_user_infos($results["user_id"]);
-            var_dump($user_results);
+        foreach($result as $results){ 
+            
 ?>
 
                 <!-- MESSAGE START -->
@@ -79,14 +78,23 @@
          
 
                     <div class="col-2 col-content-message">
+<<<<<<< HEAD
                    
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src= <?php echo "$results[id]";?> style="width: 150px;" alt="avatar_autre">
                         <p class="message-position"><?php echo" $results[title]" ;?></p>
                         <p class="message-identity"><?php  echo" $results[id]"; ?></p>
                         <p class="message-number"><?php  echo" $results[title]"?> post(s)</p>
+=======
+                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
+                        echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?> style="width: 150px;" alt="avatar_autre">
+                        <p class="message-position"><?php echo "$results[position]";?></p>
+                        <p class="message-identity"><?php echo "$results[nickname]";?></p>
+                       
+                        <p class="message-number"><?php get_message_count()?> post(s)</p>
+>>>>>>> 62084bb (message achouffe & Picsou)
 
                     </div>
-
+                    
                     <div class="col-10 col-content-message content-message2">
 
                         <div class="row">

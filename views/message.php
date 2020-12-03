@@ -125,4 +125,4 @@ foreach($infos_message as $infos)
     <!-- END BOARD__INNER -->  
 </div>
 <!-- END MAIN WRAP -->
-  <?php include "footer.php"; ?>  
+<?php include "footer.php"; ?>  

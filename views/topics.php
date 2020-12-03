@@ -2,7 +2,7 @@
 <?php
 session_start();
 ?>
-
+<?php include "header.php"; ?>
 <!-- MAIN WRAP -->
 <div class="main__wrap container overlay rounded-lg position-relative my-3 pb-3">
   <nav class="nav__list">
@@ -281,4 +281,4 @@ session_start();
 
 </div>
 <!-- END MAIN CONTAINER -->
-
+<?php include "footer.php"; ?>  

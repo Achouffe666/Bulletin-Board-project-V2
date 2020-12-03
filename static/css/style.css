@@ -91,8 +91,7 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 .topics__wrap {
   max-height: 500px;
   border-radius: 10px;
-  font-size: auto;
-  background: rgba(234, 234, 234, 0.599); }
+  font-size: auto; }
 
 .topics__title {
   font-family: Rubik;

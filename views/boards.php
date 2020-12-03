@@ -28,7 +28,7 @@
                             </div>
         
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="">Topics_one  </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="#" href="">Topics_one  </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         
@@ -72,7 +72,7 @@
                             </div>
         
                             <div class="col-9">
-                                <h4 class="topics__title"><a href="">Topics two </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="#">Topics two </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         
@@ -126,7 +126,7 @@
                         </div>
         
                         <div class="col-9">
-                            <h4 class="topics__title"><a href="">Pink Floyd </a><i class="fas fa-check"></i></h4>
+                            <h4 class="topics__title"><a href="#">Pink Floyd </a><i class="fas fa-check"></i></h4>
                             <p class="topics__description">This grouping is really cool</p>
                         </div>
         

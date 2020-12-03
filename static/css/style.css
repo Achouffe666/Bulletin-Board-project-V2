@@ -193,10 +193,8 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
         color: #B06AB3; }
 #footer .row_more-infos {
   min-height: 10vh;
-  background-color: #323233;
-  color: rgba(176, 106, 179, 0.7); }
+  background-color: #323233; }
   #footer .row_more-infos .more-infos__link a {
-    text-decoration: none;
     color: #B06AB3;
     font-size: small; }
 #footer .row_end {

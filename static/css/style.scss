@@ -284,38 +284,34 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
         padding-top:10px;
         min-height: 13vh;
         background: $secondary;
-        a
-    {
-        height: 40px;
-        width: 40px;
-        border-radius: 25px;
-        border: 1px solid white;
-        &:hover{
-          border:1px solid $tertiary;
-        }
-        i{
-          color: white;
-          font-size: 24px;
-          text-decoration:none;
-          &:hover{
-            color:$tertiary;
-          }
-        }
         
-    }
+        a{
+          height: 40px;
+          width: 40px;
+          border-radius: 25px;
+          border: 1px solid white;
+          &:hover{
+          border:1px solid $tertiary;
+          }
+          i{
+            color: white;
+            font-size: 24px;
+            text-decoration:none;
+            &:hover{
+              color:$tertiary;
+            }
+          }
+        
+        }
           
     }
     .row_more-infos
     {
         min-height: 10vh;
         background-color: #323233;
-        color: $primary;
-        
-
         .more-infos__link
         {
             a{
-              text-decoration: none;
               color: $tertiary;
               font-size: small;
             }

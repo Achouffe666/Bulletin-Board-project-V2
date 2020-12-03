@@ -65,8 +65,7 @@ header{
 /* MAIN WRAP */
 body{
   .main__wrap{
-  width:95%;
-  position:relative;
+  width:90%;
   background:white;
   z-index:1;
   margin-left:auto;
@@ -313,8 +312,11 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
         {
           color: $tertiary;
           font-size: small;
+          text-decoration: none;
             i{
-              text-decoration: none;
+              &:hover{
+                color:white;
+              }
             }
             
         }

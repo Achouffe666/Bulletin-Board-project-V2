@@ -35,8 +35,7 @@ header {
 
 /* MAIN WRAP */
 body .main__wrap {
-  width: 95%;
-  position: relative;
+  width: 90%;
   background: white;
   z-index: 1;
   margin-left: auto;
@@ -196,9 +195,10 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   background-color: #323233; }
   #footer .row_more-infos .more-infos__link {
     color: #B06AB3;
-    font-size: small; }
-    #footer .row_more-infos .more-infos__link i {
-      text-decoration: none; }
+    font-size: small;
+    text-decoration: none; }
+    #footer .row_more-infos .more-infos__link i:hover {
+      color: white; }
 #footer .row_end {
   height: 3vh;
   background-color: #000000; }

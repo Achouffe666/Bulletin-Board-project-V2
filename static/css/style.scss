@@ -293,9 +293,9 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
         i{
           color: white;
           font-size: 24px;
+          text-decoration:none;
           &:hover{
             color:$tertiary;
-            text-decoration:none;
           }
         }
         
@@ -311,9 +311,11 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
 
         .more-infos__link
         {
-            text-decoration: none;
-            color: $tertiary;
-            font-size: small;
+            a{
+              text-decoration: none;
+              color: $tertiary;
+              font-size: small;
+            }
             
         }
     }

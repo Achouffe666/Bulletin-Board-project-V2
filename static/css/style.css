@@ -184,15 +184,15 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
       border: 1px solid #B06AB3; }
     #footer .row-social-media a i {
       color: white;
-      font-size: 24px; }
+      font-size: 24px;
+      text-decoration: none; }
       #footer .row-social-media a i:hover {
-        color: #B06AB3;
-        text-decoration: none; }
+        color: #B06AB3; }
 #footer .row_more-infos {
   min-height: 10vh;
   background-color: #323233;
   color: rgba(176, 106, 179, 0.7); }
-  #footer .row_more-infos .more-infos__link {
+  #footer .row_more-infos .more-infos__link a {
     text-decoration: none;
     color: #B06AB3;
     font-size: small; }

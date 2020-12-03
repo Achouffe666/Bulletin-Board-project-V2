@@ -6,7 +6,7 @@ function get_user_position()
     $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
     $req->execute(array('nickname' => $_SESSION["id"]));
     
-    while($data = $req->fetch())
+    while($data= $req->fetch())
     {          
         echo $data["position"];
         
@@ -155,9 +155,10 @@ function get_message_id()
     $response->closeCursor();
 }
 
-function get_message_autre()
+function get_message()
 {
     include "../database/database.php";
+    global $db;
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
     while($data = $response->fetch())
                 {

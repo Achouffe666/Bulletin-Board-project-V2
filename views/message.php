@@ -3,7 +3,7 @@
    
    
 ?>
-
+<?php include "header.php"; ?>
 
 <div class="container-fluid overlay position-relative rounded-lg main__wrap d-flex flex-column">
     
@@ -27,7 +27,11 @@
 
             <!-- MESSAGES WRAP -->
             <div class="container row-content justify-content-center ">
-
+<?php 
+$infos_message = get_message();
+foreach($infos_message as $infos)
+{
+?>
                 <!-- MESSAGE CREATE -->
                 <div class="row row-message row-message2 mb-5 p-2 bg-light">
                     <div class="col-2 col-content-message">
@@ -47,12 +51,12 @@
                     </div>
                 </div>
                 <!-- END MESSAGE CREATE -->
-            
+<?php } ?>
                 <!-- MESSAGE START -->
                 <div class="row row-message mb-2 bg-light pt-2 pr-2">
 
                     <div class="col-2 col-content-message">
-                       
+                   
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
                         get_message_avatar() ?> style="width: 150px;" alt="avatar_autre">
                         <p class="message-position"><?php get_message_position();?></p>
@@ -78,7 +82,7 @@
                         </div>
 
                         <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2">
-                            <a href="message_delete.php?id=<?php get_message_id()?>">Annuler</a> 
+                            <a href="message_delete.php?id=<?php infos["id"];?>">Annuler</a> 
                         </button>
                         
                     </div>
@@ -96,4 +100,4 @@
     <!-- END BOARD__INNER -->  
 </div>
 <!-- END MAIN WRAP -->
-    
+  <?php include "footer.php"; ?>  

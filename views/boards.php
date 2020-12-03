@@ -58,8 +58,8 @@
                 </div>
                 <!-- END ONE LINK TO TOPICS-->
         
-        
-        
+
+
                 <!-- ONE LINK TO TOPICS-->
                 <div class="topics bg-white shadow-sm rounded p-1 m-1">
         
@@ -73,6 +73,50 @@
         
                             <div class="col-9">
                                 <h4 class="topics__title"><a class ="#">Topics two </a><i class="fas fa-check"></i></h4>
+                                <p class="topics__description">This grouping is really cool</p>
+                            </div>
+        
+                        </div>
+                        <hr class="topics__hr float-left m-0 mb-3">
+                        <div class="row topics__bot">
+        
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <p class="topics__number">6</p>
+                                <p class="topics__text">Topics</p>
+                            </div>
+        
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <p class="topics__number">33</p>
+                                <p class="topics__text">Posts</p>
+                            </div>
+        
+                            <div class="col-6 d-flex flex-column align-items-center">
+                                <p class="topics__date">Sun 8 Nov</p>
+                                <p class="topics__text">Last post</p>
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                </div>
+                <!-- END ONE LINK TO TOPICS-->
+
+
+        
+                <!-- ONE LINK TO TOPICS-->
+                <div class="topics bg-white shadow-sm rounded p-1 m-1">
+        
+                    <div class="topics__container d-flex flex-column pl-2">
+        
+                        <div class="row topics__top">
+        
+                            <div class="col-3">
+                                <img src="../static/image/3.png">
+                            </div>
+        
+                            <div class="col-9">
+                                <h4 class="topics__title"><a class ="#">Topics three </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         
@@ -115,7 +159,7 @@
         <!-- TOPICS WRAP-->
         <div class="topics__wrap container-fluid d-flex bg-light flex-wrap mb-5">
             <!-- ONE LINK TO TOPICS-->
-            <div class="topics bg-white shadow-sm col-3 rounded p-1 m-1">
+            <div class="topics bg-white shadow-sm rounded p-1 m-1">
         
                 <div class="topics__container d-flex flex-column pl-2">
         
@@ -127,7 +171,7 @@
         
                         <div class="col-9">
                             <h4 class="topics__title"><a href="#">Pink Floyd </a><i class="fas fa-check"></i></h4>
-                            <p class="topics__description">This grouping is really cool</p>
+                            <p class="topics__description">This grouping is cool</p>
                         </div>
         
                     </div>

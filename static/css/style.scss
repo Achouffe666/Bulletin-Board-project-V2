@@ -173,12 +173,17 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
 .topics__description, .topics__text{
   color:#8e8e8ef2;
 }
+
+.topics__top{
+  .col-9{
+    padding-right:0 !important;
+  }
+}
 .topics__hr{
   background:$secondary;
   height:2px;
   width:20%;
 }
-
 .topics__bot{
   .col-6{
     padding-right:0 !important;

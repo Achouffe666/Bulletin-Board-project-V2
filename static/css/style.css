@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Rubik:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500");
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 95% !important; } }
+@media (min-width: 992px) {
+  .container, .container-lg, .container-md, .container-sm {
+    max-width: 95% !important; } }
 /* used in every file */
 .gradient {
   background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)); }
@@ -35,7 +42,6 @@ header {
 /* MAIN WRAP */
 body .main__wrap {
   width: 95%;
-  position: relative;
   background: white;
   z-index: 1;
   margin-left: auto;
@@ -78,12 +84,12 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 /* END MAIN WRAP */
 /* BOARD INNER*/
 .topics {
-  max-width: 300px;
+  max-width: 280px;
   max-height: 200px;
   border-radius: 10px; }
   .topics img {
-    width: 70px;
-    height: 70px; }
+    width: 55px;
+    height: 55px; }
 
 .topics__description {
   width: 80%; }
@@ -91,25 +97,33 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 .topics__wrap {
   max-height: 500px;
   border-radius: 10px;
-  font-size: auto;
-  background: rgba(234, 234, 234, 0.599); }
+  font-size: auto; }
 
 .topics__title {
   font-family: Rubik;
-  font-weight: 500; }
+  font-weight: 400; }
   .topics__title a {
     text-decoration: none;
-    color: #676767; }
+    color: #676767d4; }
+    .topics__title a:hover {
+      color: #B06AB3; }
   .topics__title .fas.fa-check {
-    color: green; }
+    color: green;
+    font-size: small; }
 
 .topics__description, .topics__text {
   color: #8e8e8ef2; }
+
+.topics__top .col-9 {
+  padding-right: 0 !important; }
 
 .topics__hr {
   background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64));
   height: 2px;
   width: 20%; }
+
+.topics__bot .col-6 {
+  padding-right: 0 !important; }
 
 .board__inner {
   background: white;
@@ -163,31 +177,42 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
       .user-top .last-user-wrap h4 .col-4 {
         max-width: 130px; }
 
+.row-message2 {
+  display: none; }
+
+.row-message3 {
+  display: block; }
+
 #footer .row-social-media {
   width: auto;
   margin-top: -25px;
+  padding-top: 10px;
   min-height: 13vh;
   background: linear-gradient(to right, rgba(177, 106, 179, 0.64), rgba(69, 104, 220, 0.64)); }
   #footer .row-social-media a {
-    height: 46px;
-    width: 46px;
+    height: 40px;
+    width: 40px;
+    text-decoration: none;
     border-radius: 25px;
-    border: 1px solid white; }
+    border: 1px solid white;
+    color: white; }
+    #footer .row-social-media a:hover {
+      border: 1px solid #B06AB3;
+      color: #B06AB3; }
+    #footer .row-social-media a i {
+      font-size: 24px; }
 #footer .row_more-infos {
   min-height: 10vh;
-  background-color: #323233;
-  color: rgba(176, 106, 179, 0.7); }
+  background-color: #323233; }
   #footer .row_more-infos .more-infos__link {
-    text-decoration: none;
     color: #B06AB3;
-    font: size 13; }
+    font-size: small;
+    text-decoration: none; }
+    #footer .row_more-infos .more-infos__link i:hover {
+      color: white; }
 #footer .row_end {
   height: 3vh;
   background-color: #000000; }
-
-.fa {
-  color: white;
-  font-size: 24px; }
 
 .social-bar {
   height: 15%;

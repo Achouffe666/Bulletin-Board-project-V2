@@ -17,12 +17,45 @@
     </nav>
 
     <?php 
-          include "../controlers/functions_message.php";
+        include "../controlers/functions_message.php";
+        
+        
+        
     ?>
+
+    <div class="row mb-2">
+        <div class="col col-md-2">
+            <button id="button_reply" type="submit" class="button--modifier px-3 py-1  btn-outline-info  button-reply" name="post_reply">Post reply</button>
+        </div>
+            
+        <div class="col col-6-md search">
+            <form action="message_search.php" method="post">
+                <div class="form-group" >
+                    <div class="input-group-prepend">
+                        <input type="text" class="form-control" id="search" value="" name="search">
+                        <button type="submit" class="button--modifier btn-update"><img src="../images/search.svg" alt="search"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+    </div>
 
     <div class="board__inner row">
 
         <div class="board__wrap col-xl-9 mr-0 mb-2">
+            <!-- MESSAGE CREATE -->
+            <div class="row row-message row-message2 mb-5 p-2 bg-light">
+                <div class="col-2 col-content-message">
+                    <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
+                    <p name="message-position"><?php $post["position"]?></p>
+                    <p name="message-identity"><?php $post["nickname"]?></p>
+                </div>
 
             <!-- MESSAGES WRAP -->
             <div class="container row-content justify-content-center ">
@@ -31,23 +64,32 @@
                 <div class="row row-message row-message2 mb-5 p-2 bg-light">
                     <div class="col-2 col-content-message">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../images/avatar_autre.jpg" style="width: 150px;" alt="avatar_autre">
-                        <p name="message-position"><?php get_user_position()?></p>
-                        <p name="message-identity"><?php get_user_nickname()?></p>
+                        <p name="message-position"></p>
+                        <p name="message-identity"></p>
                     </div>
                     <div class="col-10 col-content-message row-message2">
                         <form method="post" action="message_post.php">
-                            <p>Titre :</p>
-                            <input type="text" class="form-control" name="message_name">
-                            <p>Write your message</p>
-                            <textarea class="form-control" name="content"></textarea>
-                            <button id="record" type="submit" class="btn btn-outline-info mb-2">Sauvegarder</button>
-                            <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
-                        </form>
-                    </div>
-                </div>
-                <!-- END MESSAGE CREATE -->
-
+                        
          
+                <div class="col-10 col-content-message row-message2">
+                    <form method="post" action="message_post.php">
+                        <p>Titre :</p>
+                        <input type="text" class="form-control" name="message_name">
+                        <p>Write your message</p>
+                        <textarea class="form-control" name="content"></textarea>
+                        <button id="record" type="submit" class="btn btn-outline-info mb-2">Sauvegarder</button>
+                        <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
+                    </form>
+                </div>
+            </div>
+            <!-- END MESSAGE CREATE -->
+<?php 
+        $result = get_message();
+        foreach($result as $results){
+            $user_results = get_user_infos($results["user_id"]);
+            var_dump($user_results);
+?>
+
                 <!-- MESSAGE START -->
                 <div class="row row-message mb-2 bg-light pt-2 pr-2">
 
@@ -81,13 +123,14 @@
                      
             
                         <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2">
-                            <a href="message_delete.php?id=<?php $result["id"];?>">Annuler</a> 
+                            <a href="message_delete.php?id=<?php echo $results["user_id"];?>">Annuler</a> 
                         </button>
                         
                     </div>
                    
                 </div>
                 <!-- END MESSAGE EXEMPLE -->
+                <?php ;}?>
             </div>
             <!-- END MESSAGE WRAP -->
 
@@ -99,4 +142,5 @@
     <!-- END BOARD__INNER -->  
 </div>
 <!-- END MAIN WRAP -->
-  <?php include "footer.php"; ?>  
+<script src="../static/js/javascript.js"></script>
+<?php include "footer.php"; ?>  

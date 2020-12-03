@@ -1,16 +1,13 @@
 <?php 
 
-function get_user_position()
+function get_user_infos($user_id)
 {   
     include "../database/database.php";
     $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
-    $req->execute(array('nickname' => $_SESSION["id"]));
+    $req->execute(array('nickname' => $user_id));
+    $user_results = $req->fetchAll();
+    return $user_results;
     
-    while($data= $req->fetch())
-    {          
-        echo $data["position"];
-        
-    }
 }
 function get_user_nickname()
 {
@@ -38,7 +35,7 @@ function get_message_avatar()
                         { $avatar= "http://2.gravatar.com/avatar/".md5($datas['email'])."?s=100&";
                           echo $avatar ;
                         }
-                };
+                }
             
     $response->closeCursor();
             
@@ -47,8 +44,8 @@ function get_message_position()
 {
     include "../database/database.php";
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
-    while($data = $response->fetch())
-                {
+    $data = $response->fetch();
+                
                     $user_id = $db->quote($data['user_id']);
                     $response2 = $db->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
                     $count_message = $db->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
@@ -56,50 +53,34 @@ function get_message_position()
                         
                         {  echo $datas['position'];}
                           
-                };
+                
     $response->closeCursor();
 }
-function get_message_nickname()
-{
-    include "../database/database.php";
-    $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
-    while($data = $response->fetch())
-                {
-                    $user_id = $db->quote($data['user_id']);
-                    $response2 = $db->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
-                    $count_message = $db->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
-                    while($datas = $response2->fetch())
-                        { 
-                          echo $datas['nickname'];
-                        }
-                    
-                };
-    $response->closeCursor();
-}
+
 function get_message_count()
 {
     include "../database/database.php";
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
     while($data = $response->fetch())
-                {
+              {
                     $user_id = $db->quote($data['user_id']);
                     $response2 = $db->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
                     $count_message = $db->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
                     while($datas_count = $count_message->fetch())
                         { echo $datas_count["NumberOfMessages"];}
-                }
+              } 
     $response->closeCursor();
 }
 function get_message_title()
 {
     include "../database/database.php";
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
-    while($data = $response->fetch())
-                {
+    $data = $response->fetch();
+                
                     
                     echo $data['title'];
                     
-                };
+                
     $response->closeCursor();
 }
 function get_message_content()
@@ -155,7 +136,7 @@ function get_message_id()
     $response->closeCursor();
 }
 
-function get_message()
+function get_message_autre()
 {
     include "../database/db.php";
     
@@ -165,5 +146,36 @@ function get_message()
 
     return $result;
 
+}
+function get_message()
+{
+    include "../database/database.php";
+
+    $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
+    $response -> execute();
+    $result = $response->fetchAll();
+
+    return $result;
+
+
+}
+function get_message_nickname()
+{
+    include "../database/database.php";
+    
+    $results = get_message();
+                
+                    $user_id = $db->quote($results['user_id']);
+                    $response2 = $db->query("SELECT id, nickname, position,email FROM users WHERE id=" . $user_id  );
+                    $count_message = $db->query("SELECT COUNT(user_id) AS NumberOfMessages FROM messages WHERE user_id = $user_id");
+                    $datas = $response2->fetchAll();
+                    return $datas;
+                    // while($datas = $response2->fetch())
+                    //     { 
+                    //       echo $datas['nickname'];
+                    //     }
+                    
+                
+    $response->closeCursor();
 }
 ?>

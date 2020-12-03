@@ -61,8 +61,8 @@
                         <p>Write your message</p>
                         <textarea class="form-control" name="content"></textarea>
                         <button id="record" type="submit" class="btn btn-outline-info mb-2">Sauvegarder</button>
-                        <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
                     </form>
+                    <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
                 </div>
             </div>
             <!-- END  OF MESSAGE CREATE -->
@@ -91,8 +91,7 @@
 
                         <div class="row">
                             <p class="col-8"><?php  echo" $results[title]"?></p>
-                            <p class="message-signature col-2"><?php  echo" $results[creation_date]"?></p>
-                            <p class="col-2"><?php  echo" $results[id]"?></p>
+                            <p class="message-signature col-4"><?php  echo" $results[creation_date]"?></p>
                         </div>
 
                         <div class="row"> 

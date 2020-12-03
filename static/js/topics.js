@@ -11,7 +11,6 @@
     });
 
 
-
 function topicsForm(){
   
     document.querySelector('.form_topics').classList.add('form_topics_display');

@@ -68,7 +68,7 @@
                     </form>
                 </div>
             </div>
-            <!-- END MESSAGE CREATE -->
+            <!-- END  OF MESSAGE CREATE -->
 <?php 
         $result = get_message();
         foreach($result as $results){

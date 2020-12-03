@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500");
 
+@media (min-width: 1200px){
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 95% !important;
+}
+}
+
+@media (min-width: 992px){
+  .container, .container-lg, .container-md, .container-sm {
+  max-width: 95% !important;
+}
+}
+
+
 $primary: rgba(176,106,179,0.7);
 $secondary:linear-gradient(to right, rgba(177, 106, 179, 0.64),rgba(69, 104, 220, 0.64));
 $tertiary:#B06AB3;

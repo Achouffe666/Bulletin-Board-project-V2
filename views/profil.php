@@ -19,7 +19,7 @@
                     
     ?>
         <div class="row content row-content justify-content-center ">
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-header profil__image d-flex justify-content-center">
                     <img class="card-img-top img-fluid card-profil " src=<?php echo $avatar ?> alt="avatar" style="width: 150px;">
                 </div>
@@ -30,7 +30,7 @@
                 </form>
                 <!-- UPLOAD IMAGE -->
                 <div class="card-body">
-                    <p class="h1 d-flex justify-content center text-black-50">Profile</p>
+                    <p class="h1 d-flex justify-content-center text-black-50">Profile</p>
                     <form method="post" action="inscription_update.php">
                         <div class="form-group" >
                             <label for="nickname">Pseudo</label>

@@ -27,7 +27,9 @@
                 </ol>
             </nav>
         </div>
-        
+<?php include "upload.php" ; 
+          upload_image();
+    ?>  
     <?php
         $host = "localhost"; 
         $dbname = "forum"; 
@@ -55,7 +57,7 @@
                 <div class="card-header d-flex justify-content-center">
                     <img class="card-img-top img-fluid card-profil " src=<?php echo $avatar ?> alt="avatar" style="width: 150px;">
                 </div>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <input type="submit" value="Upload Image" name="submit" >
                 </form>

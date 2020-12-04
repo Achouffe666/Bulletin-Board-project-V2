@@ -84,7 +84,7 @@
 
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
-                        echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?>  alt="avatar_autre">
+                        "../static/uploads/" .$datas["path_image"]."";?>  alt="avatar_autre">
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php ?> post(s)</p>

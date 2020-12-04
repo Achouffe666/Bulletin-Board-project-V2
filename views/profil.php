@@ -13,7 +13,7 @@
         </nav>
        
 <?php include "../controlers/functions_profil.php" ; 
-      //upload_image();
+    upload_image();
        
     $result = get_profil();
     if($result != null)
@@ -31,7 +31,7 @@
                 </div>
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit" >
+                    <input type="submit" value="Upload Image" name="send_image" >
                 </form>
                 <div class="card-body">
                     <p class="h1">Profile</p>

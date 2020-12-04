@@ -2,10 +2,7 @@
 
 function upload_image()
       {
-        $host = "localhost"; 
-        $dbname = "forum"; 
-        $user = "root"; 
-        $pass = "root";
+        include "../database/database.php";
         $target_dir="../static/uploads/";
         $new_file=(str_replace(" ","", $_FILES["fileToUpload"]["name"]));
         $target_file= $target_dir . $new_file;
@@ -51,6 +48,19 @@ function upload_image()
 
                 }
             }
+      }
+
+      function get_profil()
+      {
+          global $db;
+          global $topics_id;
+      
+         
+         $req = $db->prepare('SELECT * FROM users WHERE id = :session');
+         $req->execute(array('session' => $_SESSION["id"] ));
+         $result = $req->fetch();
+         return $result;
+      
       }
     
       ?>

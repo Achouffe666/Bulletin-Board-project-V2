@@ -28,26 +28,14 @@
             </nav>
         </div>
 <?php include "upload.php" ; 
-          upload_image();
+    upload_image();
     ?>  
-    <?php
-        $host = "localhost"; 
-        $dbname = "forum"; 
-        $user = "root"; 
-        $pass = "root";
-       
-        
-
-        try{
-            
-                $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $req = $db->prepare('SELECT * FROM users WHERE id = :session');
-                $req->execute(array('session' => $_SESSION["id"] ));
-                while($data = $req->fetch())
+<?php    
+        $result = get_profil();
+        while($result)
                 {
                 
-                $avatar= "http://2.gravatar.com/avatar/".md5($data['email'])."?s=100&";
+                $avatar= "http://2.gravatar.com/avatar/".md5($result['email'])."?s=100&";
             
             //voir si changement photo possible + sexe à choisir pour avatar dont 'Autre'
                     
@@ -67,7 +55,7 @@
                         <div class="form-group" >
                             <label for="nickname">Pseudo</label>
                                 <div class="input-group-append">
-                                <input type="text" class="form-control" id="nickname" value="<?php echo $data['nickname'] ?>" name="nickname">
+                                <input type="text" class="form-control" id="nickname" value="<?php echo $result['nickname'] ?>" name="nickname">
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
                             </div>
                         </div>
@@ -75,7 +63,7 @@
                         <div class="form-group" >
                             <label for="signature">Signature</label>
                             <div class="input-group-append">
-                                <input type="text" class="form-control" id="signature" value="<?php echo $data['signature'] ?>" name="signature">
+                                <input type="text" class="form-control" id="signature" value="<?php echo $result['signature'] ?>" name="signature">
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
                             </div>
                         </div>
@@ -88,7 +76,7 @@
                         <div class="form-group">
                             <label for="gender">Sexe</label>
                             <div class="input-group-append">
-                                <input type="text" class="form-control" id="gender" value="<?php echo $data['gender'] ?>" name="gender">
+                                <input type="text" class="form-control" id="gender" value="<?php echo $result['gender'] ?>" name="gender">
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
                             </div>
                         </div>
@@ -96,14 +84,14 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <div class="input-group-append">
-                                <input type="email" class="form-control" id="email" value="<?php echo $data['email'] ?>" name="email">
+                                <input type="email" class="form-control" id="email" value="<?php echo $result['email'] ?>" name="email">
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <div class="input-group-append">
-                                <input type="password" class="form-control" id="password" value="<?php echo $data['password'] ?>" name="password">
+                                <input type="password" class="form-control" id="password" value="<?php echo $result['password'] ?>" name="password">
                                 <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
                             </div>
                         </div>
@@ -117,11 +105,9 @@
     <?php 
                  }
                               
-        }
+        
             
-        catch(PDOException $e){
-            echo "Erreur : " . $e->getMessage();
-        }
+       
 
         ?>
 

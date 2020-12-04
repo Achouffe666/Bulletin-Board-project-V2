@@ -53,7 +53,7 @@ function upload_image()
       function get_profil()
       {
           global $db;
-          global $topics_id;
+          
       
          
          $req = $db->prepare('SELECT * FROM users WHERE id = :session');

@@ -14,11 +14,11 @@
             </nav>
         </div>
 <?php include "upload.php" ; 
-    upload_image();
-    ?>  
-<?php    
-        $result = get_profil();
-        while($result)
+      upload_image();
+       
+    $result = get_profil();
+    var_dump($result);
+    while($result)
                 {
                 
                 $avatar= "http://2.gravatar.com/avatar/".md5($result['email'])."?s=100&";
@@ -93,7 +93,7 @@
                               
         include "footer.php";
         ?>
-
+   
     
         
  

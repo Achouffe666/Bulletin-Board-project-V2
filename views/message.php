@@ -5,7 +5,7 @@
 ?>
 <?php include "header.php"; ?>
 
-<div class="container-fluid overlay position-relative rounded-lg main__wrap d-flex flex-column">
+<div class="container-fluid overlay position-relative rounded-lg main__wrap shadow d-flex flex-column pl-1 pb-2">
     
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
@@ -78,7 +78,7 @@
 ?>
 
                 <!-- MESSAGE START -->
-                <div class="row row-message mb-2 b-radius bg-white pt-2 pr-2">
+                <div class="row row-message mb-2 b-radius bg-white shadow pt-2 pr-2">
 
          
 

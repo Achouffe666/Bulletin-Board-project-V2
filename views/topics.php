@@ -184,7 +184,7 @@ session_start();
                 <div class="col">
                   <a href="#"> <?=$topic['title']?></a>
                   <p class="text-secondary small">
-                    by <a class="author" href="#"> TheMafia</a>
+                    by <a class="author" href="#"><?=$topic['user_id']?></a>
                   </p>
                 </div>
 
@@ -196,7 +196,7 @@ session_start();
                       <p>
                         by <a class="author" href="#">your mom</a> 
                         <a href=" #"><i class="fas fa-external-link-alt"></i></a>
-                        <span class="d-block">Mon Nov 3, 2020 04:20pm</span>
+                        <span class="d-block"><?=date("D d F Y H:i",strtotime($topic['creation_date']))?></span>
                       </p>
                     </div>
                   </div>

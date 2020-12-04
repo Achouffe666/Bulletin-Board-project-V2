@@ -28,7 +28,7 @@
                             </div>
         
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="views/topics.php" href="">Topics_one  </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="views/topics.php">Topics_one  </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         

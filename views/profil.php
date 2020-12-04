@@ -51,7 +51,7 @@
                             <label for="birthday">Birthday</label>
                             <div class="input-with-post-icon datepicker input-group-append">
                                 <input id="birthday"  class="form-control-plaintext border rounded pl-1" type="date" placeholder="" >
-                                <button type="submit" class="btn btn-update mb-2"><i class="fas fa-birthday-cake"></button>
+                                <button type="submit" class="btn btn-update mb-2"><i class="fas fa-birthday-cake"></i></button>
                          </div>  
                         <div class="form-group">
                             <label for="gender">Sexe</label>

@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="board__inner row p-2">
+    <div class="board__inner row p-2 ml-2">
 
         <div class="board__wrap col-xl-9 b-radius bg-light pt-1 mr-0 mb-2">
        

@@ -98,7 +98,7 @@
                         </div>
 
                         <div class="row"> 
-                            <p class="message__content">
+                            <p class="message__content text-black-50">
                             <?php echo "$results[content]"?>
                             </p>
                         </div>

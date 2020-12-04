@@ -8,7 +8,6 @@
         <nav aria-label="breadcrumb container-fluid">
             <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-            <li class="breadcrumb-item"><a href="boards.php">Boards</a></li>
             <li class="breadcrumb-item active" aria-current="page">Profil</li>
             </ol>
         </nav>

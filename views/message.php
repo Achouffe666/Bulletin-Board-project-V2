@@ -59,7 +59,7 @@
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->
-                <div class="row row-message b-radius row-message2 mb-5 p-2 ">
+                <div class="row row-message row-message2 mb-5 p-2 ">
          
                 <div class="col-10 col-content-message">
                     <form method="post" action="message_post.php">
@@ -67,7 +67,7 @@
                         <textarea class="form-control" name="content"></textarea>
                         <button id="record" type="submit" class="btn btn-outline-info mb-2">Sauvegarder</button>
                     </form>
-                    <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
+                    <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Roustam</button>
                 </div>
             </div>
             <!-- END  OF MESSAGE CREATE -->
@@ -78,7 +78,7 @@
 ?>
 
                 <!-- MESSAGE START -->
-                <div class="row row-message mb-2 bg-light pt-2 pr-2">
+                <div class="row row-message mb-2 b-radius bg-white pt-2 pr-2">
 
          
 

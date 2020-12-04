@@ -184,9 +184,6 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
       .user-top .last-user-wrap h4 .col-4 {
         max-width: 130px; }
 
-.row-message, .row-message2, .row-message3 {
-  background: white; }
-
 .row-message2 {
   display: none; }
 

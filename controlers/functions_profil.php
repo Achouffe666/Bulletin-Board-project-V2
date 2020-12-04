@@ -1,5 +1,6 @@
 <?php
-
+include "../database/database.php";
+global $db;
 function upload_image()
       {
         include "../database/database.php";

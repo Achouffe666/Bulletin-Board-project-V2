@@ -4,21 +4,20 @@
     $_SESSION["id"] = 2;
 ?>
 <?php include "header.php"; ?>
-        <div class="row breadcrumb">
-            <nav aria-label="breadcrumb container-fluid">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="inscription.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="inscription_post.php">Boards</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profil</li>
-                </ol>
-            </nav>
-        </div>
-<?php include "upload.php" ; 
-      upload_image();
+        
+        <nav aria-label="breadcrumb container-fluid">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="boards.php">Boards</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Profil</li>
+            </ol>
+        </nav>
+       
+<?php include "../controlers/functions_profil.php" ; 
+      //upload_image();
        
     $result = get_profil();
-    var_dump($result);
-    while($result)
+    if($result != null)
                 {
                 
                 $avatar= "http://2.gravatar.com/avatar/".md5($result['email'])."?s=100&";
@@ -42,7 +41,7 @@
                             <label for="nickname">Pseudo</label>
                                 <div class="input-group-append">
                                 <input type="text" class="form-control" id="nickname" value="<?php echo $result['nickname'] ?>" name="nickname">
-                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../static/image/edit.png"></button>
                             </div>
                         </div>
                     

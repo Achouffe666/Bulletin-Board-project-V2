@@ -85,20 +85,20 @@
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
                         echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?>  alt="avatar_autre">
-                        <p class="message-position"><?php echo "$results[position]";?></p>
-                        <p class="message-identity"><?php echo "$results[nickname]";?></p>
-                        <p class="message-number"><?php ?> post(s)</p>
+                        <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
+                        <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
+                        <p class="message-number justify-content-center text-black-50"><?php ?> post(s)</p>
 
                     </div>
                     
                     <div class="col-10 col-content-message content-message2">
 
                         <div class="row">
-                            <p class="message-signature col-4"><?php  echo" $results[creation_date]"?></p>
+                            <p class="message-signature col-4 text-black-50"><?php  echo" $results[creation_date]"?></p>
                         </div>
 
                         <div class="row"> 
-                            <p class="message__content text-black-50">
+                            <p class="message__content">
                             <?php echo "$results[content]"?>
                             </p>
                         </div>

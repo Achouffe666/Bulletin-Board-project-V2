@@ -13,9 +13,7 @@ session_start();
   <nav class="nav__list">
     <ol class="breadcrumb bg-transparent pt-5">
       <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-      <li class="breadcrumb-item" ><a href="#">Board Index</a></li>
-      <li class="breadcrumb-item"><a href="#">Category One</a></li>
-      <li class="breadcrumb-item">Topics_one</li>
+      <li class="breadcrumb-item active"><a href="#">Category One</a></li>
     </ol>
   </nav>
 
@@ -184,7 +182,7 @@ session_start();
                 <div class="col">
                   <a href="message.php"> <?=$topic['title']?></a>
                   <p class="text-secondary small">
-                    by <a class="author" href="#"> TheMafia</a>
+                    by <a class="author" href="#"><?=$topic['user_id']?></a>
                   </p>
                 </div>
 
@@ -196,7 +194,7 @@ session_start();
                       <p>
                         by <a class="author" href="#">your mom</a> 
                         <a href=" #"><i class="fas fa-external-link-alt"></i></a>
-                        <span class="d-block">Mon Nov 3, 2020 04:20pm</span>
+                        <span class="d-block"><?=date("D d F Y H:i",strtotime($topic['creation_date']))?></span>
                       </p>
                     </div>
                   </div>

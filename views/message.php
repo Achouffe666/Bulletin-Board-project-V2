@@ -105,7 +105,7 @@
 
                      
             
-                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2">
+                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2 float-right">
                             <a href="message_delete.php?id=<?php echo $results["user_id"];?>">Annuler</a> 
                         </button>
                         

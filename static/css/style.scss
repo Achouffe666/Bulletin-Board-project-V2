@@ -122,7 +122,7 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
   }
 }
 
-.alert{
+.rules{
   background-color: #ECD5DB;
   color:#BC2A4D;
   padding: 15px;
@@ -143,6 +143,12 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
     height:55px;
     }
 }
+.form_topics{
+  display: none;
+}
+.form_topics_display{
+  display: block;
+}
 .topics__description{
   width:80%
 }
@@ -151,8 +157,6 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
   max-height: 500px;
   border-radius:10px;
   font-size:auto;
-  
-
 }
 
 .topics__title{

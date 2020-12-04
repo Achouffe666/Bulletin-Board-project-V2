@@ -3,6 +3,11 @@
 session_start();
 ?>
 <?php include "header.php"; ?>
+
+<?php 
+        include "../controlers/functions_topics.php";
+        
+?>
 <!-- MAIN WRAP -->
 <div class="main__wrap container overlay rounded-lg position-relative my-3 pb-3">
   <nav class="nav__list">
@@ -14,35 +19,21 @@ session_start();
     </ol>
   </nav>
 
-  <?php
-  include "../database/db.php";
-  global $db;
-
-    try {
-        $query =$db ->query('SELECT * FROM topics');
-        $query->execute();
-        $topics = $query->fetchAll(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        ?>
-        <div class="alert alert-danger" role="alert">
-         Error apeared, try again,
-        </div>
-        <?php
-    }
-?>
-
  <!-- formulaire de creation de topic -->
-<form action='' method='post' class="form_topics ml-3 row d-flex">
-        <h4 class ="mx-2">Create your own topic!</h4>
-        <div class="form-group mr-1">
-        <input type="text" class="form-control bg-light rounded rounded-pill" name='Title' placeholder="Topic Title Here!" required>
-        </div>
-        
-        <input type="submit" name="formSend" id="formSend" class="button--modifier mr-1 px-3 py-1 border  rounded-pill login-button" value="Create a topic">
-        <button type="button" class="button--modifier px-3 py-1 border rounded rounded-pill" id='cancel'>Cancel</button>
-</form>
- 
- 
+
+<?=create_topic()?>
+
+ <div class="form_topics">
+      <form action='' method='post' class=" ml-3 row d-flex ">
+              <h4 class ="mx-2">Create your own topic!</h4>
+              <div class="form-group mr-1">
+              <input type="text" class="form-control bg-light rounded rounded-pill" name='Title' placeholder="Topic Title Here!" required>
+              </div>
+              
+              <input type="submit" name="formSend" id="formSend" class="button--modifier mr-1 px-3 py-1 border  rounded-pill login-button" value="Create a topic">
+              <button type="button" class="button--modifier px-3 py-1 border rounded rounded-pill" id='cancel'>Cancel</button>
+      </form>
+  </div>
 
   <div class="container-lg board__inner pt-2">
 
@@ -51,8 +42,8 @@ session_start();
       <div class="col-xl-9">
 
         <h4 class="mb-5 text-black-50">Topics exemple</h4>
-        <div class="alert b-radius alert-danger" role="alert">
-          <a href="#" class="alert-link">Forum rules</a>
+        <div class="alert b-radius alert-danger rules" role="alert">
+          <a href="#" class="alert-link ">Forum rules</a>
         </div>
         <!-- ACTION ROW -->
         <div class="d-flex mb-3">
@@ -155,12 +146,18 @@ session_start();
 
         <!-- TOPICS -->
 
+
+        <?php
+          $result = get_topics();
+          foreach($result as $topic){
+         ?>
+
         <div class="b-radius mb-3">
 
           <div class="topics-top gradient text-black row no-gutters align-items-center w-100">
             
             <div class="col topics-top-title">
-              <h4>Topics</h4>
+              <h4><?= $topic['title']?></h4>
             </div>
 
             <div class="d-none d-md-block col-6 text-black-50">
@@ -211,7 +208,7 @@ session_start();
           <!-- END POST -->
         </div>
         <!-- END TOPIC -->
-
+          <?php } ?>
 
         <div class=" d-flex pt-3">
 

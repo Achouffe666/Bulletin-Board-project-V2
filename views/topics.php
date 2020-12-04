@@ -147,7 +147,7 @@ session_start();
         <!-- TOPICS -->
 
 
-        <div class="b-radius mb-3">
+        <div class="b-radius mb-3 bg-light">
 
           <div class="topics-top gradient text-black row no-gutters align-items-center w-100">
             
@@ -171,9 +171,9 @@ session_start();
           $result = get_topics();
           foreach($result as $topic){
          ?>
-          <div class="topic bg-light b-radius p-2 my-1">
+          <div class="topic b-radius p-2 my-1 shadow-sm">
 
-            <div class="shadow-sm b-radius bg-white p-3">
+            <div class="b-radius bg-white p-3">
 
               <div class="row no-gutters text-black-50 align-items-center">
                 

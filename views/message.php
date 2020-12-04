@@ -14,8 +14,8 @@
         <ol class="breadcrumb bg-transparent pt-5">
     
             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i>Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Cuisine</a></li>
-            <li class="breadcrumb-item"><a href="#">Les repas salés</a></li>
+            <li class="breadcrumb-item"><a href="#">Category One</a></li>
+            <li class="breadcrumb-item"><a href="#">Topics_one</a></li>
             <li class="breadcrumb-item"><?=$result['title']?></li>
         </ol>
     </nav>

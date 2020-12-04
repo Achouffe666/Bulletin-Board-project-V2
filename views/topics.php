@@ -182,7 +182,7 @@ session_start();
                 </div>
 
                 <div class="col">
-                  <a href="#"> <?= $topic['title']?></a>
+                  <a href="#"> <?=$topic['title']?></a>
                   <p class="text-secondary small">
                     by <a class="author" href="#"> TheMafia</a>
                   </p>

@@ -20,10 +20,6 @@
         </ol>
     </nav>
     <h4 class="mt-2 mb-5 ml-5 text-black-50">Le clafoutis</h4>
-    <?php 
-        include "../controlers/functions_message.php";
-        
-    ?>
 
     <div class="row mb-2 ml-4">
         <div class="col col-md-2">

@@ -23,7 +23,7 @@
 
     <div class="row mb-2 ml-2">
         <div class="col col-md-2">
-            <button id="button_reply" type="submit" class="button--modifier px-3 py-1  rounded rounded-pill  btn-outline-info  button-reply" name="post_reply">Post reply</button>
+            <button id="button_reply" type="submit" class="button--modifier px-3 py-1  rounded rounded-pill  border-0  button-reply" name="post_reply">Post reply</button>
         </div>
             
           <div class="bg-light rounded rounded-pill border ml-3">
@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="board__inner row pb-2">
+    <div class="board__inner row p-2">
 
         <div class="board__wrap col-xl-9 b-radius bg-light pt-1 mr-0 mb-2">
        
@@ -67,7 +67,7 @@
                         <textarea class="form-control" name="content"></textarea>
                         <button id="record" type="submit" class="btn btn-outline-info mb-2">Sauvegarder</button>
                     </form>
-                    <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Roustam</button>
+                    <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
                 </div>
             </div>
             <!-- END  OF MESSAGE CREATE -->
@@ -78,13 +78,13 @@
 ?>
 
                 <!-- MESSAGE START -->
-                <div class="row row-message mb-2 b-radius bg-white shadow pt-2 pr-2">
+                <div class="row row-message mb-2 b-radius bg-white shadow-sm pt-2 pr-2">
 
          
 
                     <div class="col-2 col-content-message">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
-                        echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?> style="width: 150px;" alt="avatar_autre">
+                        echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?>  alt="avatar_autre">
                         <p class="message-position"><?php echo "$results[position]";?></p>
                         <p class="message-identity"><?php echo "$results[nickname]";?></p>
                        

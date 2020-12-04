@@ -293,6 +293,16 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
     display:block;
 }
 
+.col-content-message{
+  img{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:25px;
+    height:150px;
+    width: 150px;
+  }
+}
 
 
 

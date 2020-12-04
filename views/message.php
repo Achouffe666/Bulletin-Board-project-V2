@@ -21,7 +21,7 @@
         
     ?>
 
-    <div class="row mb-2 ml-2">
+    <div class="row mb-2 ml-3">
         <div class="col col-md-2">
             <button id="button_reply" type="submit" class="button--modifier px-3 py-2  rounded rounded-pill  border-0  button-reply" name="post_reply">Post reply <i class="fas fa-pencil-alt"></i></button>
         </div>

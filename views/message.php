@@ -16,13 +16,12 @@
     
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
-            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i>Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Cuisine</a></li>
+            <li class="breadcrumb-item"><a href="boards.php"><i class="fas fa-home"></i>Home</a></li>
             <li class="breadcrumb-item"><a href="topics.php"><?=$result['title']?></a></li>
             <li class="breadcrumb-item active">Messages</li>
         </ol>
     </nav>
-    <h4 class="mt-2 mb-5 ml-5 text-black-50">Le clafoutis</h4>
+    <h4 class="mt-2 mb-5 ml-5 text-black-50 topic__title">Le clafoutis</h4>
 
 
     <div class="row mb-2 ml-4">
@@ -88,7 +87,7 @@
 
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
-                        echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?>  alt="avatar_autre">
+                        "../static/uploads/" .$datas["path_image"]."";?>  alt="avatar_autre">
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>

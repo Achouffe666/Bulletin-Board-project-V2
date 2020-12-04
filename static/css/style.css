@@ -200,6 +200,11 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 .message__content {
   font-family: Rubik; }
 
+.topic__title {
+  font-family: Rubik;
+  font-size: 1.5rem;
+  font-weight: 500; }
+
 #footer .row-social-media {
   width: auto;
   margin-top: -25px;

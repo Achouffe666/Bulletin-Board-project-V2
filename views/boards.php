@@ -3,8 +3,8 @@
 <div class="container position-relative main__wrap d-flex flex-column rounded-lg my-3 pb-3 bg-white shadow">
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
-            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Board Index</a></li>
+            <li class="breadcrumb-item active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+
         </ol>
     
     </nav>

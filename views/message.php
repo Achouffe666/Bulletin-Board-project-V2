@@ -9,13 +9,13 @@
     
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
-            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Board Index</a></li>
-            <li class="breadcrumb-item"><a href="#">Category One</a></li>
-            <li class="breadcrumb-item">Forum One</li>
+            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i>Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Cuisine</a></li>
+            <li class="breadcrumb-item"><a href="#">Les repas salés</a></li>
+            <li class="breadcrumb-item">Le clafoutis</li>
         </ol>
     </nav>
-
+    <h4 class="mt-2 mb-5 ml-5 text-black-50">Le clafoutis</h4>
     <?php 
         include "../controlers/functions_message.php";
         

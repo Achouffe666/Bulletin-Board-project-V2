@@ -59,7 +59,7 @@
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->
-                <div class="row row-message bg-white row-message2 mb-5 p-2 rounded">
+                <div class="row row-message row-message2 mb-5 p-2 rounded">
          
                 <div class="col-10 col-content-message">
                     <form method="post" action="message_post.php">

@@ -194,8 +194,7 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 25px;
-  height: 150px;
+  border-radius: 75px;
   width: 150px; }
 
 #footer .row-social-media {

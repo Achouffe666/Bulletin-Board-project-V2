@@ -10,7 +10,7 @@
     </nav>
     <div class="board__inner row container-fluid">
         
-        <div class="board__wrap col-xl-9 mr-0 mb-2">
+        <div class="board__wrap col-xl-10 mr-0 mb-2">
         
             <!-- BOARD ONE TOPICS-->
             <h4 class="mt-2 mb-5 ml-5 text-black-50">Category One</h4>
@@ -28,7 +28,7 @@
                             </div>
         
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="views/topics.php" href="">Topics_one  </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="views/topics.php">Topics_one  </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         

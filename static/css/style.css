@@ -40,6 +40,14 @@ header {
     font-weight: bolder;
     padding-bottom: 50px; }
 
+/* PROFIL */
+.profil__image img {
+  border-radius: 75px; }
+
+.profil__wrap {
+  width: 50% !important; }
+
+/* END PROFIL */
 /* MAIN WRAP */
 body .main__wrap {
   width: 95%;

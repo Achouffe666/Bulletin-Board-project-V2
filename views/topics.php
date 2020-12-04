@@ -37,7 +37,7 @@ session_start();
 
     <div class="row board__wrap">
 
-      <div class="col-xl-9">
+      <div class="col-xl-10 mr-0">
 
         <h4 class="mb-5 text-black-50">Topics exemple</h4>
         <div class="alert b-radius alert-danger rules" role="alert">

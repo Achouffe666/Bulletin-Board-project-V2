@@ -82,7 +82,7 @@
 
          
 
-                    <div class="col-2 col-content-message d-flex justify-content-center">
+                    <div class="col-2 col-content-message d-flex flex-column justify-content-center">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
                         echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?>  alt="avatar_autre">
                         <p class="message-position"><?php echo "$results[position]";?></p>

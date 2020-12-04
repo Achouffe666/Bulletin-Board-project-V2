@@ -10,7 +10,7 @@
     </nav>
     <div class="board__inner row container-fluid">
         
-        <div class="board__wrap col-xl-9 mr-0 mb-2">
+        <div class="board__wrap col-xl-10 mr-0 mb-2">
         
             <!-- BOARD ONE TOPICS-->
             <h4 class="mt-2 mb-5 ml-5 text-black-50">Category One</h4>

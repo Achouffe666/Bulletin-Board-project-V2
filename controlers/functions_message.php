@@ -1,8 +1,35 @@
 <?php 
 
+include "../database/database.php";
+global $db;
+
+$topics_id = 3;
+
+
+// link from topics to messages
+function topic_link(){
+    global $db;
+    global $topics_id;
+
+ 
+    $topic_id = $db->query("SELECT topic_id FROM messages WHERE topic_id = $topics_id");
+    $topic_id -> execute();
+    $returned_id = $topic_id->fetch();
+ 
+ 
+     $response = $db->query("SELECT title FROM topics WHERE id = $returned_id[topic_id]");
+     $response -> execute();
+     $result = $response->fetch();
+ 
+     return $result;
+ }
+ 
+
+
+
 function get_user_infos($user_id)
 {   
-    include "../database/database.php";
+   global $db;
     $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
     $req->execute(array('nickname' => $user_id));
     $user_results = $req->fetchAll();
@@ -11,7 +38,7 @@ function get_user_infos($user_id)
 }
 function get_user_nickname()
 {
-    include "../database/database.php";
+   global $db;
     $req = $db->prepare('SELECT * FROM users WHERE nickname = :nickname');
     $req->execute(array('nickname' => $_SESSION["id"]));
     
@@ -24,7 +51,7 @@ function get_user_nickname()
 
 function get_message_avatar()
 {
-    include "../database/database.php";
+   global $db;
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
     while($data = $response->fetch())
                 {
@@ -42,7 +69,7 @@ function get_message_avatar()
 }
 function get_message_position()
 {
-    include "../database/database.php";
+   global $db;
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
     $data = $response->fetch();
                 
@@ -58,7 +85,7 @@ function get_message_position()
 }
 function get_message_nickname()
 {
-    include "../database/database.php";
+   global $db;
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
     $data = $response->fetch();
     $user_id = $db->quote($data['user_id']);
@@ -71,7 +98,7 @@ function get_message_nickname()
 }
 function get_message_count()
 {
-    include "../database/database.php";
+   global $db;
     
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
     while($data = $response->fetch())
@@ -87,7 +114,7 @@ function get_message_count()
 
 function get_message_autre()
 {
-    include "../database/database.php";
+   global $db;
     
     $response = $db->query("SELECT id, title, content, user_id, DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
     $response -> execute();
@@ -98,12 +125,17 @@ function get_message_autre()
 }
 function get_message()
 {
-    include "../database/database.php";
+    global $db;
+    global $topics_id;
 
-    $response = $db->query("SELECT messages.id, title, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email FROM messages INNER JOIN users WHERE messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 3");
+   
+    $response = $db->query("SELECT messages.id, title, topic_id, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email FROM messages INNER JOIN users WHERE topic_id = $topics_id && messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 3");
     $response -> execute();
     $result = $response->fetchAll();
 
     return $result;
+
 }
+
+
 ?>

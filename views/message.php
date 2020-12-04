@@ -4,6 +4,9 @@
    
 ?>
 <?php include "header.php"; ?>
+<?php include "../controlers/functions_message.php";?>
+
+<?php $result = topic_link();?>
 
 <div class="container-fluid overlay position-relative rounded-lg main__wrap d-flex flex-column">
     
@@ -12,14 +15,11 @@
             <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
             <li class="breadcrumb-item"><a href="#">Board Index</a></li>
             <li class="breadcrumb-item"><a href="#">Category One</a></li>
-            <li class="breadcrumb-item">Forum One</li>
+            <li class="breadcrumb-item"><?=$result['title']?></li>
         </ol>
     </nav>
 
-    <?php 
-        include "../controlers/functions_message.php";
-        
-    ?>
+    
 
     <div class="row mb-2">
         <div class="col col-md-2">

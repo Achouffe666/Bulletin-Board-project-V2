@@ -26,22 +26,29 @@
             <button id="button_reply" type="submit" class="button--modifier px-3 py-1  btn-outline-info  button-reply" name="post_reply">Post reply</button>
         </div>
             
-        <div class="col col-6-md search">
-            <form action="message_search.php" method="post">
-                <div class="form-group" >
-                    <div class="input-group-prepend">
-                        <input type="text" class="form-control" id="search" value="" name="search">
-                        <button type="submit" class="button--modifier btn-update"><img src="../images/search.svg" alt="search"></button>
-                    </div>
-                </div>
-            </form>
-        </div>
+          <div class="bg-light rounded rounded-pill border ml-3">
 
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
-        </form>
+            <div class="input-group">
+
+              <input type="search" placeholder="Search this forum..."
+                class="form-control bg-transparent rounded-pill border-0">
+
+              <div class="input-group-append">
+
+                <button id="search-glass" type="submit" class="btn btn-link border-right border-left">
+                  <i class="fa fa-search magnifying-glass"></i>
+                </button>
+
+                <button id="cogoption" type="submit" class="btn btn-link">
+                  <i class="fas fa-cog cog"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
     </div>
 
     <div class="board__inner row">
@@ -56,8 +63,6 @@
          
                 <div class="col-10 col-content-message">
                     <form method="post" action="message_post.php">
-                        <p>Titre :</p>
-                        <input type="text" class="form-control" name="message_name">
                         <p>Write your message</p>
                         <textarea class="form-control" name="content"></textarea>
                         <button id="record" type="submit" class="btn btn-outline-info mb-2">Sauvegarder</button>
@@ -90,7 +95,6 @@
                     <div class="col-10 col-content-message content-message2">
 
                         <div class="row">
-                            <p class="col-8"><?php  echo" $results[title]"?></p>
                             <p class="message-signature col-4"><?php  echo" $results[creation_date]"?></p>
                         </div>
 

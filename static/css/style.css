@@ -44,6 +44,9 @@ header {
 .profil__image img {
   border-radius: 75px; }
 
+.profil__wrap {
+  width: 50% !important; }
+
 /* END PROFIL */
 /* MAIN WRAP */
 body .main__wrap {

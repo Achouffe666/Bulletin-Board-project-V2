@@ -19,7 +19,7 @@
                     
     ?>
         <div class="row content row-content justify-content-center ">
-            <div class="card shadow">
+            <div class="card shadow profil__wrap">
                 <div class="card-header profil__image d-flex justify-content-center">
                     <img class="card-img-top img-fluid card-profil " src=<?php echo $avatar ?> alt="avatar" style="width: 150px;">
                 </div>

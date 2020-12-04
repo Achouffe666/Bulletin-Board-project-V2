@@ -53,7 +53,7 @@
 
     <div class="board__inner row">
 
-        <div class="board__wrap col-xl-9  bg-light mr-0 mb-2">
+        <div class="board__wrap col-xl-9  bg-light  ml-1 mr-0 mb-2">
        
             <!-- MESSAGES WRAP -->
             <div class="container row-content justify-content-center ">

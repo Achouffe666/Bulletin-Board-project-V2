@@ -53,13 +53,13 @@
 
     <div class="board__inner row">
 
-        <div class="board__wrap col-xl-9 mr-0 mb-2">
+        <div class="board__wrap col-xl-9  bg-light mr-0 mb-2">
        
             <!-- MESSAGES WRAP -->
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->
-                <div class="row row-message row-message2 mb-5 p-2 bg-light">
+                <div class="row row-message bg-white row-message2 mb-5 p-2 rounded">
          
                 <div class="col-10 col-content-message">
                     <form method="post" action="message_post.php">

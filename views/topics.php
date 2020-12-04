@@ -147,17 +147,12 @@ session_start();
         <!-- TOPICS -->
 
 
-        <?php
-          $result = get_topics();
-          foreach($result as $topic){
-         ?>
-
         <div class="b-radius mb-3">
 
           <div class="topics-top gradient text-black row no-gutters align-items-center w-100">
             
             <div class="col topics-top-title">
-              <h4><?= $topic['title']?></h4>
+              <h4>Topic title</h4>
             </div>
 
             <div class="d-none d-md-block col-6 text-black-50">
@@ -171,6 +166,11 @@ session_start();
           </div>
 
           <!-- EXEMPLE POST -->
+
+        <?php
+          $result = get_topics();
+          foreach($result as $topic){
+         ?>
           <div class="topic bg-light b-radius p-2 my-1">
 
             <div class="shadow-sm b-radius bg-white p-3">
@@ -182,7 +182,7 @@ session_start();
                 </div>
 
                 <div class="col">
-                  <a href="#"> Your Bank Account ( Locked )</a>
+                  <a href="#"> <?= $topic['title']?></a>
                   <p class="text-secondary small">
                     by <a class="author" href="#"> TheMafia</a>
                   </p>
@@ -205,10 +205,11 @@ session_start();
               </div>
             </div>
           </div>
+          <?php } ?>
           <!-- END POST -->
         </div>
         <!-- END TOPIC -->
-          <?php } ?>
+  
 
         <div class=" d-flex pt-3">
 

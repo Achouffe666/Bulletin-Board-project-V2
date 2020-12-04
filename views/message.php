@@ -8,22 +8,26 @@
 
 <?php $result = topic_link();?>
 
-<div class="container-fluid overlay position-relative rounded-lg main__wrap d-flex flex-column">
+<div class="container-fluid overlay position-relative rounded-lg main__wrap shadow d-flex flex-column pl-1 pb-2">
     
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
-            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Board Index</a></li>
-            <li class="breadcrumb-item"><a href="#">Category One</a></li>
+    
+            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i>Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Cuisine</a></li>
+            <li class="breadcrumb-item"><a href="#">Les repas salés</a></li>
             <li class="breadcrumb-item"><?=$result['title']?></li>
         </ol>
     </nav>
+    <h4 class="mt-2 mb-5 ml-5 text-black-50">Le clafoutis</h4>
+    <?php 
+        include "../controlers/functions_message.php";
+        
+    ?>
 
-    
-
-    <div class="row mb-2">
+    <div class="row mb-2 ml-4">
         <div class="col col-md-2">
-            <button id="button_reply" type="submit" class="button--modifier px-3 py-1  btn-outline-info  button-reply" name="post_reply">Post reply</button>
+            <button id="button_reply" type="submit" class="button--modifier px-3 py-2  rounded rounded-pill  border-0  button-reply" name="post_reply">Post reply <i class="fas fa-pencil-alt"></i></button>
         </div>
             
           <div class="bg-light rounded rounded-pill border ml-3">
@@ -51,15 +55,15 @@
 
     </div>
 
-    <div class="board__inner row">
+    <div class="board__inner row p-2 ml-2">
 
-        <div class="board__wrap col-xl-9 mr-0 mb-2">
+        <div class="board__wrap col-xl-9 b-radius bg-light pt-1 mr-0 mb-2">
        
             <!-- MESSAGES WRAP -->
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->
-                <div class="row row-message row-message2 mb-5 p-2 bg-light">
+                <div class="row row-message row-message2 mb-5 p-2 ">
          
                 <div class="col-10 col-content-message">
                     <form method="post" action="message_post.php">
@@ -78,16 +82,15 @@
 ?>
 
                 <!-- MESSAGE START -->
-                <div class="row row-message mb-2 bg-light pt-2 pr-2">
+                <div class="row row-message mb-2 b-radius bg-white shadow-sm pt-2 pr-2">
 
          
 
-                    <div class="col-2 col-content-message">
+                    <div class="col-2 col-content-message d-flex flex-column justify-content-center">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
-                        echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?> style="width: 150px;" alt="avatar_autre">
+                        echo "http://2.gravatar.com/avatar/".md5($results['email'])."?s=100&" ;?>  alt="avatar_autre">
                         <p class="message-position"><?php echo "$results[position]";?></p>
                         <p class="message-identity"><?php echo "$results[nickname]";?></p>
-                       
                         <p class="message-number"><?php ?> post(s)</p>
 
                     </div>
@@ -99,14 +102,14 @@
                         </div>
 
                         <div class="row"> 
-                            <p class="message__content">
+                            <p class="message__content text-black-50">
                             <?php echo "$results[content]"?>
                             </p>
                         </div>
 
                      
             
-                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2">
+                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2 float-right">
                             <a href="message_delete.php?id=<?php echo $results["user_id"];?>">Annuler</a> 
                         </button>
                         

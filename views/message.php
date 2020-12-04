@@ -23,7 +23,7 @@
 
     <div class="row mb-2">
         <div class="col col-md-2">
-            <button id="button_reply" type="submit" class="button--modifier px-3 py-1  btn-outline-info  button-reply" name="post_reply">Post reply</button>
+            <button id="button_reply" type="submit" class="button--modifier ml-2 px-3 py-1  rounded rounded-pill  btn-outline-info  button-reply" name="post_reply">Post reply</button>
         </div>
             
           <div class="bg-light rounded rounded-pill border ml-3">

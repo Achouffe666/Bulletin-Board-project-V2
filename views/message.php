@@ -19,7 +19,7 @@
             <li class="breadcrumb-item"><?=$result['title']?></li>
         </ol>
     </nav>
-    <h4 class="mt-2 mb-5 ml-5 text-black-50">Le clafoutis</h4>
+    <h4 class="mt-2 mb-5 ml-5 text-black-50 topic__title">Le clafoutis</h4>
 
     <div class="row mb-2 ml-4">
         <div class="col col-md-2">

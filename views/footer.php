@@ -1,6 +1,6 @@
 <footer id="footer">
     
-    <div class="row social-bar row-fluid row-social-media d-flex justify-content-md-center align-items-center">
+    <div class="row social-bar row-fluid row-social-media d-flex justify-content-md-center align-items-end pb-1">
         <div class="social-media__circle d-flex justify-content-center mx-1">
             <a class="social-media__link d-flex justify-content-center align-items-center" href="https://twitter.com/?lang=fr"><i class="social-media__icon fa fa-twitter"></i></a>
         </div>

@@ -83,11 +83,11 @@
 
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
-                        "../static/uploads/" .$datas["path_image"]."";?>  alt="avatar_autre">
+                        "../static/uploads/" .$results["path_image"]."";?>  alt="avatar_autre">
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>
-
+                        <p><?php var_dump($results["path_image"])?></p>
                     </div>
                     
                     <div class="col-10 col-content-message content-message2">

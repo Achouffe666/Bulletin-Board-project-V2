@@ -3,108 +3,76 @@
 
     $_SESSION["id"] = 2;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="style_test.css">
-    <title>Document</title>
-</head>
-<body>
-
-    <div class="container-fluid">
-        <div class="row header">
-            <img class="img-fluid image-header" src="../images/rail_duotone.png" alt="image header rail train" style="width: 100%; height: 100%;">
-        </div>
-        <div class="row breadcrumb">
-            <nav aria-label="breadcrumb container-fluid">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="inscription.php">Home</a></li>
-                <li class="breadcrumb-item"><a href="inscription_post.php">Boards</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profil</li>
-                </ol>
-            </nav>
-        </div>
-<?php include "upload.php" ; 
-          upload_image();
-    ?>  
-    <?php
-        $host = "localhost"; 
-        $dbname = "forum"; 
-        $user = "root"; 
-        $pass = "root";
-       
+<?php include "header.php"; ?>
         
-
-        try{
-            
-                $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $req = $db->prepare('SELECT * FROM users WHERE id = :session');
-                $req->execute(array('session' => $_SESSION["id"] ));
-                while($data = $req->fetch())
+       
+<?php include "../controlers/functions_profil.php" ; 
+    upload_image();
+       
+    $result = get_profil();
+    if($result != null)
                 {
                 
-                $avatar= "http://2.gravatar.com/avatar/".md5($data['email'])."?s=100&";
+                $avatar= "http://2.gravatar.com/avatar/".md5($result['email'])."?s=100&";
             
             //voir si changement photo possible + sexe à choisir pour avatar dont 'Autre'
                     
     ?>
         <div class="row content row-content justify-content-center ">
-            <div class="card">
-                <div class="card-header d-flex justify-content-center">
+            <div class="card shadow profil__wrap">
+                <div class="card-header profil__image d-flex justify-content-center">
                     <img class="card-img-top img-fluid card-profil " src=<?php echo $avatar ?> alt="avatar" style="width: 150px;">
                 </div>
-                <form action="" method="post" enctype="multipart/form-data">
+                <!-- UPLOAD IMAGE -->
+                <form action="" method="post" class="mx-1" enctype="multipart/form-data">
                     <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit" >
+                    <input type="submit" value="Upload Image" name="send_image" >
                 </form>
+                <!-- UPLOAD IMAGE -->
                 <div class="card-body">
-                    <p class="h1">Profile</p>
+                    <p class="h1 d-flex justify-content-center text-black-50">Profile</p>
                     <form method="post" action="inscription_update.php">
                         <div class="form-group" >
                             <label for="nickname">Pseudo</label>
                                 <div class="input-group-append">
-                                <input type="text" class="form-control" id="nickname" value="<?php echo $data['nickname'] ?>" name="nickname">
-                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                                <input type="text" class="form-control" id="nickname" value="<?php echo $result['nickname'] ?>" name="nickname">
+                                <button type="submit" class="btn btn-update mb-2"><i class="far fa-edit"></i></button>
                             </div>
                         </div>
                     
                         <div class="form-group" >
                             <label for="signature">Signature</label>
                             <div class="input-group-append">
-                                <input type="text" class="form-control" id="signature" value="<?php echo $data['signature'] ?>" name="signature">
-                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                                <input type="text" class="form-control" id="signature" value="<?php echo $result['signature'] ?>" name="signature">
+                                <button type="submit" class="btn btn-update mb-2"><i class="far fa-comment"></i></button>
                             </div>
                         </div>
                         <div class="form-group form-group" >
                             <label for="birthday">Birthday</label>
                             <div class="input-with-post-icon datepicker input-group-append">
-                                <input id="birthday"  class="form-control-plaintext" type="date" placeholder="" >
-                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                                <input id="birthday"  class="form-control-plaintext border rounded pl-1" type="date" placeholder="" >
+                                <button type="submit" class="btn btn-update mb-2"><i class="fas fa-birthday-cake"></i></button>
                          </div>  
                         <div class="form-group">
                             <label for="gender">Sexe</label>
                             <div class="input-group-append">
-                                <input type="text" class="form-control" id="gender" value="<?php echo $data['gender'] ?>" name="gender">
-                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                                <input type="text" class="form-control" id="gender" value="<?php echo $result['gender'] ?>" name="gender">
+                                <button type="submit" class="btn btn-update mb-2"><i class="fas fa-venus-mars"></i></button>
                             </div>
                         </div>
                     
                         <div class="form-group">
                             <label for="email">Email</label>
                             <div class="input-group-append">
-                                <input type="email" class="form-control" id="email" value="<?php echo $data['email'] ?>" name="email">
-                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                                <input type="email" class="form-control" id="email" value="<?php echo $result['email'] ?>" name="email">
+                                <button type="submit" class="btn btn-update mb-2"><i class="fas fa-envelope"></i></button>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <div class="input-group-append">
-                                <input type="password" class="form-control" id="password" value="<?php echo $data['password'] ?>" name="password">
-                                <button type="submit" class="btn btn-update mb-2"><img class="img-edit"src="../images/edit.png"></button>
+                                <input type="password" class="form-control" id="password" value="<?php echo $result['password'] ?>" name="password">
+                                <button type="submit" class="btn btn-update mb-2"><i class="fas fa-lock"></i></button>
                             </div>
                         </div>
                     </form>
@@ -117,18 +85,9 @@
     <?php 
                  }
                               
-        }
-            
-        catch(PDOException $e){
-            echo "Erreur : " . $e->getMessage();
-        }
-
+        include "footer.php";
         ?>
-
-    <div class="row-fluid footer">
-    </div>
+   
+    
         
  
-       
-    </body>
-</html>

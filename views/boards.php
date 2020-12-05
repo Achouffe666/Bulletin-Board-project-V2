@@ -4,7 +4,6 @@
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
             <li class="breadcrumb-item active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-
         </ol>
     
     </nav>

@@ -12,7 +12,7 @@ session_start();
 <div class="main__wrap container overlay rounded-lg position-relative my-3 pb-3">
   <nav class="nav__list">
     <ol class="breadcrumb bg-transparent pt-5">
-      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li class="breadcrumb-item"><a href="../index.php"><i class="fas fa-home"></i> Home</a></li>
       <li class="breadcrumb-item active"><a href="#">Category One</a></li>
     </ol>
   </nav>

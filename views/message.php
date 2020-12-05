@@ -6,17 +6,13 @@
 <?php include "header.php"; ?>
 <?php include "../controlers/functions_message.php";?>
 
-
-<?php $essai = select_topic(); ?>
-
-
 <?php $result = topic_link();?>
 
 <div class="container-fluid overlay position-relative rounded-lg main__wrap shadow d-flex flex-column pl-1 pb-2">
     
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
-            <li class="breadcrumb-item"><a href="boards.php"><i class="fas fa-home"></i>Home</a></li>
+            <li class="breadcrumb-item"><a href="../index.php"><i class="fas fa-home"></i>Home</a></li>
             <li class="breadcrumb-item"><a href="topics.php"><?=$result['title']?></a></li>
             <li class="breadcrumb-item active">Messages</li>
         </ol>

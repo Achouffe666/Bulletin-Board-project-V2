@@ -8,7 +8,7 @@
        
 <?php include "../controlers/functions_profil.php" ; 
     upload_image();
-       
+    update_profil();
     $result = get_profil();
     if($result != null)
                 {
@@ -31,7 +31,7 @@
                 <!-- UPLOAD IMAGE -->
                 <div class="card-body">
                     <p class="h1 d-flex justify-content-center text-black-50">Profile</p>
-                    <form method="post" action="inscription_update.php">
+                    <form method="post" action=" ">
                         <div class="form-group" >
                             <label for="nickname">Pseudo</label>
                                 <div class="input-group-append">

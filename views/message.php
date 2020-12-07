@@ -77,6 +77,7 @@
             <!-- END  OF MESSAGE CREATE -->
 <?php 
         delete_message();
+        update_message();
         $result = get_message();
         foreach($result as $results){ 
             
@@ -114,6 +115,7 @@
                            Annuler
                         </button>
                        </form>
+                       
                         
                     </div>
                    

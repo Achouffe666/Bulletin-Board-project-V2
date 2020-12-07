@@ -58,16 +58,18 @@
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->
+                <?php 
+                create_message();?>
                 <div class="row row-message row-message2 mb-5 p-2 ">
          
                 <div class="col-10 col-content-message">
-                    <form method="post" action="message_post.php">
+                    <form method="post" action=" ">
                         <p>Write your message</p>
                         <textarea class="form-control" name="content"></textarea>
-                        <button id="record" type="submit" class="btn btn-outline-info mb-2">Sauvegarder</button>
+                        <input type="submit" name="record" id="record" class="btn btn-outline-info mb-2" value="Save">
                     </form>
                     <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
-                </div>
+                </div> 
             </div>
             <!-- END  OF MESSAGE CREATE -->
 <?php 

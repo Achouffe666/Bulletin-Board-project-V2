@@ -24,8 +24,6 @@ function get_boards(){
 {
     global $db;
     $board_id = $_GET['boardId'];
-
-   
     $response = $db->query("SELECT * FROM topics WHERE board_id = $board_id");
     $response -> execute();
     $result = $response->fetchAll();

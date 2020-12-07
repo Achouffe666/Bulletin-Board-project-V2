@@ -67,5 +67,73 @@ function upload_image()
          return $result;
           
       }
+      function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+      function update_profil()
+        {
+            global $db;
+            $nickname = $_POST["nickname"];
+            $signature = $_POST["signature"];  
+            $gender = $_POST["gender"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];  
+            $emailErr = "";
+        
+            $query = $db->prepare("SELECT * FROM users WHERE id= :id");
+            $query->execute(array(':id' => $_SESSION['id']));
+            while($datas = $query->fetch())
+            {
+                if ((isset($_POST['nickname'])) && ($_POST['nickname'] != $datas['nickname']))
+                {
+                    $sth = $db->prepare("UPDATE users SET nickname = :nickname WHERE id = :id");
+                    $sth->execute(array(':nickname' => $nickname, ':id' => $_SESSION['id']));
+                    //TO DO: inscrire succes + validation
+                }
+                if ((isset($_POST['signature'])) && ($_POST['signature'] != $datas['signature']))
+                {
+                    
+                    $sth = $db->prepare("UPDATE users SET signature = :signature WHERE id = :id");
+                    $sth->execute(array(':signature' => $signature, ':id' => $_SESSION['id']));
+                    //TO DO: inscrire succes + validation
+                }
+                if ((isset($_POST["gender"])) && ($_POST["gender"] != $datas["gender"]))
+                {
+                    $sth = $db->prepare("UPDATE users SET gender = :gender WHERE id = :id");
+                    $sth->execute(array("gender" => $gender, ":id" => $_SESSION['id']));
+                }
+                if ((isset($_POST['email'])) && ($_POST['email'] != $datas['email']))
+                {
+                    if (empty($_POST["email"])) {
+                        $emailErr = "Email is required";
+                        } else
+                        {
+                        $email = test_input($_POST["email"]);
+                        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            $emailErr = "Invalid email format";
+                        }
+                        else
+                        {
+                            $sth = $db->prepare("UPDATE users SET email = :email WHERE id = :id");
+                            $sth->execute(array(':email' => $email, ':id' => $_SESSION['id']));
+                            //TO DO: inscrire succes + validation
+                        }
+                        }   
+                    
+                }
+                if ((isset($_POST['password'])) && ($_POST['password'] != $datas['password']))
+                {
+                    
+                    $sth = $db->prepare("UPDATE users SET password = :password WHERE id = :id");
+                    $sth->execute(array(':password' => $password, ':id' => $_SESSION['id']));
+                    //TO DO: inscrire succes + validation
+                }
+                //TO DO faire un onglet pour gender avec répartition correcte dans les checkbox;
+            }
+        }
+        
     
       ?>

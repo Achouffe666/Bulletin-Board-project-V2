@@ -65,7 +65,9 @@
                 <div class="col-10 col-content-message">
                     <form method="post" action=" ">
                         <p>Write your message</p>
-                        <textarea class="form-control" name="content"></textarea>
+                        <?php  include '../markdown/Michelf/Markdown.inc.php';?>
+
+                        <textarea class="form-control markItUp" id="#bbcode" name="content"></textarea>
                         <input type="submit" name="record" id="record" class="btn btn-outline-info mb-2" value="Save">
                     </form>
                     <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>

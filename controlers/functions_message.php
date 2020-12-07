@@ -155,7 +155,7 @@ function create_message(){
 
     $title = $result['title'];
     $content = $_POST['content'];
-    $session_id = $_GET['topicId'];
+    $user_id = $_GET['topicId'];
     $topicid = $_GET['topicId'];
     
     $message = $db->prepare("

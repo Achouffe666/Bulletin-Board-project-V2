@@ -71,6 +71,7 @@
             </div>
             <!-- END  OF MESSAGE CREATE -->
 <?php 
+        delete_message();
         $result = get_message();
         foreach($result as $results){ 
             
@@ -102,14 +103,11 @@
                             </p>
                         </div>
 
-                     <?php 
-                     $id = $results["id"];
-                     delete_message(); ?>
                         <form action=" " method="post">
-                        <button id="delete" type="submit" name="message_deleted"  class="btn btn-outline-warning mb-2 float-right">
-                            Annuler
+                        <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
+                           Annuler
                         </button>
-                        </form>
+                       </form>
                         
                     </div>
                    

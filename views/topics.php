@@ -6,8 +6,8 @@ session_start();
 
 <?php 
         include "../controlers/functions_topics.php";
-        
 ?>
+
 <!-- MAIN WRAP -->
 <div class="main__wrap container overlay rounded-lg position-relative my-3 pb-3">
   <nav class="nav__list">
@@ -176,11 +176,12 @@ session_start();
               <div class="row no-gutters text-black-50 align-items-center">
                 
                 <div class="col-1 text-center">
+                <button id='topic_lock' style="display: none;">Lock this topic</button>
                   <i class="fas fa-check"></i>
                 </div>
 
                 <div class="col">
-                  <a href="message.php"> <?=$topic['title']?></a>
+                  <a href="message.php?topicId=<?=$topic['id']?>"> <?=$topic['title']?></a>
                   <p class="text-secondary small">
                     by <a class="author" href="#"><?=$topic['user_id']?></a>
                   </p>

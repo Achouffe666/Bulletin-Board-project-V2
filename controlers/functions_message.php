@@ -159,7 +159,7 @@ function create_message(){
 
     $title = $result['title'];
     $content = $_POST['content'];
-    $user_id = $_GET['topicId'];
+    $session_id = $_GET['topicId'];
     $topicid = $_GET['topicId'];
     
     $message = $db->prepare("
@@ -178,6 +178,16 @@ function create_message(){
             
     }
 
-    
+    function update_message()
+    {
+        global $db;
+        $new_content= $_POST["message_content"];
+        $id = $_POST["message_update"];
+        if(ISSET($_POST["message_update"]))
+        {
+            $response = $db->prepare("UPDATE messages SET content = :content WHERE id= :id");
+            $response->execute(array(":content"=> $new_content, ":id" => $id));
+        }
+    }
 }
 ?>

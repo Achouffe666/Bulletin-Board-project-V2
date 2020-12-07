@@ -101,18 +101,22 @@
                         <div class="row">
                             <p class="message-signature col-4 text-black-50"><?php echo "$results[creation_date]"?></p>
                         </div>
-
-                        <div class="row"> 
-                            <p class="message__content">
-                            <?php echo "$results[content]"?>
-                            </p>
-                        </div>
-
                         <form action=" " method="post">
-                        <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
+                        <div class="row"> 
+                            <input id="message_content" name="message_content" class="message__content" value="<?php echo "$results[content]"?>"></input>
+                            <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
+                             Modifier
+                            </button>
+                            <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                            Annuler
-                        </button>
-                       </form>
+                            </button>
+                        </div>
+                        </form>
+
+                       
+                       
+                       
+                       
                        
                         
                     </div>

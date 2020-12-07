@@ -166,7 +166,7 @@ session_start();
           <!-- EXEMPLE POST -->
 
         <?php
-          $result = get_topics();
+          $result = get_topic();
           foreach($result as $topic){
          ?>
           <div class="topic b-radius p-2 my-1">

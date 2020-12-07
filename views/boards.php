@@ -25,9 +25,9 @@
                             <div class="col-3">
                                 <img src="../static/image/1.png">
                             </div>
-        
+        <!-- for exemple --> <?php $board['id']=1;?>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="views/topics.php">General  </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>">General  </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         

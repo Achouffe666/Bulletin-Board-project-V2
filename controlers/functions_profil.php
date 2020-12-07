@@ -43,13 +43,9 @@ function upload_image()
             else {
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
                     {
-                    $host="'188.166.24.55' ";
-                    $dbname="bcbb-pink-floyd";
-                    $user="bcbb-pink-floyd";
-                    $pass="ibk@H-7bVsJf.oeT'";
+                    
                 
                     $image_uploaded = htmlspecialchars($new_file);
-                    $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
                     $request = $db->prepare("UPDATE users SET path_image =:image WHERE id = :id");
                     $request->execute(array(':image' => $image_uploaded, ':id' => $_SESSION['id'])); 
                     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";

@@ -3,30 +3,18 @@
 include "../database/database.php";
 global $db;
 
-function select_topic(){
-    global $db;
-
-    $topic_id = $db->query("SELECT * FROM topics WHERE id = 3");
-    $topic_id -> execute();
-    $returned_id = $topic_id->fetch();
-
-    return $returned_id['id'];
-   
-}
-
 
 
 // link from topics to messages
 function topic_link(){
     global $db;
-    $topics_id = select_topic();
  
-    $topic_id = $db->query("SELECT topic_id FROM messages WHERE topic_id = $topics_id");
+    $topic_id = $db->query("SELECT * FROM messages WHERE topic_id = $_GET[topicId]");
     $topic_id -> execute();
     $returned_id = $topic_id->fetch();
  
  
-     $response = $db->query("SELECT title FROM topics WHERE id = $returned_id[topic_id]");
+     $response = $db->query("SELECT title FROM topics WHERE id = $_GET[topicId]");
      $response -> execute();
      $result = $response->fetch();
  
@@ -135,7 +123,7 @@ function get_message_autre()
 function get_message()
 {
     global $db;
-    $topics_id = select_topic();
+    $topics_id = $_GET['topicId'];
 
    
     $response = $db->query("SELECT messages.id, title, topic_id, path_image, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email FROM messages INNER JOIN users WHERE topic_id = $topics_id && messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 3");

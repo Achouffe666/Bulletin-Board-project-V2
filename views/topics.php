@@ -6,13 +6,13 @@ session_start();
 
 <?php 
         include "../controlers/functions_topics.php";
-        
 ?>
+
 <!-- MAIN WRAP -->
 <div class="main__wrap container overlay rounded-lg position-relative my-3 pb-3">
   <nav class="nav__list">
     <ol class="breadcrumb bg-transparent pt-5">
-      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li class="breadcrumb-item"><a href="../index.php"><i class="fas fa-home"></i> Home</a></li>
       <li class="breadcrumb-item active"><a href="#">Category One</a></li>
     </ol>
   </nav>
@@ -176,11 +176,12 @@ session_start();
               <div class="row no-gutters text-black-50 align-items-center">
                 
                 <div class="col-1 text-center">
+                <button id='topic_lock' style="display: none;">Lock this topic</button>
                   <i class="fas fa-check"></i>
                 </div>
 
                 <div class="col">
-                  <a href="message.php"> <?=$topic['title']?></a>
+                  <a href="message.php?topicId=<?=$topic['id']?>"> <?=$topic['title']?></a>
                   <p class="text-secondary small">
                     by <a class="author" href="#"><?=$topic['user_id']?></a>
                   </p>

@@ -4,7 +4,6 @@
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
             <li class="breadcrumb-item active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-
         </ol>
     
     </nav>
@@ -28,7 +27,7 @@
                             </div>
         
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="views/topics.php">Topics_one  </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="views/topics.php">General  </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         
@@ -72,7 +71,7 @@
                             </div>
         
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="#">Topics two </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="#">Development </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         
@@ -116,7 +115,7 @@
                             </div>
         
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="#">Topics three </a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="#">Smalltalk </a><i class="fas fa-check"></i></h4>
                                 <p class="topics__description">This grouping is really cool</p>
                             </div>
         
@@ -145,6 +144,49 @@
         
                 </div>
                 <!-- END ONE LINK TO TOPICS-->
+
+
+                <!-- ONE LINK TO TOPICS-->
+                <div class="topics bg-white shadow rounded p-1 m-1">
+        
+                    <div class="topics__container d-flex flex-column pl-2">
+        
+                        <div class="row topics__top">
+        
+                            <div class="col-3">
+                                <img src="../static/image/4.png">
+                            </div>
+        
+                            <div class="col-9">
+                                <h4 class="topics__title"><a class ="#">Events </a><i class="fas fa-check"></i></h4>
+                                <p class="topics__description">This grouping is really cool</p>
+                            </div>
+        
+                        </div>
+                        <hr class="topics__hr float-left m-0 mb-3">
+                        <div class="row topics__bot">
+        
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <p class="topics__number">6</p>
+                                <p class="topics__text">Topics</p>
+                            </div>
+        
+                            <div class="col-3 d-flex flex-column align-items-center">
+                                <p class="topics__number">33</p>
+                                <p class="topics__text">Posts</p>
+                            </div>
+        
+                            <div class="col-6 d-flex flex-column align-items-center">
+                                <p class="topics__date">Sun 8 Nov</p>
+                                <p class="topics__text">Last post</p>
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                </div>
+                <!-- END ONE LINK TO TOPICS-->                
         
         
         

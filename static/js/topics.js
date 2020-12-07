@@ -23,3 +23,13 @@ function topicsForm(){
         document.querySelector('.form_topics_display').classList.remove('form_topics_display');
 })
 }
+
+function lockTopic(){
+    document.querySelector('#topic_lock').addEventListener('click', () =>{
+
+        if (confirm('Are you sure you want to lock this topic?')) {
+            document.getElementById('button_reply').style.display = "none";
+        }
+    })
+}
+lockTopic();

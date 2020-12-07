@@ -4,7 +4,9 @@
    
 ?>
 <?php include "header.php"; ?>
-<?php include "../controlers/functions_message.php";?>
+<?php include "../controlers/functions_message.php";
+      include '../markdown/Michelf/MarkdownExtra.inc.php';
+      use Michelf\MarkdownExtra;?>
 
 <?php $result = topic_link();?>
 
@@ -65,9 +67,8 @@
                 <div class="col-10 col-content-message">
                     <form method="post" action=" ">
                         <p>Write your message</p>
-                        <?php  include '../markdown/Michelf/Markdown.inc.php';?>
-
-                        <textarea class="form-control markItUp" id="#bbcode" name="content"></textarea>
+                        
+                        <textarea class="form-control markItUp" id="markdown" name="content"></textarea>
                         <input type="submit" name="record" id="record" class="btn btn-outline-info mb-2" value="Save">
                     </form>
                     <button id="cancel" type="submit" class="btn btn-outline-warning mb-2">Annuler</button>
@@ -103,7 +104,8 @@
 
                         <div class="row"> 
                             <p class="message__content">
-                            <?php echo "$results[content]"?>
+                            <?php $markdown = MarkdownExtra::defaultTransform($results['content']);
+                             echo $markdown; ?>
                             </p>
                         </div>
 

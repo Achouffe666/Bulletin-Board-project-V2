@@ -12,8 +12,7 @@ function topic_link(){
     $topic_id = $db->query("SELECT * FROM messages WHERE topic_id = $_GET[topicId]");
     $topic_id -> execute();
     $returned_id = $topic_id->fetch();
- 
- 
+    
      $response = $db->query("SELECT title FROM topics WHERE id = $_GET[topicId]");
      $response -> execute();
      $result = $response->fetch();

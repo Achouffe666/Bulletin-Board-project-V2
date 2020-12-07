@@ -133,5 +133,19 @@ function get_message()
 
 }
 
+function delete_message()
+{
+    global $db;
+    global $id;
+    if (ISSET($_POST["message_deleted"]))
+    {
+        
+        $db->query("DELETE FROM messages WHERE id = $id ");
+       
+
+    }
+    
+}
+
 
 ?>

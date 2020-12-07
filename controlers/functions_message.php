@@ -12,8 +12,7 @@ function topic_link(){
     $topic_id = $db->query("SELECT * FROM messages WHERE topic_id = $_GET[topicId]");
     $topic_id -> execute();
     $returned_id = $topic_id->fetch();
- 
- 
+
      $response = $db->query("SELECT title FROM topics WHERE id = $_GET[topicId]");
      $response -> execute();
      $result = $response->fetch();
@@ -150,5 +149,33 @@ function delete_message()
     
 }
 
+function create_message(){
 
+    global $db;
+
+    if (isset($_POST['record'])) {
+       
+    global $result;
+
+    $title = $result['title'];
+    $content = $_POST['content'];
+    $session_id = $_GET['topicId'];
+    $topicid = $_GET['topicId'];
+    
+    $message = $db->prepare("
+        INSERT INTO messages(title, content, user_id, topic_id)
+        VALUES (:title, :content, :user_id, :topic_id)
+    ");
+    $message->execute(array(
+                        ':title' => $title,
+                        ':content' => $content,
+                        ':user_id' => 1,
+                        ':topic_id' => $topicid
+                        ));
+   
+    echo "Entrée ajoutée dans la table";
+ 
+            
+    }
+}
 ?>

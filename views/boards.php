@@ -43,7 +43,7 @@
                                 else{
                                     echo "views/topics.php?boardId=<?=$board['id']?>";
                                 }
-                                ;?>
+                                ?>
                                 ">
                                 <?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>

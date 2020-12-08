@@ -16,6 +16,5 @@ function get_boards()
 
 }
 
-
 ?>
 

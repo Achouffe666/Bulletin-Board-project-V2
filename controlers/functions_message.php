@@ -210,4 +210,18 @@ function create_message(){
         
     }
 
+function lockedTopic(){
+    global $db;
+
+    $topic = $db ->prepare("SELECT locked FROM topics WHERE id = $_GET[topicId]");
+    $topic -> execute();
+    $islocked = $topic->fetch();
+
+    return $islocked;
+
+}
+
+
+ 
+
 ?>

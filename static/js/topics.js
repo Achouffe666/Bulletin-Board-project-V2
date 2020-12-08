@@ -1,6 +1,7 @@
     
     //cancel with the button "create" (declaring i)
-         
+
+
     // Create form
     document.querySelector('#btn').addEventListener('click',()=>{
         topicsForm();
@@ -24,12 +25,4 @@ function topicsForm(){
 })
 }
 
-function lockTopic(){
-    document.querySelector('#topic_lock').addEventListener('click', () =>{
 
-        if (confirm('Are you sure you want to lock this topic?')) {
-            document.getElementById('button_reply').style.display = "none";
-        }
-    })
-}
-lockTopic();

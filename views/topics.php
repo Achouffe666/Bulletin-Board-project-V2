@@ -167,21 +167,32 @@ session_start();
 
         <?php
           $result = get_topic();
+
           foreach($result as $topic){
+
+            $topicId = $topic['id'];
+            lock_topic();
          ?>
           <div class="topic b-radius p-2 my-1">
 
             <div class="b-radius bg-white shadow-sm p-3">
 
               <div class="row no-gutters text-black-50 align-items-center">
-                
+                <?php if ($topic['user_id'] == 26){ ?>
                 <div class="col-1 text-center">
-                <button id='topic_lock' style="display: none;">Lock this topic</button>
-                  <i class="fas fa-check"></i>
-                </div>
+                <?php if ($topic['locked'] == 0){ ?>
+                  <form action=" " method="POST">
+                <button  id='topic_lock'  name='lock'>Lock this topic</button>
+                </form>
+                <i class="fas fa-check"></i><?php } ?>
+                <?php if($topic['locked'] == 1){ ?>
+                <div class="alert alert-danger" id='topic_locked' style="width:75%;">topic Locked</div> <?php } ?>
 
+
+                </div>
+                <?php } ?>
                 <div class="col">
-                  <a href="message.php?topicId=<?=$topic['id']?>"> <?=$topic['title']?></a>
+                  <a href="message.php?boardId=<?=$topic['board_id']?>&&topicId=<?=$topic['id']?>"> <?=$topic['title']?></a>
                   <p class="text-secondary small">
                     by <a class="author" href="#"><?=$topic['user_id']?></a>
                   </p>
@@ -277,5 +288,6 @@ session_start();
   <!-- END CONTAINER -->
 
 </div>
+<script src="../static/js/lock.js"></script>
 <!-- END MAIN CONTAINER -->
 <?php include "footer.php"; ?>  

@@ -6,9 +6,12 @@
 <?php include "header.php"; ?>
 <?php include "../controlers/functions_message.php";
       include '../markdown/Michelf/MarkdownExtra.inc.php';
-      use Michelf\MarkdownExtra;?>
+      use Michelf\MarkdownExtra;
+      $result = topic_link();
+?>
 
-<?php $result = topic_link();?>
+
+
 
 <div class="container-fluid overlay position-relative rounded-lg main__wrap shadow d-flex flex-column pl-1 pb-2">
     
@@ -26,6 +29,15 @@
         <div class="col col-md-2">
             <button id="button_reply" type="submit" class="button--modifier px-3 py-2  rounded rounded-pill  border-0  button-reply" name="post_reply">Post reply <i class="fas fa-pencil-alt"></i></button>
         </div>
+
+
+<?php
+      $isLocked = lockedTopic();
+
+      if($isLocked[0] == 1){
+?>
+<script src="../static/js/lockMessage.js"></script>
+<?php } ?>
             
           <div class="bg-light rounded rounded-pill border ml-3">
                 <form action="message_search.php " method="post">
@@ -136,4 +148,5 @@
 </div>
 <!-- END MAIN WRAP -->
 <script src="../static/js/javascript.js"></script>
+
 <?php include "footer.php"; ?>  

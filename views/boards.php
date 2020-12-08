@@ -138,7 +138,7 @@
                     <div class="topics__container d-flex flex-column pl-2">
 
         
-                        <div class="row topics__top">
+                        <div class="row topics__top position-absolute">
         
                             <div class="col-3">
                                 <img src="../static/image/<?=$board['id']%5?>.png">
@@ -150,7 +150,7 @@
         
                         </div>
                         <hr class="topics__hr float-left m-0 mb-3">
-                        <div class="row topics__bot">
+                        <div class="row topics__bot position-absolute">
         
                             <div class="col-3 d-flex flex-column align-items-center">
                                 <p class="topics__number">6</p>

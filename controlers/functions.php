@@ -24,7 +24,7 @@ $remember = $_POST['remember'];
             }
             if($data["password"] == $_POST["password"])
             {
-                header("Location:../views/index.php");
+                echo $_SERVER['HTTP_REFERER'];
             }
             else
             {

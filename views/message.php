@@ -21,33 +21,33 @@
     </nav>
     <h4 class="mt-2 mb-5 ml-5 text-black-50 topic__title"><?=$result['title']?></h4>
 
-
+   
     <div class="row mb-2 ml-4">
         <div class="col col-md-2">
             <button id="button_reply" type="submit" class="button--modifier px-3 py-2  rounded rounded-pill  border-0  button-reply" name="post_reply">Post reply <i class="fas fa-pencil-alt"></i></button>
         </div>
             
           <div class="bg-light rounded rounded-pill border ml-3">
+                <form action="message_search.php " method="post">
+                        <div class="input-group">
 
-            <div class="input-group">
+                            <input id="search" name="search" type="search" placeholder="Search this forum..."
+                                class="form-control bg-transparent rounded-pill border-0">
 
-              <input type="search" placeholder="Search this forum..."
-                class="form-control bg-transparent rounded-pill border-0">
+                            <div class="input-group-append">
 
-              <div class="input-group-append">
+                                <button id="search-glass" type="submit" class="btn btn-link border-right border-left">
+                                <i class="fa fa-search magnifying-glass"></i>
+                                </button>
 
-                <button id="search-glass" type="submit" class="btn btn-link border-right border-left">
-                  <i class="fa fa-search magnifying-glass"></i>
-                </button>
+                                <button id="cogoption" type="submit" class="btn btn-link">
+                                <i class="fas fa-cog cog"></i>
+                                </button>
 
-                <button id="cogoption" type="submit" class="btn btn-link">
-                  <i class="fas fa-cog cog"></i>
-                </button>
+                            </div>
 
-              </div>
-
-            </div>
-
+                        </div>
+                </form>
           </div>
 
     </div>
@@ -93,7 +93,7 @@
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>
-                        <p><?php var_dump($results["path_image"])?></p>
+                       
                     </div>
                     
                     <div class="col-10 col-content-message content-message2">
@@ -109,7 +109,7 @@
                              Modifier
                             </button>
                             <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
-                           Annuler
+                            Annuler
                             </button>
                         </div>
                         </form>

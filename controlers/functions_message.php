@@ -175,8 +175,10 @@ function create_message(){
    
     echo "Entrée ajoutée dans la table";
  
-            
-    }
+                    }
+                }   
+    
+
 
     function update_message()
     {
@@ -189,5 +191,23 @@ function create_message(){
             $response->execute(array(":content"=> $new_content, ":id" => $id));
         }
     }
-}
+
+    function message_search()
+    {
+        global $db;
+        if(ISSET($_POST["search"]))
+        {
+            $research = $_POST["search"];
+            $req = $db->prepare("SELECT messages.content, messages.creation_date, users.id, users.email, users.position, users.nickname, users.path_image,users.signature FROM messages 
+                         INNER JOIN users ON messages.user_id=users.id
+                         WHERE content LIKE '%".$research."%' OR title LIKE '%".$research."%' ");
+            $response = $req->execute();
+            $datas = $req->fetchAll();
+            return $datas;
+            
+
+        }
+        
+    }
+
 ?>

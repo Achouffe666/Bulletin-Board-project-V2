@@ -18,7 +18,7 @@
            
             <!-- TOPICS WRAP-->
 
-            <div class="topics__wrap container-fluid d-flex bg-light p-1 mb-5">
+            <div class="topics__wrap container-fluid d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 1?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>

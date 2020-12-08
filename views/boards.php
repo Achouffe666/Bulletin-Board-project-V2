@@ -36,7 +36,7 @@
                                 <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="<?=$secret?>" href="$">
+                                <h4 class="topics__title"><a class ="" href="<?=$secret?>">
                                 <?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>

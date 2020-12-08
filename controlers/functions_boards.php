@@ -15,14 +15,15 @@ function get_boards()
     return $result;
 
 }
-
-
 function board_secret()
 {
-    $boards=get_boards();
+    global $db;
+    global $board_id;
+
+    $db->query("SELECT * FROM boards WHERE board_id = $board_id");
 
 
-    if($board['id']==13){
+    if($board_id==13){
         $result = echo "#";
     }
     else{

@@ -68,10 +68,6 @@
             <!-- END CATEGORY ONE TOPICS-->
         
         <!-- BOARD TWO TOPICS-->
-         
-        <div class="board__wrap col-xl-10 mr-0 mb-2">
-        
-
             <h4 class="mt-2 mb-5 ml-5 text-black-50">Category Two</h4>
            
             <!-- TOPICS WRAP-->
@@ -126,9 +122,6 @@
             <!-- END CATEGORY TWO TOPICS-->
 
         <!-- BOARD THREE TOPICS-->
-         
-        <div class="board__wrap col-xl-10 mr-0 mb-2">
-        
             <!-- BOARD THREE TOPICS-->
             <h4 class="mt-2 mb-5 ml-5 text-black-50">Category Three</h4>
            
@@ -184,7 +177,7 @@
             <!-- END CATEGORY THREE TOPICS-->
 
         
-        </div>
+        
             </div>
         <!-- END OF BOARD WRAP-->
     </div>

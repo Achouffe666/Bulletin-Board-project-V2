@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include "../database/db.php";
+include "../database/database.php";
 global $db;
 $nickname = $_POST['nickname'];
 $password = $_POST['password'];

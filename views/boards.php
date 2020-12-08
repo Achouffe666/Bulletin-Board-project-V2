@@ -21,8 +21,8 @@
             <div class="topics__wrap container-fluid d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 1?>
             <?php $boards = get_boards();
-            $secret=board_secret();
-            foreach($boards as $board){?>
+
+                foreach($boards as $board){?>
         
                 <!-- ONE LINK TO TOPICS-->
                 <div class="topics bg-white shadow rounded p-1 m-1">

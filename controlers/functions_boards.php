@@ -17,20 +17,5 @@ function get_boards()
 }
 
 
-function board_secret()
-{
-    $boards=get_boards();
-
-
-    if($board['id']==13){
-        $result = echo "#";
-    }
-    else{
-        $result = echo "views/topics.php?boardId=<?=$board['id']?>";
-    }
-    
-    return $result;
-}
-
 ?>
 

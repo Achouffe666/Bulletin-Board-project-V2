@@ -23,7 +23,7 @@
             <?php $boards = get_boards();
             foreach($boards as $board){?>
         
-                <!-- ONE LINK TO TOPICS-->
+                <!-- ONE LINK TO TOPICS - -->
                 <div class="topics bg-white shadow rounded p-1 m-1">
 
                     <div class="topics__container d-flex flex-column pl-2">

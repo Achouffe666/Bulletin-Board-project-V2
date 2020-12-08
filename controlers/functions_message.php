@@ -189,6 +189,7 @@ function create_message(){
         {
             $response = $db->prepare("UPDATE messages SET content = :content WHERE id= :id");
             $response->execute(array(":content"=> $new_content, ":id" => $id));
+            
         }
     }
 

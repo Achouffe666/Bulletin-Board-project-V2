@@ -5,8 +5,9 @@ define('USER','bcbb-pink-floyd');
 define('PASS','ibk@H-7bVsJf.oeT');
 
 try {
-    $db = new PDO("mysql:host=" . HOST . ";dbname=" . DB_NAME, USER, PASS);
+    $db = new PDO("mysql:host=" . HOST . ";dbname=" . DB_NAME .";charset=utf8mb4", USER, PASS );
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
 } catch (PDOException $e) {
     echo $e;
 }

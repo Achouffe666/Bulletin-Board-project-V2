@@ -111,6 +111,9 @@
                             Annuler
                             </button>
                         </div>
+                        <div class="row">
+                        <p><?php echo "$results[content]"?></p>
+                        </div>
                         </form>
 
                        

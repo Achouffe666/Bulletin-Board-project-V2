@@ -32,10 +32,10 @@
                         <div class="row topics__top">
         
                             <div class="col-3">
-                                <img src="../static/image/1.png">
+                                <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>
         
@@ -86,10 +86,10 @@
                         <div class="row topics__top">
         
                             <div class="col-3">
-                                <img src="../static/image/1.png">
+                                <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>
         
@@ -141,10 +141,10 @@
                         <div class="row topics__top">
         
                             <div class="col-3">
-                                <img src="../static/image/1.png">
+                                <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>
         

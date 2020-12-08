@@ -137,8 +137,6 @@ function delete_message()
 {
     global $db;
     
-    
-    
     if (ISSET($_POST["message_deleted"]))
     {
         $id = $_POST["message_deleted"];
@@ -183,10 +181,11 @@ function create_message(){
     function update_message()
     {
         global $db;
-        $new_content= $_POST["message_content"];
-        $id = $_POST["message_update"];
+        
         if(ISSET($_POST["message_update"]))
         {
+            $new_content= $_POST["message_content"];
+             $id = $_POST["message_update"];
             $response = $db->prepare("UPDATE messages SET content = :content WHERE id= :id");
             $response->execute(array(":content"=> $new_content, ":id" => $id));
             

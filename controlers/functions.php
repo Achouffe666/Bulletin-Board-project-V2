@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include "../database/db.php";
+include "../database/database.php";
 global $db;
 $nickname = $_POST['nickname'];
 $password = $_POST['password'];
@@ -24,7 +24,7 @@ $remember = $_POST['remember'];
             }
             if($data["password"] == $_POST["password"])
             {
-                header("Location:../views/index.php");
+                echo $_SERVER['HTTP_REFERER'];
             }
             else
             {

@@ -15,6 +15,7 @@ function get_boards()
     return $result;
 
 }
- 
+
+
 ?>
 

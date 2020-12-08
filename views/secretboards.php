@@ -21,10 +21,9 @@
             <div class="topics__wrap container-fluid d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 1?>
             <?php $boards = get_boards();
-            $secret=board_secret();
             foreach($boards as $board){?>
         
-                <!-- ONE LINK TO TOPICS-->
+                <!-- ONE LINK TO TOPICS - -->
                 <div class="topics bg-white shadow rounded p-1 m-1">
 
                     <div class="topics__container d-flex flex-column pl-2">
@@ -36,7 +35,7 @@
                                 <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="<?=$secret?>">
+                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>">
                                 <?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>
@@ -189,4 +188,3 @@
 
 </div>
 <!-- END OF CONTAINER-->
-

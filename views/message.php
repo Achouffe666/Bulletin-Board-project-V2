@@ -88,6 +88,7 @@
             <!-- END  OF MESSAGE CREATE -->
 <?php 
         delete_message();
+        update_message();
         $result = get_message();
         foreach($result as $results){ 
             
@@ -113,15 +114,20 @@
                             <p class="message-signature col-4 text-black-50"><?php echo "$results[creation_date]"?></p>
                         </div>
                         <form action=" " method="post">
-                        <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
-                        <div class="row"> 
-                            <input id="message_content" name="message_content" class="message__content" value="<?php echo "$markdown"?>"></input>
-                            <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
-                             Modifier
-                            </button>
-                            <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
-                            Annuler
-                            </button>
+                            <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
+                            <div class="row"> 
+                                <textarea style="width: 100%;" id="message_content" name="message_content" class="message__content" ><?php echo "$markdown"?>"</textarea>
+                                <?php if ($results["id"] == $_SESSION["id"] )
+                                { ?>
+                                <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
+                                    Modifier
+                                </button>
+                                <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
+                                    Annuler
+                                </button>
+                                <?php }?>                            
+                            </div>
+                        <div class="row">
                         </div>
                         </form>
 

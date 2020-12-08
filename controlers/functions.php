@@ -49,4 +49,9 @@ $remember = $_POST['remember'];
     }
 
 
+
+    function last_message()
+{
+    global $db;
+}
 ?>

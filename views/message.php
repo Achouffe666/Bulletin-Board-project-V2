@@ -67,7 +67,6 @@
                 <div class="col-10 col-content-message">
                     <form method="post" action=" ">
                         <p>Write your message</p>
-                        
                         <textarea class="form-control markItUp" id="markdown" name="content"></textarea>
                         <input type="submit" name="record" id="record" class="btn btn-outline-info mb-2" value="Save">
                     </form>

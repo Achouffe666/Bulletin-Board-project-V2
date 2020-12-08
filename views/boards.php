@@ -35,7 +35,17 @@
                                 <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
+                                <h4 class="topics__title"><a class ="" href="
+                                <?php 
+                                if($board['id']==13){
+                                    echo "#";
+                                }
+                                else{
+                                    echo "views/topics.php?boardId=<?=$board['id']?>";
+                                }
+                                ;?>
+                                ">
+                                <?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>
         

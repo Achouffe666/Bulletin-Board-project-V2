@@ -21,6 +21,7 @@
             <div class="topics__wrap container-fluid d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 1?>
             <?php $boards = get_boards();
+            $secret=board_secret();
             foreach($boards as $board){?>
         
                 <!-- ONE LINK TO TOPICS-->
@@ -35,16 +36,7 @@
                                 <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
                             <div class="col-9">
-                                <h4 class="topics__title"><a class ="" href="
-                                <?php 
-                                if($board['id']==13){
-                                    echo "#";
-                                }
-                                else{
-                                    echo "views/topics.php?boardId=<?=$board['id']?>";
-                                }
-                                ?>
-                                ">
+                                <h4 class="topics__title"><a class ="<?=$secret?>" href="$">
                                 <?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>

@@ -37,8 +37,8 @@
                             <div class="col-9">
                                 <h4 class="topics__title"><a class =""
                                 <?php
-                                    var_dump($board['id']);
-                                    if($board['id']==13){
+                                    
+                                    if($board['subject']=='Very Secret'){
                                         echo 'href="#"';
                                     }
                                     

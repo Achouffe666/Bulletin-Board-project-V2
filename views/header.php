@@ -24,10 +24,10 @@
             <div class="d-flex align-items-end bd-highlight mb-3">
                 <ul class=" nav flex-row p-2 bd-highlight">
                     <li class="nav-item">
-                        <a class="nav-link" href="Bulletin-Board-project-V2/views/profil.php"><img src="../static/image/edit.png">Profil</a>
+                        <a class="nav-link" href="/views/profil.php"><img src="../static/image/edit.png">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Bulletin-Board-project-V2/views/profil.php"><img src="../static/image/enter.png">S'enregistrer</a>
+                        <a class="nav-link" href="/views/profil.php"><img src="../static/image/enter.png">S'enregistrer</a>
                     </li>
                 </ul>
             </div>

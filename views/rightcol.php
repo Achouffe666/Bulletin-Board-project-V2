@@ -1,5 +1,8 @@
       <!-- RIGHT COL -->
       <?php
+       include '../markdown/Michelf/MarkdownExtra.inc.php';
+       use Michelf\MarkdownExtra;
+
         function last_post(){
         global $db;
 
@@ -92,6 +95,7 @@
 
           <?php 
           foreach($last_post as $posts){
+            $markdown = MarkdownExtra::defaultTransform($posts['content']);
           ?>
 
           <div class="card-body last-topics-wrap">
@@ -102,7 +106,7 @@
               <span class="float-right"><?=date("D H:i",strtotime($posts['creation_date']))?></span>
 
               <div>
-                <span><?=$posts['content']?></span>
+                <span><?=$markdown?></span>
                 <hr>
               </div>
 

@@ -62,7 +62,7 @@ function upload_image()
           global $db;
           
          $req = $db->prepare('SELECT * FROM users WHERE id = :session');
-         $req->execute(array('session' => $_SESSION["id"] ));
+         $req->execute(array(':session' => $_SESSION["id"] ));
          $result = $req->fetch();
          return $result;
           

@@ -73,15 +73,7 @@
 
                 <!-- MESSAGE CREATE -->
                 <?php 
-                // try if it not the author of the last message in a same topic
-                $lastMessage = double_message();
-
-                if($lastMessage['user_id'] != $_SESSION["id"] || $lastMessage['topic_id'] != $_GET['topicId']){
-                create_message();}
-                // if user post 2 message in a row:
-                else{?>
-                    <div class="alert alert-danger"><p>You cannot post 2 message in a row, try again later.</p></div>
-                <?php }?>
+                create_message();?>
                 <div class="row row-message row-message2 mb-5 p-2 ">
          
                 <div class="col-10 col-content-message">
@@ -99,7 +91,7 @@
         update_message();
         $result = get_message();
         foreach($result as $results){ 
-        
+            
 ?>
 
                 <!-- MESSAGE START -->
@@ -124,9 +116,8 @@
                         <form action=" " method="post">
                             <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
                             <div class="row"> 
-                            
-                                <textarea style="width: 100%;" id="message_content" name="message_content" class="message__content" ><?php echo "$markdown"?>"</textarea>
-                                <?php if ($results["user_id"] == $_SESSION["id"] )
+                                <textarea style="width: 100%;" id="message_content" name="message_content" class="message__content" ><?php echo strip_tags($markdown) ?></textarea>
+                                <?php if ($results["id"] == $_SESSION["id"] )
                                 { ?>
                                 <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                                     Modifier

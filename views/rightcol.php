@@ -88,7 +88,7 @@
             <div>
 
               <span class="content-title"><?=$last_post['title']?></span>
-              <span class="float-right"><?=$last_post['creation_date']?></span>
+              <span class="float-right"><?=date("D H:i",strtotime($last_post['creation_date']))?></span>
 
               <div>
                 <span><?=$last_post['content']?></span>

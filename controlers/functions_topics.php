@@ -24,7 +24,7 @@ function get_boards(){
 {
     global $db;
     $board_id = $_GET['boardId'];
-    $response = $db->query("SELECT * FROM topics WHERE board_id = $board_id");
+    $response = $db->query("SELECT * FROM topics WHERE board_id = $board_id ORDER BY creation_date DESC ");
     $response -> execute();
     $result = $response->fetchAll();
 

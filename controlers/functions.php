@@ -29,7 +29,7 @@ include "../database/database.php";
             {
                 
                 echo "Tu es log log loggué !";
-                header("Location:" .$address);
+                header("Location:../" . $address);
             }
             else
             {

@@ -1,5 +1,8 @@
       <!-- RIGHT COL -->
-   
+      <?php
+        include "../controlers/functions_lastPost.php";
+      ?>
+
       <div class="col-xl-2 themed-grid-col rightcol"> 
         
         <div class="bg-light rounded rounded-pill border mt-5"> 
@@ -71,6 +74,9 @@
         <!-- END LOGIN -->
         
         <!-- last posts  -->
+        <?php 
+        $last_post = last_post();
+        ?>
         <div class="card">
 
           <div class="card-header gradient topics-top">
@@ -81,11 +87,11 @@
             
             <div>
 
-              <span class="content-title">titre (php)</span>
-              <span class="float-right">2 hours ago</span>
+              <span class="content-title"><?=$last_post['title']?></span>
+              <span class="float-right"><?=$last_post['creation_date']?></span>
 
               <div>
-                <span>contents contents</span>
+                <span><?=$last_post['content']?></span>
               </div>
 
             </div>

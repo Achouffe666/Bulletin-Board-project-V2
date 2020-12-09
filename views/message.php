@@ -80,8 +80,6 @@
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->
-                <?php 
-                create_message();?>
                 <div class="row row-message row-message2 mb-5 p-2 ">
          
                 <div class="col-10 col-content-message">
@@ -124,8 +122,10 @@
                         <form action=" " method="post">
                             <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
                             <div class="row"> 
-                                <div style="width: 100%;" id="message_content" name="message_content" class="message__content row" ><?php echo $markdown ?></div>
-                                <?php if ($results["id"] == $_SESSION["id"] )
+                                <textarea style="width: 100%;" id="message_content" name="message_content" class="message__content" ><?php 
+                                echo $markdown;
+                                ?> </textarea>
+                                <?php if ($results["user_id"] == $_SESSION["id"] )
                                 { ?>
                                 <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                                     Modifier

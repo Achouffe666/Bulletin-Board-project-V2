@@ -29,7 +29,7 @@
                 </form>
                 <!-- UPLOAD IMAGE -->
                 <div class="card-body">
-                    <p class="h1 d-flex justify-content-center text-black-50">Profile</p>
+                    <p class="h1 d-flex justify-content-center text-black-50">Profil</p>
                     <form method="post" action=" ">
                         <div class="form-group" >
                             <label for="nickname">Pseudo</label>

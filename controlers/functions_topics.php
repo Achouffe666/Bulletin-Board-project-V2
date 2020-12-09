@@ -52,17 +52,19 @@ function lock_topic(){
 function create_topic(){
 
     global $db;
+    global $boardid;
     
     try {
     if (isset($_POST['formSend'])) {
         $query = $db->prepare('SELECT * FROM topics WHERE board_id=:board_id');
-        $query->execute(['board_id' => $_GET['board_id']]);
+        $query->execute(['board_id' => $boardid]);
         $count = $query->rowCount();
 
        if ($count == 0){
-    $query = $db->prepare('INSERT INTO topics(title) VALUES (:title);');
+    $query = $db->prepare('INSERT INTO topics(title, board_id) VALUES (:title,:board_id);');
     $query->execute([
         'title' => $_POST['Title'],
+        'board_id' => $boardid,
         ]);
 ?>     
      <div class="alert alert-success" role="alert">

@@ -174,6 +174,12 @@ session_start();
             $nickname = user_nickname();
             $topicId = $topic['id'];
             lock_topic();
+            $lastpost= $result[5]['id'];
+            if(($topic['board_id']==5)&&(sizeof($result)>5)){
+              $response = $db->query("DELETE FROM topics WHERE id = $lastpost");
+              $response->execute();
+              get_topic();
+            }
          ?>
           <div class="topic b-radius p-2 my-1">
 

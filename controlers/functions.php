@@ -2,11 +2,14 @@
 session_start();
 
 include "../database/database.php";
-global $db;
-$nickname = $_POST['nickname'];
-$password = $_POST['password'];
-$remember = $_POST['remember'];
 
+
+
+    global $db;
+    $nickname = $_POST['nickname'];
+    $password = $_POST['password'];
+    $remember = $_POST['remember'];
+    $address = $_POST['address_url'];
 
     $database2;
     if (isset($_POST['nickname'])) 
@@ -24,7 +27,9 @@ $remember = $_POST['remember'];
             }
             if($data["password"] == $_POST["password"])
             {
-                echo $_SERVER['HTTP_REFERER'];
+                
+                echo "Tu es log log loggué !";
+                header("Location:../" . $address);
             }
             else
             {
@@ -38,7 +43,7 @@ $remember = $_POST['remember'];
                         <div class="card-body">
                             <p class="h1">Aie Aie Aie</p>
                             <p>Mauvais mot de passe !</p>
-                            <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour</a>
+                            <a href="<?php echo $address ;?>">Retour</a>
                         </div>
                     </div>
                 </div>
@@ -49,9 +54,9 @@ $remember = $_POST['remember'];
     }
 
 
+    ?>
 
-    function last_message()
-{
-    global $db;
-}
-?>
+
+   
+
+

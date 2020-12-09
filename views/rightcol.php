@@ -1,6 +1,15 @@
       <!-- RIGHT COL -->
       <?php
-        include "../controlers/functions_lastPost.php";
+        function last_post(){
+        global $db;
+
+        $lastMessage = $db->prepare("SELECT creation_date, title, content FROM messages ORDER BY creation_date DESC LIMIT 0, 1");
+        $lastMessage->execute();
+        $last = $lastMessage->fetch();
+        
+        return $last;
+      }
+        $last_post = last_post();
       ?>
 
       <div class="col-xl-2 themed-grid-col rightcol"> 
@@ -74,9 +83,7 @@
         <!-- END LOGIN -->
         
         <!-- last posts  -->
-        <?php 
-        $last_post = last_post();
-        ?>
+ 
         <div class="card">
 
           <div class="card-header gradient topics-top">

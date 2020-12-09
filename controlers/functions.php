@@ -23,13 +23,13 @@ include "../database/database.php";
             {
                 $_SESSION["id"] = $data["id"];
                 $_SESSION["nickname"] = $data["nickname"];
-                setCookie($data['nickname'], $data["id"], time()+3600, "/", true);
+                setCookie($data['nickname'], $data["id"], time()+36000, "/", true);
             }
             if($data["password"] == $_POST["password"])
             {
                 $_SESSION["id"] = $data["id"];
                 $_SESSION["nickname"] = $data["nickname"];
-                setCookie($data['nickname'], $data["id"], time()+3600, "/", true);
+                setCookie($data['nickname'], $data["id"], time()+36000, "/", true);
                 echo "Tu es log log loggué !";
                 header("Location:../" . $address);
             }

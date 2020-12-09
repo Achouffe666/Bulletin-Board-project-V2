@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/views/profil.php"><img src="/static/image/edit.png">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/views/profil.php"><img src="/static/image/enter.png">S'enregistrer</a>
+                        <a class="nav-link" href="/views/register.php"><img src="/static/image/enter.png">S'enregistrer</a>
                     </li>
                 </ul>
             </div>

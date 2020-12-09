@@ -1,5 +1,17 @@
       <!-- RIGHT COL -->
-   
+      <?php
+        function last_post(){
+        global $db;
+
+        $lastMessage = $db->prepare("SELECT creation_date, title, content FROM messages ORDER BY creation_date DESC LIMIT 0, 1");
+        $lastMessage->execute();
+        $last = $lastMessage->fetch();
+        
+        return $last;
+      }
+        $last_post = last_post();
+      ?>
+
       <div class="col-xl-2 themed-grid-col rightcol"> 
         
         <div class="bg-light rounded rounded-pill border mt-5"> 
@@ -71,6 +83,7 @@
         <!-- END LOGIN -->
         
         <!-- last posts  -->
+ 
         <div class="card">
 
           <div class="card-header gradient topics-top">
@@ -81,11 +94,11 @@
             
             <div>
 
-              <span class="content-title">titre (php)</span>
-              <span class="float-right">2 hours ago</span>
+              <span class="content-title"><?=$last_post['title']?></span>
+              <span class="float-right"><?=date("D H:i",strtotime($last_post['creation_date']))?></span>
 
               <div>
-                <span>contents contents</span>
+                <span><?=$last_post['content']?></span>
               </div>
 
             </div>

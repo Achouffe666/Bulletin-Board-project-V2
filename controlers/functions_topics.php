@@ -61,10 +61,11 @@ function create_topic(){
         $count = $query->rowCount();
 
        if ($count == 0){
-    $query = $db->prepare('INSERT INTO topics(title, board_id) VALUES (:title,:board_id);');
+    $query = $db->prepare('INSERT INTO topics(title, board_id, user_id) VALUES (:title,:board_id, :user_id);');
     $query->execute([
         'title' => $_POST['Title'],
         'board_id' => $boardid,
+        'user_id' => $_SESSION['id'],
         ]);
 ?>     
      <div class="alert alert-success" role="alert">
@@ -78,5 +79,20 @@ function create_topic(){
     }
 } catch (PDOException $e) {
     $error = $e->getMessage();
-}}?>
+}}
+
+function user_nickname(){
+
+    global $db;
+    global $user_id;
+
+    $response = $db->query("SELECT nickname FROM users WHERE id = $user_id");
+    $response -> execute();
+    $nickname = $response->fetch();
+
+    return($nickname);
+
+
+}
+?>
 

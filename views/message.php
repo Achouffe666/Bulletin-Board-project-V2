@@ -75,7 +75,7 @@
                 <?php 
                 // try if it not the author of the last message in a same topic
                 $lastMessage = double_message();
-                if($lastMessage['user_id'] != $_SESSION["id"] && $lastMessage['topic_id'] == $_GET['topicId']){
+                if($lastMessage['user_id'] != $_SESSION["id"] && $lastMessage['topic_id'] != $_GET['topicId']){
                 create_message();}
                 // if user post 2 message in a row:
                 else{?>

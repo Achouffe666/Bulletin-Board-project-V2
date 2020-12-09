@@ -57,7 +57,7 @@ function create_topic(){
     try {
     if (isset($_POST['formSend'])) {
         $query = $db->prepare('SELECT * FROM topics WHERE board_id=:board_id');
-        $query->execute(['board_id' => $boardid]);
+        $query->execute(['board_id' => $_GET['board_id']]);
         $count = $query->rowCount();
 
        if ($count == 0){

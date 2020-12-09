@@ -69,6 +69,15 @@
         <div class="board__wrap col-xl-9 b-radius bg-light pt-1 mr-0 mb-2">
        
             <!-- MESSAGES WRAP -->
+                <?php // try if it not the author of the last message in a same topic
+                $lastMessage = double_message();
+
+                if($lastMessage['user_id'] != $_SESSION["id"] || $lastMessage['topic_id'] != $_GET['topicId']){
+                create_message();}
+                // if user post 2 message in a row:
+                else{?>
+                <div class="alert alert-danger"><p>You cannot post 2 message in a row, try again later.</p></div>
+                <?php }?>
             <div class="container row-content justify-content-center ">
 
                 <!-- MESSAGE CREATE -->

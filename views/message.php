@@ -33,7 +33,6 @@
 
 <?php
       $isLocked = lockedTopic();
-
       if($isLocked[0] == 1){
 ?>
 <script src="../static/js/lockMessage.js"></script>

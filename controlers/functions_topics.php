@@ -31,7 +31,23 @@ function get_boards(){
     return $result;
 
 }
- 
+
+
+
+function lock_topic(){
+
+    global $db;
+    global $topicId;
+
+    if (isset($_POST['lock'])){
+    
+    $lock = $db->query("UPDATE topics SET locked=1 WHERE id = $topicId");
+    $lock -> execute();
+    echo '<script src="../static/js/lock.js"></script>';
+
+}
+}
+
 
 function create_topic(){
 

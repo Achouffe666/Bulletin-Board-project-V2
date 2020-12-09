@@ -210,4 +210,28 @@ function create_message(){
         
     }
 
+function lockedTopic(){
+    global $db;
+
+    $topic = $db ->prepare("SELECT locked FROM topics WHERE id = $_GET[topicId]");
+    $topic -> execute();
+    $islocked = $topic->fetch();
+
+    return $islocked;
+
+}
+
+function double_message(){
+    global $db;
+
+    $lastMessage = $db->prepare("SELECT creation_date, user_id FROM messages ORDER BY creation_date DESC LIMIT 0, 1");
+    $lastMessage->execute();
+    $last = $lastMessage->fetch();
+
+    return $last;
+
+}
+
+ 
+
 ?>

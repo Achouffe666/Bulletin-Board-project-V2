@@ -6,6 +6,7 @@ session_start();
 
 <?php 
         include "../controlers/functions_topics.php";
+        $boardid = $_GET['boardId'];
 ?>
 
 <!-- MAIN WRAP -->

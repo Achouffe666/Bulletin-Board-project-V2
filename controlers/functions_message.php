@@ -221,6 +221,16 @@ function lockedTopic(){
 
 }
 
+function double_message(){
+    global $db;
+
+    $lastMessage = $db->prepare("SELECT creation_date, user_id FROM messages ORDER BY creation_date DESC LIMIT 0, 1");
+    $lastMessage->execute();
+    $last = $lastMessage->fetch();
+
+    return $last;
+
+}
 
  
 

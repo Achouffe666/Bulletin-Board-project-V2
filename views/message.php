@@ -73,7 +73,14 @@
 
                 <!-- MESSAGE CREATE -->
                 <?php 
-                create_message();?>
+                // try if it not the author of the last message
+                $lastMessage = double_message();
+                if($lastMessage['user_id'] != $_SESSION["id"]){
+                create_message();}
+                // if user post 2 message in a row:
+                else{?>
+                    <div class="alert alert-danger"><p>You cannot post 2 message in a row, try again later.</p></div>
+                <?php }?>
                 <div class="row row-message row-message2 mb-5 p-2 ">
          
                 <div class="col-10 col-content-message">

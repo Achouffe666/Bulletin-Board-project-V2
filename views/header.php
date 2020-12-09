@@ -27,7 +27,7 @@
                         <a class="nav-link" href="#"><img src="../static/image/edit.png"> Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="../static/image/enter.png"> Register</a>
+                        <a class="nav-link" href="profil.php"><img src="../static/image/enter.png"> Profil</a>
                     </li>
                 </ul>
             </div>

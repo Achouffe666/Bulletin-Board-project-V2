@@ -179,7 +179,7 @@ session_start();
             <div class="b-radius bg-white shadow-sm p-3">
 
               <div class="row no-gutters text-black-50 align-items-center">
-                <?php if ($topic['user_id'] == $_SESSION['user_id']){ ?>
+                <?php if ($topic['user_id'] == $_SESSION['id']){ ?>
                 <div class="col-1 text-center">
                 <?php if ($topic['locked'] == 0){ ?>
                   <form action=" " method="POST">

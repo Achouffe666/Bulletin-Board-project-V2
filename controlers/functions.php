@@ -27,7 +27,9 @@ include "../database/database.php";
             }
             if($data["password"] == $_POST["password"])
             {
-                
+                $_SESSION["id"] = $data["id"];
+                $_SESSION["nickname"] = $data["nickname"];
+                setCookie($data['nickname'], $data["id"], time()+3600, "/", true);
                 echo "Tu es log log loggué !";
                 header("Location:../" . $address);
             }

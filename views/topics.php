@@ -170,7 +170,8 @@ session_start();
           $result = get_topic();
 
           foreach($result as $topic){
-
+            $user_id = $topic['user_id'];
+            $nickname = user_nickname();
             $topicId = $topic['id'];
             lock_topic();
          ?>
@@ -195,7 +196,7 @@ session_start();
                 <div class="col">
                   <a href="message.php?boardId=<?=$topic['board_id']?>&&topicId=<?=$topic['id']?>"> <?=$topic['title']?></a>
                   <p class="text-secondary small">
-                    by <a class="author" href="#"><?=$topic['user_id']?></a>
+                    by <a class="author" href="#"><?=$nickname[0]?></a>
                   </p>
                 </div>
 
@@ -205,7 +206,7 @@ session_start();
                     <div class="col-3">333</div>
                     <div class="col-6 align-items-center">
                       <p>
-                        by <a class="author" href="#">your mom</a> 
+                        by <a class="author" href="#"><?=$nickname[0]?></a> 
                         <a href=" #"><i class="fas fa-external-link-alt"></i></a>
                         <span class="d-block"><?=date("D d F Y H:i",strtotime($topic['creation_date']))?></span>
                       </p>

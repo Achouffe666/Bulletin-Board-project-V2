@@ -79,5 +79,20 @@ function create_topic(){
     }
 } catch (PDOException $e) {
     $error = $e->getMessage();
-}}?>
+}}
+
+function user_nickname(){
+
+    global $db;
+    global $user_id;
+
+    $response = $db->query("SELECT nickname FROM users WHERE id = $user_id");
+    $response -> execute();
+    $nickname = $response->fetch();
+
+    return($nickname);
+
+
+}
+?>
 

@@ -158,7 +158,7 @@ function create_message(){
         
             $title = $result['title'];
             $content = $_POST['content'];
-            $session_id = $_GET['topicId'];
+            $session_id = $_SESSION['id'];
             $topicid = $_GET['topicId'];
             
             $message = $db->prepare("
@@ -168,7 +168,7 @@ function create_message(){
             $message->execute(array(
                                 ':title' => $title,
                                 ':content' => $content,
-                                ':user_id' => 1,
+                                ':user_id' => $_SESSION['id'],
                                 ':topic_id' => $topicid
                                 ));
            

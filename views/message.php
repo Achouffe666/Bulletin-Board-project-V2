@@ -116,7 +116,7 @@
                         <form action=" " method="post">
                             <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
                             <div class="row"> 
-                                <div style="width: 100%;" id="message_content" name="message_content" class="message__content row" ><?php echo strip_tags($markdown) ?></div>
+                                <div style="width: 100%;" id="message_content" name="message_content" class="message__content row" ><?php echo $markdown ?></div>
                                 <?php if ($results["id"] == $_SESSION["id"] )
                                 { ?>
                                 <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">

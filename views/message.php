@@ -96,7 +96,9 @@
         delete_message();
         update_message();
         $result = get_message();
+        $last = ($result[0]);
         foreach($result as $results){ 
+
             
 ?>
 
@@ -106,8 +108,7 @@
          
 
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
-                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php 
-                        "../static/uploads/" .$results["path_image"]."";?>  alt="avatar_autre">
+                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php ?>  alt="avatar_autre">
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>
@@ -125,7 +126,7 @@
                                 <textarea style="width: 100%;" id="message_content" name="message_content" class="message__content" ><?php 
                                 echo $markdown;
                                 ?> </textarea>
-                                <?php if ($results["user_id"] == $_SESSION["id"] )
+                                <?php if ($last["id"] == $results["id"] && $results["user_id"] == $_SESSION["id"] )
                                 { ?>
                                 <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                                     Modifier

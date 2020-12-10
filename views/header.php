@@ -34,7 +34,6 @@
             <div>
             <h1 class="text-center text-uppercase">Rocker</h1> 
             </div>
-<?php        include 'markdown/Michelf/MarkdownExtra.inc.php';?>
     </header>
 
 

@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="form-group d-flex justify-content-center">
-                <?php $address = $_SERVER['PHP_SELF']; ?>
+                <?php $address = $_SERVER['PHP_SELF'];?>
                   <button type="submit" value=<?php $address ?> name="address_url" class="button--modifier py-1 border rounded rounded-pill login-button">
                     Login 
                   </button>

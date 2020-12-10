@@ -1,11 +1,14 @@
       <!-- RIGHT COL -->
       <?php
+      //  include 'markdown/Michelf/MarkdownExtra.inc.php';
+      //  use Michelf\MarkdownExtra;
+
         function last_post(){
         global $db;
 
-        $lastMessage = $db->prepare("SELECT creation_date, title, content FROM messages ORDER BY creation_date DESC LIMIT 0, 1");
+        $lastMessage = $db->prepare("SELECT creation_date, title, content FROM messages ORDER BY creation_date DESC LIMIT 0, 3");
         $lastMessage->execute();
-        $last = $lastMessage->fetch();
+        $last = $lastMessage->fetchAll();
         
         return $last;
       }
@@ -90,19 +93,26 @@
             <h4 class="topics-top-title">Last posts</h4>
           </div>
 
+          <?php 
+          foreach($last_post as $posts){
+            // $markdown = MarkdownExtra::defaultTransform($posts['content']);
+          ?>
+
           <div class="card-body last-topics-wrap">
             
             <div>
 
-              <span class="content-title"><?=$last_post['title']?></span>
-              <span class="float-right"><?=date("D H:i",strtotime($last_post['creation_date']))?></span>
+              <span class="content-title"><?=$posts['title']?></span>
+              <span class="float-right"><?=date("D H:i",strtotime($posts['creation_date']))?></span>
 
               <div>
-                <span><?=$last_post['content']?></span>
+                <span><?=$posts['content']?></span>
+                <hr>
               </div>
 
             </div>
           </div>
+          <?php } ?>
         </div>
     <!-- end last posts  -->
 

@@ -5,16 +5,17 @@ function upload_image()
       { 
           
         global $db;
-        if(count($_FILES) > 0)
+        
+        if (isset($_POST['send_image'])) 
         {
-            if (isset($_POST['send_image'])) 
+                if(count($_FILES) > 0)
             {
-                // $target_dir="../static/uploads/";
-                // $new_file= str_replace(" ","", $_FILES["fileToUpload"]["name"]);
-                // $target_file= $target_dir . $new_file;
                 
+                $new_file= str_replace(" ","", $_FILES["fileToUpload"]["name"]);
+                $imgData = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
+                $imageFileType = strtolower(pathinfo($new_file,PATHINFO_EXTENSION));
+                $imageType = $_FILES["fileToUpload"]["type"];
                 $uploadOk= 1;
-                // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                 if (isset($_POST["submit"]))
                 {
                     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -40,29 +41,25 @@ function upload_image()
                 if ($uploadOk == 0) 
                         {
                         echo "Sorry, your file was not uploaded.";
-                    // if everything is ok, try to upload file
+                    
                         } 
                 else {
-                        //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
-                        //{
-                        $imgData = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
-                        $imgSize = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                        
+                        
                         $user_id = $_SESSION["id"];
-
-                        //$image_uploaded = htmlspecialchars($new_file);
-                        $request = $db->prepare("INSERT INTO image (image_type, image_data, user_id) VALUES(:imgSize, :imgData, :user_id)");
+                      
+                       
+                        $request = $db->prepare("INSERT INTO image_user(image_title, image_type, image_data, user_id) VALUES(:imgTitle, :imgType, :imgData, :user_id)");
                         $request->execute(array
-                            (':imgSize' => $imgSize,  
-                            ':imgData' => $imgData,
-                            ':user_id' => $user_id
-                        )
+                            (
+                            'imgTitle' => $new_file,
+                            'imgType' => $imageType,  
+                            'imgData' => $imgData,
+                            'user_id' => $user_id
+                            )
                         ); 
                         echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-                        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-                        // } else {
-                        // echo "Sorry, there was an error uploading your file.";
-
-                       // }
+                        
                     }
             } 
         }
@@ -87,37 +84,35 @@ function upload_image()
       function update_profil()
         {
             global $db;
-            $nickname = $_POST["nickname"];
-            $signature = $_POST["signature"];  
-            $gender = $_POST["gender"];
-            $email = $_POST["email"];
-            $password = $_POST["password"];  
-            $emailErr = "";
-        
+            
             $query = $db->prepare("SELECT * FROM users WHERE id= :id");
             $query->execute(array(':id' => $_SESSION['id']));
             while($datas = $query->fetch())
             {
                 if ((isset($_POST['nickname'])) && ($_POST['nickname'] != $datas['nickname']))
                 {
+                    $nickname = $_POST["nickname"];
                     $sth = $db->prepare("UPDATE users SET nickname = :nickname WHERE id = :id");
                     $sth->execute(array(':nickname' => $nickname, ':id' => $_SESSION['id']));
                     //TO DO: inscrire succes + validation
                 }
                 if ((isset($_POST['signature'])) && ($_POST['signature'] != $datas['signature']))
                 {
-                    
+                    $signature = $_POST["signature"];  
                     $sth = $db->prepare("UPDATE users SET signature = :signature WHERE id = :id");
                     $sth->execute(array(':signature' => $signature, ':id' => $_SESSION['id']));
                     //TO DO: inscrire succes + validation
                 }
                 if ((isset($_POST["gender"])) && ($_POST["gender"] != $datas["gender"]))
                 {
+                    $gender = $_POST["gender"];
                     $sth = $db->prepare("UPDATE users SET gender = :gender WHERE id = :id");
                     $sth->execute(array("gender" => $gender, ":id" => $_SESSION['id']));
                 }
                 if ((isset($_POST['email'])) && ($_POST['email'] != $datas['email']))
                 {
+                    $emailErr = "";
+                    $email = $_POST["email"];
                     if (empty($_POST["email"])) {
                         $emailErr = "Email is required";
                         } else
@@ -137,7 +132,7 @@ function upload_image()
                 }
                 if ((isset($_POST['password'])) && ($_POST['password'] != $datas['password']))
                 {
-                    
+                    $password = $_POST["password"];  
                     $sth = $db->prepare("UPDATE users SET password = :password WHERE id = :id");
                     $sth->execute(array(':password' => $password, ':id' => $_SESSION['id']));
                     //TO DO: inscrire succes + validation

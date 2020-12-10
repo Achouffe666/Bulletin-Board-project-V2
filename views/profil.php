@@ -2,7 +2,9 @@
     session_start();
 
 ?>
-<?php include "header.php"; ?>
+<?php 
+include "header.php"; 
+?>
         
        
 <?php include "../controlers/functions_profil.php" ; 

@@ -5,56 +5,67 @@ function upload_image()
       { 
           
         global $db;
-        if (isset($_POST['send_image'])) 
+        if(count($_FILES) > 0)
         {
-            $target_dir="../static/uploads/";
-            $new_file= str_replace(" ","", $_FILES["fileToUpload"]["name"]);
-            $target_file= $target_dir . $new_file;
-            
-            $uploadOk= 1;
-            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-            if (isset($_POST["submit"]))
+            if (isset($_POST['send_image'])) 
             {
-                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-                if($check !== false)
-                {
-                    echo "File is an image - " . $check["mime"] . ".";
-                    $uploadOk = 1;
-                } 
-                else 
-                {
-                    echo "File is not an image.";
-                    $uploadOk = 0;
-                }
+                // $target_dir="../static/uploads/";
+                // $new_file= str_replace(" ","", $_FILES["fileToUpload"]["name"]);
+                // $target_file= $target_dir . $new_file;
                 
-            }
-            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                    && $imageFileType != "gif" ) 
+                $uploadOk= 1;
+                // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                if (isset($_POST["submit"]))
+                {
+                    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                    if($check !== false)
                     {
-                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                        echo "File is an image - " . $check["mime"] . ".";
+                        $uploadOk = 1;
+                    } 
+                    else 
+                    {
+                        echo "File is not an image.";
                         $uploadOk = 0;
                     }
-            
-            if ($uploadOk == 0) 
-                    {
-                    echo "Sorry, your file was not uploaded.";
-                // if everything is ok, try to upload file
-                    } 
-            else {
-                    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
-                    {
                     
-                
-                    $image_uploaded = htmlspecialchars($new_file);
-                    $request = $db->prepare("UPDATE users SET path_image =:image WHERE id = :id");
-                    $request->execute(array(':image' => $image_uploaded, ':id' => $_SESSION['id'])); 
-                    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-                    } else {
-                    echo "Sorry, there was an error uploading your file.";
-
-                    }
                 }
-         } 
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                        && $imageFileType != "gif" ) 
+                        {
+                            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                            $uploadOk = 0;
+                        }
+                
+                if ($uploadOk == 0) 
+                        {
+                        echo "Sorry, your file was not uploaded.";
+                    // if everything is ok, try to upload file
+                        } 
+                else {
+                        //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
+                        //{
+                        $imgData = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
+                        $imgSize = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                        $user_id = $_SESSION["id"];
+
+                        //$image_uploaded = htmlspecialchars($new_file);
+                        $request = $db->prepare("INSERT INTO image (image_type, image_data, user_id) VALUES(:imgSize, :imgData, :user_id)");
+                        $request->execute(array
+                            (':imgSize' => $imgSize,  
+                            ':imgData' => $imgData,
+                            ':user_id' => $user_id
+                        )
+                        ); 
+                        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                        // } else {
+                        // echo "Sorry, there was an error uploading your file.";
+
+                       // }
+                    }
+            } 
+        }
      }
 
       function get_profil()

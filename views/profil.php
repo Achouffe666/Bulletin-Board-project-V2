@@ -7,7 +7,7 @@
        
 <?php include "../controlers/functions_profil.php" ; 
     upload_image();
-    update_profil();
+    //update_profil();
     $result = get_profil();
     if($result != null)
                 {
@@ -23,7 +23,7 @@
                     <img class="card-img-top img-fluid card-profil " src=<?php echo $avatar ?> alt="avatar" style="width: 150px;">
                 </div>
                 <!-- UPLOAD IMAGE -->
-                <form action="" method="post" class="mx-1" enctype="multipart/form-data">
+                <form action="" method="post" class="mx-1" name="formImage" enctype="multipart/form-data">
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <input type="submit" value="Upload Image" name="send_image" >
                 </form>

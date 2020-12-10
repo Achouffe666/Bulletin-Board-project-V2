@@ -125,7 +125,7 @@ function get_message()
     $topics_id = $_GET['topicId'];
 
    
-    $response = $db->query("SELECT messages.id, title, topic_id, path_image, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email FROM messages INNER JOIN users WHERE topic_id = $topics_id && messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 3");
+    $response = $db->query("SELECT messages.id, title, topic_id, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email FROM messages INNER JOIN users WHERE topic_id = $topics_id && messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 3");
     $response -> execute();
     $result = $response->fetchAll();
 

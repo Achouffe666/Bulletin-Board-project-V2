@@ -336,7 +336,8 @@ function generate_buttons($post_id){
     }
 
     ?>
-        <div class="container d-flex emojis">
+     <!-- bouton des emojis -->
+        <div class="container d-flex emojis" style="margin-top:10px;margin-bottom: 30px;">
 
             <form method="post" action=" ">
                 <button type="submit" class="like" id="like-<?=$post_id;?>" value="like" name="like-<?=$post_id;?>"><img class="like"  src="../static/image/like.svg" alt="Like"> <?= count_reaction($post_id, "like");?></button>

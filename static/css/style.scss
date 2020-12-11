@@ -55,7 +55,9 @@ header{
         font-size: 1vw;
         color: white;
         font-family: 'Rubik';
-    
+        .fas.fa-home{
+              background:white;
+            }
         
             img{
                 width: 16px;
@@ -64,9 +66,7 @@ header{
             &:hover{
         color:$primary;
         }
-            fas.fa-home{
-              background:white;
-            }
+        
     }
     h1{
         font-size: 5vw;

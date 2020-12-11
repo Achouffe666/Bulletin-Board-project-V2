@@ -84,7 +84,7 @@
                                 }
                                 echo $sum;
                                 ?></p>
-                                <p class="topics__text">Posts</p>
+                                <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
@@ -160,7 +160,7 @@
                                 }
                                 echo $sum;
                                 ?></p>
-                                <p class="topics__text">Posts</p>
+                                <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
@@ -238,7 +238,7 @@
                                 }
                                 echo $sum;
                                 ?></p>
-                                <p class="topics__text">Posts</p>
+                                <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">

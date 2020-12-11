@@ -30,7 +30,7 @@ header {
     font-size: 1vw;
     color: white;
     font-family: 'Rubik'; }
-    header .nav-link .fas.fa-home {
+    header .nav-link i.fas.fa-home {
       background: white; }
     header .nav-link img {
       width: 16px; }

@@ -251,8 +251,6 @@ function get_reaction(){
 
 function count_reaction($post_id, $emoji){
     global $db;
-   
-
     $number = $db->prepare("SELECT * FROM reactions WHERE post_id = :post_id  && emoji = :emoji");
     $number->execute(array(
         ':post_id' => $post_id,
@@ -260,16 +258,24 @@ function count_reaction($post_id, $emoji){
         ));    
         
     $count = $number->rowCount();
-
     return $count;
-   
+}
 
+function users_reaction($post_id){
+    global $db;
+    $number = $db->prepare("SELECT * FROM reactions WHERE post_id = :post_id  && user_id = :user_id");
+    $number->execute(array(
+        ':post_id' => $post_id,
+        ':user_id' => $_SESSION['id'],
+        ));    
+        
+    $count = $number->rowCount();
+    return $count;
 }
 
 
 function add_reaction($emoji,$post_id){
     global $db;
-    global $post_id;
   
         $reaction = $db->prepare("INSERT INTO reactions(post_id, emoji, user_id) VALUES (:post_id, :emoji, :user_id)");
         $reaction->execute(array(
@@ -279,26 +285,53 @@ function add_reaction($emoji,$post_id){
                             ));     
 }
 
+function del_reaction($user_id, $post_id){
+    global $db;
+
+    $response = $db->query("DELETE  FROM reactions WHERE post_id = $post_id && user_id = $user_id");
+    $response->execute();
+}
+
 function generate_buttons($post_id){
 
     if(isset($_POST['like-' . $post_id]) ){
-        add_reaction("like",$post_id);
+        if(users_reaction($post_id) == 0){
+        add_reaction("like",$post_id);}
+        else{
+        del_reaction($_SESSION['id'], $post_id);
+        }
     }
 
     elseif(isset($_POST['dislike-' . $post_id])){
-        add_reaction("dislike", $post_id);
+       if(users_reaction($post_id) == 0){
+        add_reaction("dislike",$post_id);}
+        else{
+        del_reaction($_SESSION['id'], $post_id);
+        }
         
     }
     elseif(isset($_POST['love-' . $post_id])){
-        add_reaction("love", $post_id);
+        if(users_reaction($post_id) == 0){
+        add_reaction("love",$post_id);}
+        else{
+        del_reaction($_SESSION['id'], $post_id);
+        }
         
     }
     elseif(isset($_POST['angry-' . $post_id])){
-        add_reaction("angry", $post_id);
+        if(users_reaction($post_id) == 0){
+        add_reaction("angry",$post_id);}
+        else{
+        del_reaction($_SESSION['id'], $post_id);
+        }
         
     }
     elseif(isset($_POST['sad-' . $post_id])){
-        add_reaction("sad", $post_id);
+       if(users_reaction($post_id) == 0){
+        add_reaction("sad",$post_id);}
+        else{
+        del_reaction($_SESSION['id'], $post_id);
+        }
         
     }
 

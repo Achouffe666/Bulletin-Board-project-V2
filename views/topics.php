@@ -174,8 +174,8 @@ session_start();
             $nickname = user_nickname();
             $topicId = $topic['id'];
             lock_topic();
-            $lastpost= $result[5]['id'];
             if(($topic['board_id']==5)&&(sizeof($result)>5)){
+              $lastpost= $result[5]['id'];
               $response = $db->query("DELETE FROM topics WHERE id = $lastpost");
               $response->execute();
             }
@@ -207,7 +207,15 @@ session_start();
 
                 <div class="d-none d-md-block col-6">
                   <div class="row no-gutters align-items-center pl-2">
-                    <div class="col-3">33</div>
+                    <div class="col-3"><?php 
+                    
+                    $response = $db->query("SELECT id FROM messages WHERE topic_id=$topicId");
+                    $response->execute();
+                    $data = $response->fetchAll();
+                    echo sizeof($data);
+
+                    
+                    ?></div>
                     <div class="col-3">333</div>
                     <div class="col-6 align-items-center">
                       <p>

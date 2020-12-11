@@ -34,6 +34,8 @@ header {
       width: 16px; }
     header .nav-link:hover {
       color: rgba(176, 106, 179, 0.7); }
+    header .nav-link i {
+      background: white; }
   header h1 {
     font-size: 5vw;
     font-family: 'Raleway', sans-serif;

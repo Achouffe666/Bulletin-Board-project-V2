@@ -16,5 +16,18 @@ function get_boards()
 
 }
 
+
+
+ function last_posted($topic_id){
+  global $db;
+
+  $lastMessage = $db->prepare("SELECT creation_date FROM messages WHERE topic_id = $topic_id ORDER BY creation_date DESC LIMIT 0, 1");
+  $lastMessage->execute();   
+  $last = $lastMessage->fetch();
+  
+  return $last;
+}
+
+
 ?>
 

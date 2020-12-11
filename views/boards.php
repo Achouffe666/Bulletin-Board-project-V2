@@ -1,5 +1,6 @@
 <?php 
         include "controlers/functions_boards.php";
+        $topic_id =1;
 ?>
 <!-- BOARD -->
 <div class="container position-relative main__wrap d-flex flex-column rounded-lg my-3 pb-3 bg-white shadow">
@@ -22,7 +23,6 @@
             <?php $category_id = 1?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>
-
                 <!-- ONE LINK TO TOPICS-->
                 <div class="topics bg-white shadow rounded p-1 m-1">
 
@@ -60,8 +60,9 @@
                                 $response = $db->query("SELECT id FROM topics WHERE board_id=$boardId");
                                 $response->execute();
                                 $data = $response->fetchAll();
+     
                                 echo sizeof($data);
-                                
+
                                 ?></p>
                                 <p class="topics__text">Topic(s)</p>
                             </div>
@@ -81,14 +82,21 @@
                                     $messagesize=sizeof($result);
                                     $sum=$sum+$messagesize;
                                     $increment++;
+
+                                    $last_post = last_posted($topicId);
+
                                 }
+
+
                                 echo $sum;
                                 ?></p>
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
-                                <p class="topics__date">Sun 8 Nov</p>
+                            
+                                <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
+                          
                                 <p class="topics__text">Last post</p>
                             </div>
         
@@ -138,6 +146,7 @@
                                 $response->execute();
                                 $data = $response->fetchAll();
                                 echo sizeof($data);
+                                
                                 ?></p>
                                 <p class="topics__text">Topic(s)</p>
                             </div>
@@ -157,16 +166,20 @@
                                     $messagesize=sizeof($result);
                                     $sum=$sum+$messagesize;
                                     $increment++;
-                                }
                                     
-                                
-                                echo $sum;
+                                    $last_post = last_posted($topicId);
+
+                                    }
+  
+                                  echo $sum;
+
                                 ?></p>
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
-                                <p class="topics__date"></p>
+                       
+                                <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
                                 <p class="topics__text">Last post</p>
                             </div>
         
@@ -217,7 +230,7 @@
                                 $response->execute();
                                 $data = $response->fetchAll();
                                 echo sizeof($data);
-                                
+                                $topic_id = $data;
                                 ?></p>
                                 <p class="topics__text">Topic(s)</p>
                             </div>
@@ -237,14 +250,21 @@
                                     $messagesize=sizeof($result);
                                     $sum=$sum+$messagesize;
                                     $increment++;
+
+                                    $last_post = last_posted($topicId);
+
                                 }
+                                
+
                                 echo $sum;
                                 ?></p>
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
-                                <p class="topics__date"></p>
+                          
+                                <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
+                           
                                 <p class="topics__text">Last post</p>
                             </div>
         
@@ -252,7 +272,9 @@
 
                     </div>
                 </div>
-                <?php } ?>
+                <?php } 
+                 
+               ?>
                 <!-- END three LINK TO TOPICS-->
             </div>
             <!-- END CATEGORY THREE TOPICS-->

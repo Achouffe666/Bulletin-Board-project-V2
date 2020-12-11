@@ -96,8 +96,9 @@
         delete_message();
         update_message();
         $result = get_message();
+        
+        
         $last = ($result[0]);
-        $i = 0;
 
         foreach($result as $results){ 
             $post_id = $results['id'];
@@ -111,7 +112,7 @@
          
 
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
-                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php ?>  alt="avatar_autre">
+                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo 'data:image/'.$results["image_type"].';base64,'.$results["image_data"];?>  alt="avatar_autre">
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>

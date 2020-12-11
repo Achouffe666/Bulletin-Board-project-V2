@@ -124,12 +124,12 @@ function get_message()
     global $db;
     $topics_id = $_GET['topicId'];
    
-    $response = $db->query("SELECT messages.id, title, topic_id, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email FROM messages INNER JOIN users WHERE topic_id = $topics_id && messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 6");
+    $response = $db->query("SELECT messages.id, title, topic_id, content, messages.user_id,DATE_FORMAT(creation_date, '%d/%m/%Y à %Hh%i') AS creation_date, DATE_FORMAT(edition_date, '%d/%m/%Y à %Hh%i') AS edition_date, nickname, position, email, image_title, image_type, image_data FROM messages INNER JOIN users WHERE topic_id = $topics_id && messages.user_id = users.id ORDER BY creation_date DESC LIMIT 0, 6");
     $response -> execute();
     $result = $response->fetchAll();
-
     return $result;
 }
+
 
 function delete_message()
 {
@@ -191,7 +191,7 @@ function create_message(){
         if(ISSET($_POST["message_update"]))
         {
             $new_content= $_POST["message_content"];
-             $id = $_POST["message_update"];
+            $id = $_POST["message_update"];
             $response = $db->prepare("UPDATE messages SET content = :content WHERE id= :id");
             $response->execute(array(":content"=> $new_content, ":id" => $id));
             

@@ -35,6 +35,14 @@ $alpha: 0;
       &:hover{
         color:$primary;
       }
+      i.fas.fa-home{
+        color: #676767;
+        text-decoration:none;
+        font-size:16px;
+        &:hover{
+        color: rgba(176,106,179,1);
+  }
+}
     }
   }
 }
@@ -55,7 +63,9 @@ header{
         font-size: 1vw;
         color: white;
         font-family: 'Rubik';
-    
+        i.fas.fa-home{
+              color:white !important;
+            }
         
             img{
                 width: 16px;
@@ -64,6 +74,7 @@ header{
             &:hover{
         color:$primary;
         }
+        
     }
     h1{
         font-size: 5vw;
@@ -112,8 +123,8 @@ i.fas.fa-comments,i.fas.fa-eye,i.fas.fa-clock{
     font-size: 16px;
 }
 
-i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
-  color: #676767 !important;
+i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
+  color: #676767;
   text-decoration:none;
   font-size:16px;
   &:hover{

@@ -55,13 +55,36 @@
                         <div class="row topics__bot">
         
                             <div class="col-3 d-flex flex-column align-items-center">
-                                <p class="topics__number">6</p>
-                                <p class="topics__text">Topics</p>
+                                <p class="topics__number"><?php
+                                $boardId=$board['id'];
+                                $response = $db->query("SELECT id FROM topics WHERE board_id=$boardId");
+                                $response->execute();
+                                $data = $response->fetchAll();
+                                echo sizeof($data);
+                                
+                                ?></p>
+                                <p class="topics__text">Topic(s)</p>
                             </div>
         
                             <div class="col-3 d-flex flex-column align-items-center">
-                                <p class="topics__number">33</p>
-                                <p class="topics__text">Posts</p>
+                                <p class="topics__number"><?php
+                                $increment=0;
+                                $sum=0;
+                                $max=intval(sizeof($data));
+                                $lastdatetable=array();
+                                while($increment<$max){
+
+                                    $topicId=$data[$increment]['id'];
+                                    $response = $db->query("SELECT DATE_FORMAT(creation_date, '%Hh%i') AS creation_date FROM messages WHERE topic_id=$topicId ORDER BY creation_date DESC");
+                                    $response ->execute();
+                                    $result= $response->fetchAll();
+                                    $messagesize=sizeof($result);
+                                    $sum=$sum+$messagesize;
+                                    $increment++;
+                                }
+                                echo $sum;
+                                ?></p>
+                                <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
@@ -109,17 +132,39 @@
                         <div class="row topics__bot">
         
                             <div class="col-3 d-flex flex-column align-items-center">
-                                <p class="topics__number">6</p>
-                                <p class="topics__text">Topics</p>
+                                <p class="topics__number"><?php
+                                $boardId=$board['id'];
+                                $response = $db->query("SELECT id FROM topics  WHERE board_id=$boardId ORDER BY creation_date DESC" );
+                                $response->execute();
+                                $data = $response->fetchAll();
+                                echo sizeof($data);
+                                ?></p>
+                                <p class="topics__text">Topic(s)</p>
                             </div>
         
                             <div class="col-3 d-flex flex-column align-items-center">
-                                <p class="topics__number">33</p>
-                                <p class="topics__text">Posts</p>
+                                <p class="topics__number"><?php
+                                $increment=0;
+                                $sum=0;
+                                $max=intval(sizeof($data));
+                                $lastdatetable=array();
+                                while($increment<$max){
+
+                                    $topicId=$data[$increment]['id'];
+                                    $response = $db->query("SELECT DATE_FORMAT(creation_date, '%Hh%i') AS creation_date FROM messages WHERE topic_id=$topicId ORDER BY creation_date DESC");
+                                    $response ->execute();
+                                    $result= $response->fetchAll();
+                                    $messagesize=sizeof($result);
+                                    $sum=$sum+$messagesize;
+                                    $increment++;
+                                }
+                                echo $sum;
+                                ?></p>
+                                <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
-                                <p class="topics__date">Sun 8 Nov</p>
+                                <p class="topics__date"></p>
                                 <p class="topics__text">Last post</p>
                             </div>
         
@@ -164,13 +209,36 @@
                         <div class="row topics__bot">
         
                             <div class="col-3 d-flex flex-column align-items-center">
-                                <p class="topics__number">6</p>
-                                <p class="topics__text">Topics</p>
+                                <p class="topics__number"><?php
+                                $boardId=$board['id'];
+                                $response = $db->query("SELECT id FROM topics WHERE board_id=$boardId");
+                                $response->execute();
+                                $data = $response->fetchAll();
+                                echo sizeof($data);
+                                
+                                ?></p>
+                                <p class="topics__text">Topic(s)</p>
                             </div>
         
                             <div class="col-3 d-flex flex-column align-items-center">
-                                <p class="topics__number">33</p>
-                                <p class="topics__text">Posts</p>
+                                <p class="topics__number"><?php
+                                $increment=0;
+                                $sum=0;
+                                $max=intval(sizeof($data));
+                                $lastdatetable=array();
+                                while($increment<$max){
+
+                                    $topicId=$data[$increment]['id'];
+                                    $response = $db->query("SELECT DATE_FORMAT(creation_date, '%Hh%i') AS creation_date FROM messages WHERE topic_id=$topicId ORDER BY creation_date DESC");
+                                    $response ->execute();
+                                    $result= $response->fetchAll();
+                                    $messagesize=sizeof($result);
+                                    $sum=$sum+$messagesize;
+                                    $increment++;
+                                }
+                                echo $sum;
+                                ?></p>
+                                <p class="topics__text">Post(s)</p>
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">

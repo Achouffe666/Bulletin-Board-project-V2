@@ -12,9 +12,12 @@ function upload_image()
             {
                 
                 $new_file= str_replace(" ","", $_FILES["fileToUpload"]["name"]);
-                $imgData = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
+                $target_dir = "upload/";
+                $imgData = base64_encode(file_get_contents($_FILES['fileToUpload']['tmp_name']));
                 $imageFileType = strtolower(pathinfo($new_file,PATHINFO_EXTENSION));
                 $imageType = $_FILES["fileToUpload"]["type"];
+                $name = $_FILES["fileToUpload"]["name"];
+                $image = "data:image/" .$imageFileType. ";base_64," .$imgData;
                 $uploadOk= 1;
                 if (isset($_POST["submit"]))
                 {
@@ -40,23 +43,18 @@ function upload_image()
                 
                 if ($uploadOk == 0) 
                         {
-                        echo "Sorry, your file was not uploaded.";
-                    
+                          echo "Sorry, your file was not uploaded.";
                         } 
                 else {
-                        
-                        
                         $user_id = $_SESSION["id"];
-                      
-                       
-                        $request = $db->prepare("INSERT INTO image_user(image_title, image_type, image_data, user_id) VALUES(:imgTitle, :imgType, :imgData, :user_id)");
+                        $request = $db->prepare("UPDATE users SET image_title =:imgTitle, image_type = :imgType, image_data= :imgData WHERE users.id=$user_id");
                         $request->execute(array
                             (
                             'imgTitle' => $new_file,
                             'imgType' => $imageType,  
-                            'imgData' => $imgData,
-                            'user_id' => $user_id
+                            'imgData' => $imgData
                             )
+                        
                         ); 
                         echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                         
@@ -64,6 +62,7 @@ function upload_image()
             } 
         }
      }
+     
 
       function get_profil()
       {

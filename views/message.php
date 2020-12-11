@@ -151,7 +151,6 @@
                 </div>
                 <!-- END MESSAGE EXEMPLE -->
 
-                <?php generate_buttons($post_id);}?>
             </div>
             <!-- END MESSAGE WRAP -->
       

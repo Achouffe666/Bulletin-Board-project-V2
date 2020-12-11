@@ -128,7 +128,6 @@ function get_message()
     $response -> execute();
     $result = $response->fetchAll();
     return $result;
-
 }
 
 
@@ -239,6 +238,87 @@ function double_message(){
 
 }
 
- 
+function get_reaction(){
+    global $db;
+    global $post_id;
+
+    $reactions = $db->prepare("SELECT * FROM reactions WHERE post_id = $post_id");
+    $reactions->execute();
+    $reaction = $reactions->fetchAll();
+
+    return $reaction;
+}
+
+function count_reaction($post_id, $emoji){
+    global $db;
+   
+
+    $number = $db->prepare("SELECT * FROM reactions WHERE post_id = :post_id  && emoji = :emoji");
+    $number->execute(array(
+        ':post_id' => $post_id,
+        ':emoji' => $emoji,
+        ));    
+        
+    $count = $number->rowCount();
+
+    return $count;
+   
+
+}
+
+
+function add_reaction($emoji,$post_id){
+    global $db;
+    global $post_id;
+  
+        $reaction = $db->prepare("INSERT INTO reactions(post_id, emoji, user_id) VALUES (:post_id, :emoji, :user_id)");
+        $reaction->execute(array(
+                            ':post_id' => $post_id,
+                            ':emoji' => $emoji,
+                            ':user_id' => $_SESSION['id']
+                            ));     
+}
+
+function generate_buttons($post_id){
+
+    if(isset($_POST['like-' . $post_id]) ){
+        add_reaction("like",$post_id);
+    }
+
+    elseif(isset($_POST['dislike-' . $post_id])){
+        add_reaction("dislike", $post_id);
+        
+    }
+    elseif(isset($_POST['love-' . $post_id])){
+        add_reaction("love", $post_id);
+        
+    }
+    elseif(isset($_POST['angry-' . $post_id])){
+        add_reaction("angry", $post_id);
+        
+    }
+    elseif(isset($_POST['sad-' . $post_id])){
+        add_reaction("sad", $post_id);
+        
+    }
+
+    ?>
+        <div class="container d-flex emojis">
+
+            <form method="post" action=" ">
+                <button type="submit" class="like" id="like-<?=$post_id;?>" value="like" name="like-<?=$post_id;?>"><img class="like"  src="../static/image/like.svg" alt="Like"> <?= count_reaction($post_id, "like");?></button>
+                <button type="submit" class="dislike" id="dislike-<?=$post_id;?>" value="dislike" name="dislike-<?=$post_id;?>"><img class="dislike"  src="../static/image/dislike.svg" alt="dislike">  <?= count_reaction($post_id, "dislike");?> </button>
+                <button type="submit" class="love" id="love-<?=$post_id;?>" value="love" name="love-<?=$post_id;?>"><img class="love"  src="../static/image/heart.svg" alt="love">  <?= count_reaction($post_id, "love") ;?></button>
+                <button type="submit" class="angry" id="angry-<?=$post_id;?>" value="angry" name="angry-<?=$post_id;?>"><img class="angry"  src="../static/image/angry.svg" alt="angry">  <?= count_reaction($post_id, "angry");?> </button>
+                <button type="submit" class="sad" id="sad-<?=$post_id;?>" value="sad" name="sad-<?=$post_id;?>"><img class="sad"  src="../static/image/crying.svg" alt="sad">  <?= count_reaction($post_id, "sad");?> </button>
+            </form>
+
+        </div>
+<?php
+}
+
+
+
+
 
 ?>

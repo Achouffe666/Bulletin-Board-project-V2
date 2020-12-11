@@ -99,10 +99,11 @@
         
         
         $last = ($result[0]);
+
         foreach($result as $results){ 
-          
-         
-           
+            $post_id = $results['id'];
+     
+            
 ?>
 
                 <!-- MESSAGE START -->
@@ -140,22 +141,22 @@
                                 <?php }?>                            
                             </div>
                         <div class="row">
+                            
                         </div>
-                        </form>
 
-                       
-                       
-                       
-                       
-                       
-                        
+                        </form>
                     </div>
                    
                 </div>
                 <!-- END MESSAGE EXEMPLE -->
-                <?php ;}?>
+
+                    
+                <?php generate_buttons($post_id);}?>
             </div>
             <!-- END MESSAGE WRAP -->
+            <?php 
+ 
+            ?>
 
         </div>
         <!-- END BOARD__WRAP -->

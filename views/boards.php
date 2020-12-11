@@ -18,7 +18,7 @@
            
             <!-- TOPICS WRAP-->
 
-            <div class="topics__wrap container-fluid d-flex flex-wrap bg-light p-1 mb-5">
+            <div class="topics__wrap d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 1?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>
@@ -34,7 +34,7 @@
                             <div class="col-3">
                                 <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <h4 class="topics__title"><a class =""
                                 <?php
                                     
@@ -106,7 +106,7 @@
            
             <!-- TOPICS WRAP-->
 
-            <div class="topics__wrap container-fluid d-flex bg-light p-1 mb-5">
+            <div class="topics__wrap d-flex bg-light p-1 mb-5">
             <?php $category_id = 2?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>
@@ -122,7 +122,7 @@
                             <div class="col-3">
                                 <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>
@@ -148,8 +148,8 @@
                                 $sum=0;
                                 $max=intval(sizeof($data));
                                 $lastdatetable=array();
+                                
                                 while($increment<$max){
-
                                     $topicId=$data[$increment]['id'];
                                     $response = $db->query("SELECT DATE_FORMAT(creation_date, '%Hh%i') AS creation_date FROM messages WHERE topic_id=$topicId ORDER BY creation_date DESC");
                                     $response ->execute();
@@ -158,6 +158,8 @@
                                     $sum=$sum+$messagesize;
                                     $increment++;
                                 }
+                                    
+                                
                                 echo $sum;
                                 ?></p>
                                 <p class="topics__text">Post(s)</p>
@@ -183,7 +185,7 @@
            
             <!-- TOPICS WRAP-->
 
-            <div class="topics__wrap container-fluid d-flex bg-light p-1 mb-5">
+            <div class="topics__wrap d-flex bg-light p-1 mb-5">
             <?php $category_id = 3?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>
@@ -199,7 +201,7 @@
                             <div class="col-3">
                                 <img src="../static/image/<?=$board['id']%5?>.png">
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <h4 class="topics__title"><a class ="" href="views/topics.php?boardId=<?=$board['id']?>"><?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
                                 <p class="topics__description"><?=$board['description']?></p>
                             </div>
@@ -242,7 +244,7 @@
                             </div>
         
                             <div class="col-6 d-flex flex-column align-items-center">
-                                <p class="topics__date">Sun 8 Nov</p>
+                                <p class="topics__date"></p>
                                 <p class="topics__text">Last post</p>
                             </div>
         

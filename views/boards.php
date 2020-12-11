@@ -10,21 +10,21 @@
         </ol>
     
     </nav>
-    <div class="board__inner row container-fluid">
+    <div class="board__inner row container">
         
-        <div class="board__wrap col-xl-10 mr-0 mb-2">
+        <div class="board__wrap  container  col-sm-10 mr-0 mb-2">
         
             <!-- BOARD ONE TOPICS-->
             <h4 class="mt-2 mb-5 ml-5 text-black-50">Category One</h4>
            
             <!-- TOPICS WRAP-->
 
-            <div class="topics__wrap d-flex flex-wrap bg-light p-1 mb-5">
+            <div class="topics__wrap container d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 1?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>
                 <!-- ONE LINK TO TOPICS-->
-                <div class="topics bg-white shadow rounded p-1 m-1">
+                <div class="topics bg-white shadow rounded  m-1">
 
                     <div class="topics__container d-flex flex-column pl-2">
 
@@ -47,12 +47,12 @@
                                     }
                                 ?>>
                                 <?=$board['subject']?></a><i class="fas fa-check ml-1"></i></h4>
-                                <p class="topics__description"><?=$board['description']?></p>
+                                <p class="topics__description d-flex flex-wrap"><?=$board['description']?></p>
                             </div>
         
                         </div>
-                        <hr class="topics__hr float-left m-0 mb-3">
-                        <div class="row topics__bot">
+                        <hr class="topics__hr float-left m-0">
+                        <div class="row topics__bot p-1 m-1">
         
                             <div class="col-3 d-flex flex-column align-items-center">
                                 <p class="topics__number"><?php
@@ -93,15 +93,20 @@
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
+<<<<<<< HEAD
                             <div class="col-6 d-flex flex-column align-items-center">
                             
                                 <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
                           
+=======
+                            <div class="col-5 d-flex flex-column align-items-center">
+                                <p class="topics__date">Sun 8 Nov</p>
+>>>>>>> acaec8b2f5e220f529d3a72ba8dbc88722f03159
                                 <p class="topics__text">Last post</p>
                             </div>
         
                         </div>
-
+                    
                     </div>
                 </div>
                 <?php } ?>
@@ -114,7 +119,7 @@
            
             <!-- TOPICS WRAP-->
 
-            <div class="topics__wrap d-flex bg-light p-1 mb-5">
+            <div class="topics__wrap d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 2?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>
@@ -177,9 +182,14 @@
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
+<<<<<<< HEAD
                             <div class="col-6 d-flex flex-column align-items-center">
                        
                                 <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
+=======
+                            <div class="col-5 d-flex flex-column align-items-center">
+                                <p class="topics__date"></p>
+>>>>>>> acaec8b2f5e220f529d3a72ba8dbc88722f03159
                                 <p class="topics__text">Last post</p>
                             </div>
         
@@ -198,7 +208,7 @@
            
             <!-- TOPICS WRAP-->
 
-            <div class="topics__wrap d-flex bg-light p-1 mb-5">
+            <div class="topics__wrap d-flex flex-wrap bg-light p-1 mb-5">
             <?php $category_id = 3?>
             <?php $boards = get_boards();
             foreach($boards as $board){?>
@@ -261,10 +271,15 @@
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
+<<<<<<< HEAD
                             <div class="col-6 d-flex flex-column align-items-center">
                           
                                 <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
                            
+=======
+                            <div class="col-5 d-flex flex-column align-items-center">
+                                <p class="topics__date"></p>
+>>>>>>> acaec8b2f5e220f529d3a72ba8dbc88722f03159
                                 <p class="topics__text">Last post</p>
                             </div>
         

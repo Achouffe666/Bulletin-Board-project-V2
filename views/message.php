@@ -65,7 +65,7 @@
 
     <div class="board__inner row p-2 ml-2">
 
-        <div class="board__wrap col-xl-9 b-radius bg-light pt-1 mr-0 mb-2">
+        <div class="board__wrap col-sm-10 b-radius bg-light pt-1 mr-0 mb-2">
        
             <!-- MESSAGES WRAP -->
                 <?php // try if it not the author of the last message in a same topic
@@ -111,18 +111,19 @@
 
          
 
-                    <div class="col-2 col-content-message d-flex flex-column justify-content-center">
+                    <div class="col-3 border-right col-content-message d-flex flex-column justify-content-center">
                         <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo 'data:image/'.$results["image_type"].';base64,'.$results["image_data"];?>  alt="avatar_autre">
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>
                        
                     </div>
-                    
-                    <div class="col-10 col-content-message content-message2">
+                    <div class="col-1 border-left my-2"></div>
+                    <div class="col-8 col-content-message content-message2">
 
                         <div class="row">
-                            <p class="message-signature col-4 text-black-50"><?php echo "$results[creation_date]"?></p>
+                            <div class=" col-3 my-1 mx-0 p-O"></div>
+                            <p class="col-8 my-1 mx-0 p-0 message-signature text-black-50"><?php echo "$results[creation_date]"?></p>
                         </div>
                         <form action=" " method="post">
                             <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
@@ -140,8 +141,8 @@
                                 </button>
                                 <?php }?>                            
                             </div>
-                        <div class="row">
-                            
+                        <div class="row pt-2">
+                            <?php generate_buttons($post_id); ?>
                         </div>
 
                         </form>

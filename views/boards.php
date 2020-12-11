@@ -93,15 +93,10 @@
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
-<<<<<<< HEAD
                             <div class="col-6 d-flex flex-column align-items-center">
                             
                                 <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
                           
-=======
-                            <div class="col-5 d-flex flex-column align-items-center">
-                                <p class="topics__date">Sun 8 Nov</p>
->>>>>>> acaec8b2f5e220f529d3a72ba8dbc88722f03159
                                 <p class="topics__text">Last post</p>
                             </div>
         
@@ -182,14 +177,9 @@
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
-<<<<<<< HEAD
                             <div class="col-6 d-flex flex-column align-items-center">
                        
                                 <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
-=======
-                            <div class="col-5 d-flex flex-column align-items-center">
-                                <p class="topics__date"></p>
->>>>>>> acaec8b2f5e220f529d3a72ba8dbc88722f03159
                                 <p class="topics__text">Last post</p>
                             </div>
         
@@ -271,15 +261,10 @@
                                 <p class="topics__text">Post(s)</p>
                             </div>
         
-<<<<<<< HEAD
                             <div class="col-6 d-flex flex-column align-items-center">
                           
                                 <p class="topics__date"><?=date("D H:i",strtotime(($last_post[0])))?></p>
                            
-=======
-                            <div class="col-5 d-flex flex-column align-items-center">
-                                <p class="topics__date"></p>
->>>>>>> acaec8b2f5e220f529d3a72ba8dbc88722f03159
                                 <p class="topics__text">Last post</p>
                             </div>
         

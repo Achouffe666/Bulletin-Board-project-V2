@@ -128,29 +128,33 @@
                         <form action=" " method="post">
                             <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
                             <div class="row"> 
+                            <?php if ($last["id"] == $results["id"] && $results["user_id"] == $_SESSION["id"] )
+                                { ?>
                                 <textarea style="width: 100%;" id="message_content" name="message_content" class="message__content" ><?php 
                                 echo $markdown;
                                 ?> </textarea>
-                                <?php if ($last["id"] == $results["id"] && $results["user_id"] == $_SESSION["id"] )
-                                { ?>
+
                                 <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                                     Modifier
                                 </button>
                                 <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                                     Annuler
                                 </button>
-                                <?php }?>                            
+                                <?php } else{?>      
+                                <p><?= $markdown?></p>
+                                <?php } ?>                      
                             </div>
-                        <div class="row pt-2">
-                            <?php generate_buttons($post_id); ?>
-                        </div>
+                 
 
                         </form>
                     </div>
-                   <?php } ?>
+                    
                 </div>
+                        <div class="row pt-2 ">
+                            <?php generate_buttons($post_id); ?>
+                        </div>
+                        <?php } ?>
                 <!-- END MESSAGE EXEMPLE -->
-
             </div>
             <!-- END MESSAGE WRAP -->
       

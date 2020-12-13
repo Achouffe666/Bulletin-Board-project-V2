@@ -29,6 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/views/register.php"><img src="/static/image/enter.png">S'enregistrer</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.php"><i class="fas fa-home mr-1"></i>Accueil</a>
+                    </li>
                 </ul>
             </div>
             <div>

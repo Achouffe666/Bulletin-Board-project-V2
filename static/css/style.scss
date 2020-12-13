@@ -35,6 +35,14 @@ $alpha: 0;
       &:hover{
         color:$primary;
       }
+      i.fas.fa-home{
+        color: #676767;
+        text-decoration:none;
+        font-size:16px;
+        &:hover{
+        color: rgba(176,106,179,1);
+  }
+}
     }
   }
 }
@@ -55,7 +63,9 @@ header{
         font-size: 1vw;
         color: white;
         font-family: 'Rubik';
-    
+        i.fas.fa-home{
+              color:white !important;
+            }
         
             img{
                 width: 16px;
@@ -64,6 +74,7 @@ header{
             &:hover{
         color:$primary;
         }
+        
     }
     h1{
         font-size: 5vw;
@@ -112,8 +123,8 @@ i.fas.fa-comments,i.fas.fa-eye,i.fas.fa-clock{
     font-size: 16px;
 }
 
-i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
-  color: #676767 !important;
+i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
+  color: #676767;
   text-decoration:none;
   font-size:16px;
   &:hover{
@@ -147,7 +158,7 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
 /* BOARD INNER*/
 
 .topics{
-  width: 280px;
+  width:280px;
   height:200px;
   border-radius:10px;
     img{
@@ -162,11 +173,11 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
   display: block;
 }
 .topics__description{
-  width:80%
+  width:80%;
+  overflow-wrap: break-word;
 }
 
 .topics__wrap{
-  max-height: 500px;
   border-radius:10px;
   font-size:auto;
 }
@@ -192,7 +203,7 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
 }
 
 .topics__top{
-  .col-9{
+  .col-8{
     padding-right:0 !important;
   }
 }
@@ -202,7 +213,7 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
   width:20%;
 }
 .topics__bot{
-  .col-6{
+  .col-5{
     padding-right:0 !important;
   }
 }
@@ -322,6 +333,19 @@ i.fas.fa-home,i.fas.fa-cog,i.fa.fa-search, i.fas.fa-external-link-alt{
   font-family:Rubik;
   font-size: 1.5rem;
   font-weight:500;
+}
+
+.emojis button{
+  background: none;
+  border: none;
+
+}
+
+.emojis img{
+  border: none;
+  height: 25px;
+  width: 25px;
+  background: none;
 }
 
 

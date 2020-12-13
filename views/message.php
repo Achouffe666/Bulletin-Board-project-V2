@@ -66,7 +66,7 @@
 
     <div class="board__inner row p-2 ml-2">
 
-        <div class="board__wrap col-xl-9 b-radius bg-light pt-1 mr-0 mb-2">
+        <div class="board__wrap col-sm-10 b-radius bg-light pt-1 mr-0 mb-2">
        
             <!-- MESSAGES WRAP -->
                 <?php // try if it not the author of the last message in a same topic
@@ -100,10 +100,11 @@
         
         
         $last = ($result[0]);
+
         foreach($result as $results){ 
-          
-         
-           
+            $post_id = $results['id'];
+     
+            
 ?>
 
                 <!-- MESSAGE START -->
@@ -118,46 +119,46 @@
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>
                        
                     </div>
-                    
-                    <div class="col-10 col-content-message content-message2">
+                    <div class="col-1 border-left my-2"></div>
+                    <div class="col-8 col-content-message content-message2">
 
                         <div class="row">
-                            <p class="message-signature col-4 text-black-50"><?php echo "$results[creation_date]"?></p>
+                            <div class=" col-3 my-1 mx-0 p-O"></div>
+                            <p class="col-8 my-1 mx-0 p-0 message-signature text-black-50"><?php echo "$results[creation_date]"?></p>
                         </div>
                         <form action=" " method="post">
                             <?php $markdown = MarkdownExtra::defaultTransform($results['content']);?>
                             <div class="row"> 
+                            <?php if ($last["id"] == $results["id"] && $results["user_id"] == $_SESSION["id"] )
+                                { ?>
                                 <textarea style="width: 100%;" id="message_content" name="message_content" class="message__content" ><?php 
                                 echo $markdown;
                                 ?> </textarea>
-                                <?php if ($last["id"] == $results["id"] && $results["user_id"] == $_SESSION["id"] )
-                                { ?>
+
                                 <button id="update" type="submit" name="message_update"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                                     Modifier
                                 </button>
                                 <button id="delete" type="submit" name="message_deleted"  value="<?php echo $results["id"];?>"class="btn btn-outline-warning mb-2 float-right">
                                     Annuler
                                 </button>
-                                <?php }?>                            
+                                <?php } else{?>      
+                                <p><?= $markdown?></p>
+                                <?php } ?>                      
                             </div>
-                        <div class="row">
-                        </div>
-                        </form>
+                 
 
-                       
-                       
-                       
-                       
-                       
-                        
+                        </form>
                     </div>
-                   
+                    
                 </div>
+                        <div class="row pt-2 ">
+                            <?php generate_buttons($post_id); ?>
+                        </div>
+                        <?php } ?>
                 <!-- END MESSAGE EXEMPLE -->
-                <?php ;}?>
             </div>
             <!-- END MESSAGE WRAP -->
-
+      
         </div>
         <!-- END BOARD__WRAP -->
 

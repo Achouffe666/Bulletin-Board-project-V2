@@ -15,6 +15,12 @@
   color: #676767; }
   .nav__list li a:hover {
     color: rgba(176, 106, 179, 0.7); }
+  .nav__list li a i.fas.fa-home {
+    color: #676767;
+    text-decoration: none;
+    font-size: 16px; }
+    .nav__list li a i.fas.fa-home:hover {
+      color: #b06ab3; }
 
 /*----used in every file----*/
 /* HEADER */
@@ -30,6 +36,8 @@ header {
     font-size: 1vw;
     color: white;
     font-family: 'Rubik'; }
+    header .nav-link i.fas.fa-home {
+      color: white !important; }
     header .nav-link img {
       width: 16px; }
     header .nav-link:hover {
@@ -66,11 +74,11 @@ i.fas.fa-comments, i.fas.fa-eye, i.fas.fa-clock {
   color: white;
   font-size: 16px; }
 
-i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
-  color: #676767 !important;
+i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
+  color: #676767;
   text-decoration: none;
   font-size: 16px; }
-  i.fas.fa-home:hover, i.fas.fa-cog:hover, i.fa.fa-search:hover, i.fas.fa-external-link-alt:hover {
+  i.fas.fa-cog:hover, i.fa.fa-search:hover, i.fas.fa-external-link-alt:hover {
     color: #b06ab3; }
 
 .b-radius {
@@ -107,10 +115,10 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   display: block; }
 
 .topics__description {
-  width: 80%; }
+  width: 80%;
+  overflow-wrap: break-word; }
 
 .topics__wrap {
-  max-height: 500px;
   border-radius: 10px;
   font-size: auto; }
 
@@ -129,7 +137,7 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
 .topics__description, .topics__text {
   color: #8e8e8ef2; }
 
-.topics__top .col-9 {
+.topics__top .col-8 {
   padding-right: 0 !important; }
 
 .topics__hr {
@@ -137,7 +145,7 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   height: 2px;
   width: 20%; }
 
-.topics__bot .col-6 {
+.topics__bot .col-5 {
   padding-right: 0 !important; }
 
 .board__inner {
@@ -212,6 +220,16 @@ i.fas.fa-home, i.fas.fa-cog, i.fa.fa-search, i.fas.fa-external-link-alt {
   font-family: Rubik;
   font-size: 1.5rem;
   font-weight: 500; }
+
+.emojis button {
+  background: none;
+  border: none; }
+
+.emojis img {
+  border: none;
+  height: 25px;
+  width: 25px;
+  background: none; }
 
 #footer .row-social-media {
   width: auto;

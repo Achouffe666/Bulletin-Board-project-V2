@@ -62,7 +62,25 @@ function upload_image()
             } 
         }
      }
-     
+    
+     function display_image_default()
+     {
+        global $db;
+        include "functions_message.php";
+        global $results;
+        if ($results["messages.user_id"] == NULL)
+        {
+            ?>
+            <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo 'data:image/'.$results["image_type"].';base64,'.$results["image_data"];?>  alt="avatar_user">
+            <?php
+        }
+        else
+        {
+            ?>
+            <img class="card-img-top img-fluid message-photo d-block mx-auto" src="../static/image/avatar_autre.jpg" alt="avatar_autre">
+            <?php
+        }
+     }
 
       function get_profil()
       {

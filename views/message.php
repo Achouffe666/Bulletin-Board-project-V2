@@ -5,6 +5,7 @@
 ?>
 <?php include "header.php"; ?>
 <?php include "../controlers/functions_message.php";
+      include "../controlers/functions_profil.php";
       include '../markdown/Michelf/MarkdownExtra.inc.php';
       use Michelf\MarkdownExtra;
       $result = topic_link();
@@ -111,7 +112,7 @@
          
 
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
-                        <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo 'data:image/'.$results["image_type"].';base64,'.$results["image_data"];?>  alt="avatar_autre">
+                        <?php display_image_default();?>
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>

@@ -5,10 +5,9 @@
 ?>
 <?php include "header.php"; ?>
 <?php include "../controlers/functions_message.php";
-      include "../controlers/functions_profil.php";
       include '../markdown/Michelf/MarkdownExtra.inc.php';
       use Michelf\MarkdownExtra;
-      $result = topic_link();
+      $topic = topic_link();
 ?>
 
 
@@ -19,11 +18,11 @@
     <nav class="nav__list">
         <ol class="breadcrumb bg-transparent pt-5">
             <li class="breadcrumb-item"><a href="../index.php"><i class="fas fa-home"></i>Home</a></li>
-            <li class="breadcrumb-item"><a href="topics.php"><?=$result['title']?></a></li>
+            <li class="breadcrumb-item"><a href="topics.php"><?=$topic['title']?></a></li>
             <li class="breadcrumb-item active">Messages</li>
         </ol>
     </nav>
-    <h4 class="mt-2 mb-5 ml-5 text-black-50 topic__title"><?=$result['title']?></h4>
+    <h4 class="mt-2 mb-5 ml-5 text-black-50 topic__title"><?=$topic['title']?></h4>
 
    
     <div class="row mb-2 ml-4">
@@ -113,7 +112,7 @@
          
 
                     <div class="col-2 col-content-message d-flex flex-column justify-content-center">
-                        <?php display_image_default();?>
+                    <img class="card-img-top img-fluid message-photo d-block mx-auto" src=<?php echo 'data:image/'.$results["image_type"].';base64,'.$results["image_data"];?>  alt="avatar_user">
                         <p class="message-position justify-content-center text-black-50"><?php echo "$results[position]";?></p>
                         <p class="message-identity  justify-content-center text-black-50"><?php echo "$results[nickname]";?></p>
                         <p class="message-number justify-content-center text-black-50"><?php echo "$results[id]";?> post(s)</p>

@@ -5,7 +5,7 @@ global $db;
 
 
 
-// link from topics to messages
+// link from topics to messages()
 function topic_link(){
     global $db;
  

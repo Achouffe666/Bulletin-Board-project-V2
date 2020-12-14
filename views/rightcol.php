@@ -117,11 +117,11 @@
     <!-- end last posts  -->
 
     <!-- last activer users -->
-    <div class="card user-top">
+    <div class="card user-top bg-light border-0">
           <div class="card-header user-top-title">
             <h4>Last active users</h4>
           </div>
-            <div class="row d-flex flex-row align-items-center justify-content-center card-body last-user-wrap p-0">
+            <div class="row d-flex flex-row align-items-center justify-content-center card-body last-user-wrap p-0 shadow-sm">
               <div class="col d-flex flex-column align-items-center justify-content-center mx-1 p-1"> 
               <img src="../static/image/3.png" alt="User1" style="width:35px">
               <p>#User1</p>             

@@ -126,11 +126,11 @@
               <img src="../static/image/3.png" alt="User1" style="width:35px">
               <p>#User1</p>             
              </div>
-              <div class="col d-flex flex-column mx-1 p-1"> 
+              <div class="col d-flex flex-column align-items-center justify-content-center mx-1 p-1"> 
               <img src="../static/image/3.png " alt="user2" style="width:35px">
               <p>#User2</p>             
               </div>
-              <div class="col d-flex flex-column mx-1 p-1"> 
+              <div class="col d-flex flex-column align-items-center justify-content-center mx-1 p-1"> 
               <img src="../static/image/3.png" alt="user3" style="width:35px">
               <p>#User3</p>             
               </div>

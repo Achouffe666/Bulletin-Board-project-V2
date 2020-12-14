@@ -123,15 +123,15 @@
           </div>
             <div class="row d-flex flex-row align-items-center justify-content-center card-body last-user-wrap p-0 shadow-sm">
               <div class="col d-flex flex-column align-items-center justify-content-center mx-1 p-1"> 
-              <img src="../static/image/3.png" alt="User1" style="width:35px">
+              <img src="../static/image/3.png" style="width:35px">
               <p>#User1</p>             
              </div>
               <div class="col d-flex flex-column align-items-center justify-content-center mx-1 p-1"> 
-              <img src="../static/image/3.png " alt="user2" style="width:35px">
+              <img src="../static/image/3.png " style="width:35px">
               <p>#User2</p>             
               </div>
               <div class="col d-flex flex-column align-items-center justify-content-center mx-1 p-1"> 
-              <img src="../static/image/3.png" alt="user3" style="width:35px">
+              <img src="../static/image/3.png" style="width:35px">
               <p>#User3</p>             
               </div>
                   </div>

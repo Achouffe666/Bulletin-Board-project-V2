@@ -103,10 +103,10 @@
             <div>
 
               <span class="content-title"><?=$posts['title']?></span>
-              <span class="float-right"><?=date("D H:i",strtotime($posts['creation_date']))?></span>
+              <span class="float-right text-black-50"><strong><?=date("D H:i",strtotime($posts['creation_date']))?></strong></span>
 
               <div>
-                <span><?=$posts['content']?></span>
+                <span class="text-black-50"><?=$posts['content']?></span>
                 <hr>
               </div>
 

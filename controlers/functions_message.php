@@ -152,9 +152,9 @@ function create_message(){
     {
         if (isset($_POST['record'])) {
        
-            global $result;
+            global $topic;
         
-            $title = $result['title'];
+            $title = $topic['title'];
             $content = $_POST['content'];
             $session_id = $_SESSION['id'];
             $topicid = $_GET['topicId'];

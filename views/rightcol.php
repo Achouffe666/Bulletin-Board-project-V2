@@ -102,7 +102,7 @@
             
             <div>
 
-              <span class="content-title"><?=$posts['title']?></span>
+              <span class="content-title"><u><?=$posts['title']?></u></span>
               <span class="float-right text-black-50"><strong><?=date("D H:i",strtotime($posts['creation_date']))?></strong></span>
 
               <div>

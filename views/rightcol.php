@@ -87,7 +87,7 @@
         
         <!-- last posts  -->
  
-        <div class="card">
+        <div class="card bg-light border-0">
 
           <div class="card-header gradient topics-top">
             <h4 class="topics-top-title">Last posts</h4>
@@ -98,7 +98,7 @@
             // $markdown = MarkdownExtra::defaultTransform($posts['content']);
           ?>
 
-          <div class="card-body last-topics-wrap">
+          <div class="card-body last-topics-wrap p-2 b-radius bg-white shadow-sm m-1 ">
             
             <div>
 

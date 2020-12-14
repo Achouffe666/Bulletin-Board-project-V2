@@ -35,7 +35,7 @@
                 </ul>
             </div>
             <div>
-            <h1 class="text-center text-uppercase">Rocker</h1> 
+            <h1 class="text-center text-uppercase">Pink Floyd</h1> 
             </div>
     </header>
 

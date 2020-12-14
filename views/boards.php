@@ -15,7 +15,7 @@
         <div class="board__wrap  container  col-sm-10 mr-0 mb-2">
         
             <!-- BOARD ONE TOPICS-->
-            <h4 class="mt-2 mb-5 ml-5 text-black-50">Category One</h4>
+            <h4 class="mt-2 mb-5 ml-5 text-black-50">Main boards</h4>
            
             <!-- TOPICS WRAP-->
 
@@ -110,7 +110,7 @@
             <!-- END CATEGORY ONE TOPICS-->
         
         <!-- BOARD TWO TOPICS-->
-            <h4 class="mt-2 mb-5 ml-5 text-black-50">Category Two</h4>
+            <h4 class="mt-2 mb-5 ml-5 text-black-50">Knowledge</h4>
            
             <!-- TOPICS WRAP-->
 
@@ -194,7 +194,7 @@
 
         <!-- BOARD THREE TOPICS-->
             <!-- BOARD THREE TOPICS-->
-            <h4 class="mt-2 mb-5 ml-5 text-black-50">Category Three</h4>
+            <h4 class="mt-2 mb-5 ml-5 text-black-50">Extra</h4>
            
             <!-- TOPICS WRAP-->
 
